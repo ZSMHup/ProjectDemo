@@ -11,9 +11,11 @@
 @class PageModel;
 @interface NetworkRequestModel : NSObject
 
-@property (nonatomic, copy) NSString *statusCode;
+@property (nonatomic, copy) NSString *code;
 
-@property (nonatomic, copy) NSString *msg;
+@property (nonatomic, copy) NSString *message;
+@property (nonatomic, copy) NSString *status;
+@property (nonatomic, copy) NSString *remark;
 
 @property (nonatomic, strong) PageModel *page;
 

@@ -10,8 +10,8 @@
 
 #define kWindow [UIApplication sharedApplication].delegate.window
 
-//#define kApiPrefix @"http://tyapi.znzkj.net/touyanshe_api/s/api"
-#define kApiPrefix @"http://api.touyanshe.com.cn/touyanshe_api/s/api"
+//#define kApiPrefix@"http://dev.ellabook.cn/rest/api/service"
+#define kApiPrefix @"http://api.ellabook.cn/rest/api/service"
 
 @implementation NetworkRequestManager
 
@@ -31,13 +31,13 @@
     [NetworkHelper openLog];
     
     return [NetworkHelper POST:kApiPrefix parameters:parameter responseCache:^(id responseCache) {
-        if (responseCache) {
-            id object = [manager convertToModel:[responseCache yy_modelToJSONString]];
-            
-            if (responseCaches) {
-                responseCaches(object);
-            }
-        }
+//        if (responseCache) {
+//            id object = [manager convertToModel:[responseCache yy_modelToJSONString]];
+//            
+//            if (responseCaches) {
+//                responseCaches(object);
+//            }
+//        }
     } success:^(id responseObject) {
         id object = [manager convertToModel:[responseObject yy_modelToJSONString]];
         if (success) {
@@ -48,7 +48,7 @@
         NSHTTPURLResponse *response = userInfo[@"com.alamofire.serialization.response.error.response"];
         if (response.statusCode == 500 || response.statusCode == 502 || response.statusCode == 404) {
             NetworkRequestModel *model = [[NetworkRequestModel alloc] init];
-            model.msg = @"服务器异常";
+            model.message = @"服务器异常";
             !success ?: success(model);
         } else {
             !failure ? : failure(error);
@@ -59,14 +59,14 @@
 
 + (NSDictionary *)configParameters:(NSDictionary *)parameters {
     NSMutableDictionary *mDic = [NSMutableDictionary dictionary];
-    NSString *accessToken = @"1413b137d62bf3aea469a524efc2b6";
-    if (accessToken) {
-        [mDic setObject:accessToken forKey:@"accessToken"];
-    } else {
-        [mDic setObject:@"" forKey:@"accessToken"];
-    }
-    [mDic setObject:@"4.0.5" forKey:@"version"];
-    [mDic setObject:@"1" forKey:@"deviceType"];
+//    NSString *accessToken = @"1413b137d62bf3aea469a524efc2b6";
+//    if (accessToken) {
+//        [mDic setObject:accessToken forKey:@"accessToken"];
+//    } else {
+//        [mDic setObject:@"" forKey:@"accessToken"];
+//    }
+//    [mDic setObject:@"4.0.5" forKey:@"version"];
+//    [mDic setObject:@"1" forKey:@"deviceType"];
     for (NSString *key in parameters.allKeys) {
         NSString *value = parameters[key];
         [mDic setObject:value forKey:key];
@@ -76,7 +76,7 @@
 
 - (id)convertToModel:(NSString *)JSONString {
     NSDictionary *resultDic = [self dictionaryWithJSON:JSONString];
-    NSDictionary *object = resultDic[@"object"];
+    NSDictionary *object = resultDic[@"data"];
     NetworkRequestModel *model = [[NetworkRequestModel alloc] init];
     if ([object isKindOfClass:[NSDictionary class]]) {
         model = [self.modelClass yy_modelWithJSON:[object yy_modelToJSONString]];
@@ -90,16 +90,16 @@
         model = [[self.modelClass alloc] init];
     }
     
-    if (resultDic[@"msg"]) {
-        model.msg = resultDic[@"msg"];
+    if (resultDic[@"message"]) {
+        model.message = resultDic[@"message"];
     }
-    if (resultDic[@"statusCode"]) {
-        model.statusCode = resultDic[@"statusCode"];
+    if (resultDic[@"code"]) {
+        model.code = resultDic[@"code"];
     }
     
-    if ([model.statusCode isEqualToString:@"90000"] || [model.msg isEqualToString:@"accessToken失效"]) {
-        NSLog(@"accessToken失效");
-    }
+//    if ([model.statusCode isEqualToString:@"90000"] || [model.msg isEqualToString:@"accessToken失效"]) {
+//        NSLog(@"accessToken失效");
+//    }
     
     return model;
 }

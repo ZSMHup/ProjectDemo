@@ -9,12 +9,46 @@
 #ifndef AYMacro_h
 #define AYMacro_h
 
+// APP版本号
+#define kAppVersion [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]
+// 系统版本号
+#define kSystemVersion [[UIDevice currentDevice] systemVersion]
+// 获取当前语言
+#define kCurrentLanguage ([[NSLocale preferredLanguages] objectAtIndex:0])
+// 判断是否为iPhone
+#define kISiPhone (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
+// 判断是否为iPad
+#define kISiPad (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+
+// 判断是真机还是模拟器
+#if TARGET_OS_IPHONE
+// 真机
+#endif
+
+#if TARGET_IPHONE_SIMULATOR
+// 模拟器
+#endif
+
 // 获取状态栏/导航栏高度
 #define kStatusBarHeight [UIApplication sharedApplication].statusBarFrame.size.height
 #define kNavigationBarHeight ([[UIApplication sharedApplication] statusBarFrame].size.height + 44.f)
 // 获取屏幕宽高
 #define kScreenWidth [[UIScreen mainScreen] bounds].size.width
 #define kScreenHeight [[UIScreen mainScreen] bounds].size.height
+
+#if UIUserInterfaceIdiomPad
+
+#define AdaptW(w) [UIScreen mainScreen].bounds.size.width / 375 * (w) * 1.0
+#define AdaptH(h) [UIScreen mainScreen].bounds.size.height == 812 ? 1.0 : ([UIScreen mainScreen].bounds.size.height / 812) * (h) * 1.0
+
+#else
+
+#define AdaptW(w) kScreenWidth * (w * 1.0 / 768)
+#define AdaptH(h) kScreenHeight * (h * 1.0 / 1024)
+
+#endif
+
+
 
 #define adjustsScrollViewInsets_NO(scrollView,vc)\
 do { \
@@ -41,26 +75,6 @@ do { \
 || ([_object respondsToSelector:@selector(count)] && [(NSArray *)_object count] == 0))
 // NSStringFormat
 #define NSStringFormat(format,...) [NSString stringWithFormat:format,##__VA_ARGS__]
-
-// APP版本号
-#define kAppVersion [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]
-// 系统版本号
-#define kSystemVersion [[UIDevice currentDevice] systemVersion]
-// 获取当前语言
-#define kCurrentLanguage ([[NSLocale preferredLanguages] objectAtIndex:0])
-// 判断是否为iPhone
-#define kISiPhone (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
-// 判断是否为iPad
-#define kISiPad (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
-
-// 判断是真机还是模拟器
-#if TARGET_OS_IPHONE
-// 真机
-#endif
-
-#if TARGET_IPHONE_SIMULATOR
-// 模拟器
-#endif
 
 // 获取沙盒Document路径
 #define kDocumentPath [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject]

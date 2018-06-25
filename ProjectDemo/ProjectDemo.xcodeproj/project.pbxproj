@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		CA2227DEAB586D43E24A4783 /* libPods-ProjectDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 785549A2330789233A55F4C5 /* libPods-ProjectDemo.a */; };
+		E1E3AA7220E0EC4A009B6FAC /* DailyListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E3AA7120E0EC4A009B6FAC /* DailyListModel.m */; };
+		E1E3AA7520E0EC68009B6FAC /* BookListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E3AA7420E0EC68009B6FAC /* BookListModel.m */; };
+		E1E3AA7820E0ECAD009B6FAC /* EbBookModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E3AA7720E0ECAD009B6FAC /* EbBookModel.m */; };
 		E1E67E1B20E08B9300D537E5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E67E1A20E08B9300D537E5 /* AppDelegate.m */; };
 		E1E67E3720E08DDA00D537E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1E67E3120E08DDA00D537E5 /* Assets.xcassets */; };
 		E1E67E3820E08DDA00D537E5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1E67E3220E08DDA00D537E5 /* LaunchScreen.storyboard */; };
@@ -55,16 +58,27 @@
 		E1E67ECF20E09A7800D537E5 /* HomeChoiceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E67ECE20E09A7800D537E5 /* HomeChoiceViewController.m */; };
 		E1E67ED220E09A8900D537E5 /* MyStudyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E67ED120E09A8900D537E5 /* MyStudyViewController.m */; };
 		E1E67ED520E09C6900D537E5 /* UIColor+Custom.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E67ED420E09C6900D537E5 /* UIColor+Custom.m */; };
-		E1E67EE320E0B0B400D537E5 /* NetWorkRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E67ED920E0B0B400D537E5 /* NetWorkRequest.m */; };
-		E1E67EE420E0B0B400D537E5 /* NetworkRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E67EDB20E0B0B400D537E5 /* NetworkRequestManager.m */; };
-		E1E67EE520E0B0B400D537E5 /* NetworkRequestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E67EDD20E0B0B400D537E5 /* NetworkRequestModel.m */; };
 		E1E67EE620E0B0B400D537E5 /* NetworkCache.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E67EE020E0B0B400D537E5 /* NetworkCache.m */; };
 		E1E67EE720E0B0B400D537E5 /* NetworkHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E67EE220E0B0B400D537E5 /* NetworkHelper.m */; };
+		E1E67EEA20E0B96F00D537E5 /* HomeSubjectCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E67EE920E0B96F00D537E5 /* HomeSubjectCell.m */; };
+		E1E67EF220E0C8DF00D537E5 /* HomeSubjectCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E67EF120E0C8DF00D537E5 /* HomeSubjectCollectionCell.m */; };
+		E1E67EF520E0D61300D537E5 /* HomeSectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E67EF420E0D61300D537E5 /* HomeSectionView.m */; };
+		E1E67EF820E0DC8D00D537E5 /* SubjectListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E67EF720E0DC8D00D537E5 /* SubjectListModel.m */; };
+		E1E67EFD20E0E63A00D537E5 /* NetworkRequestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E67EF920E0E63A00D537E5 /* NetworkRequestModel.m */; };
+		E1E67EFE20E0E63A00D537E5 /* NetworkRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E67EFA20E0E63A00D537E5 /* NetworkRequestManager.m */; };
+		E1E67F0620E0E6D500D537E5 /* HomeRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E67F0520E0E6D500D537E5 /* HomeRequest.m */; };
+		E1E67F0920E0E88600D537E5 /* HomeListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E67F0820E0E88600D537E5 /* HomeListModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1A63463A904B078FD69E2E32 /* Pods-ProjectDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ProjectDemo/Pods-ProjectDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		785549A2330789233A55F4C5 /* libPods-ProjectDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ProjectDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E1E3AA7020E0EC4A009B6FAC /* DailyListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DailyListModel.h; sourceTree = "<group>"; };
+		E1E3AA7120E0EC4A009B6FAC /* DailyListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DailyListModel.m; sourceTree = "<group>"; };
+		E1E3AA7320E0EC68009B6FAC /* BookListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BookListModel.h; sourceTree = "<group>"; };
+		E1E3AA7420E0EC68009B6FAC /* BookListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BookListModel.m; sourceTree = "<group>"; };
+		E1E3AA7620E0ECAD009B6FAC /* EbBookModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EbBookModel.h; sourceTree = "<group>"; };
+		E1E3AA7720E0ECAD009B6FAC /* EbBookModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EbBookModel.m; sourceTree = "<group>"; };
 		E1E67E1620E08B9300D537E5 /* ProjectDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjectDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1E67E1920E08B9300D537E5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E1E67E1A20E08B9300D537E5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -153,16 +167,26 @@
 		E1E67ED120E09A8900D537E5 /* MyStudyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyStudyViewController.m; sourceTree = "<group>"; };
 		E1E67ED320E09C6900D537E5 /* UIColor+Custom.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+Custom.h"; sourceTree = "<group>"; };
 		E1E67ED420E09C6900D537E5 /* UIColor+Custom.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Custom.m"; sourceTree = "<group>"; };
-		E1E67ED820E0B0B400D537E5 /* NetWorkRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetWorkRequest.h; sourceTree = "<group>"; };
-		E1E67ED920E0B0B400D537E5 /* NetWorkRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetWorkRequest.m; sourceTree = "<group>"; };
-		E1E67EDA20E0B0B400D537E5 /* NetworkRequestManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkRequestManager.h; sourceTree = "<group>"; };
-		E1E67EDB20E0B0B400D537E5 /* NetworkRequestManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkRequestManager.m; sourceTree = "<group>"; };
-		E1E67EDC20E0B0B400D537E5 /* NetworkRequestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkRequestModel.h; sourceTree = "<group>"; };
-		E1E67EDD20E0B0B400D537E5 /* NetworkRequestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkRequestModel.m; sourceTree = "<group>"; };
 		E1E67EDF20E0B0B400D537E5 /* NetworkCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkCache.h; sourceTree = "<group>"; };
 		E1E67EE020E0B0B400D537E5 /* NetworkCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkCache.m; sourceTree = "<group>"; };
 		E1E67EE120E0B0B400D537E5 /* NetworkHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkHelper.h; sourceTree = "<group>"; };
 		E1E67EE220E0B0B400D537E5 /* NetworkHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkHelper.m; sourceTree = "<group>"; };
+		E1E67EE820E0B96F00D537E5 /* HomeSubjectCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeSubjectCell.h; sourceTree = "<group>"; };
+		E1E67EE920E0B96F00D537E5 /* HomeSubjectCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeSubjectCell.m; sourceTree = "<group>"; };
+		E1E67EF020E0C8DF00D537E5 /* HomeSubjectCollectionCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeSubjectCollectionCell.h; sourceTree = "<group>"; };
+		E1E67EF120E0C8DF00D537E5 /* HomeSubjectCollectionCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeSubjectCollectionCell.m; sourceTree = "<group>"; };
+		E1E67EF320E0D61300D537E5 /* HomeSectionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeSectionView.h; sourceTree = "<group>"; };
+		E1E67EF420E0D61300D537E5 /* HomeSectionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeSectionView.m; sourceTree = "<group>"; };
+		E1E67EF620E0DC8D00D537E5 /* SubjectListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SubjectListModel.h; sourceTree = "<group>"; };
+		E1E67EF720E0DC8D00D537E5 /* SubjectListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SubjectListModel.m; sourceTree = "<group>"; };
+		E1E67EF920E0E63A00D537E5 /* NetworkRequestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkRequestModel.m; sourceTree = "<group>"; };
+		E1E67EFA20E0E63A00D537E5 /* NetworkRequestManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkRequestManager.m; sourceTree = "<group>"; };
+		E1E67EFB20E0E63A00D537E5 /* NetworkRequestManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkRequestManager.h; sourceTree = "<group>"; };
+		E1E67EFC20E0E63A00D537E5 /* NetworkRequestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkRequestModel.h; sourceTree = "<group>"; };
+		E1E67F0420E0E6D500D537E5 /* HomeRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeRequest.h; sourceTree = "<group>"; };
+		E1E67F0520E0E6D500D537E5 /* HomeRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeRequest.m; sourceTree = "<group>"; };
+		E1E67F0720E0E88600D537E5 /* HomeListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeListModel.h; sourceTree = "<group>"; };
+		E1E67F0820E0E88600D537E5 /* HomeListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeListModel.m; sourceTree = "<group>"; };
 		FA6636864F2369525BAADBEE /* Pods-ProjectDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-ProjectDemo/Pods-ProjectDemo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -295,6 +319,16 @@
 		E1E67E4120E08F1500D537E5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E1E67EF620E0DC8D00D537E5 /* SubjectListModel.h */,
+				E1E67EF720E0DC8D00D537E5 /* SubjectListModel.m */,
+				E1E67F0720E0E88600D537E5 /* HomeListModel.h */,
+				E1E67F0820E0E88600D537E5 /* HomeListModel.m */,
+				E1E3AA7020E0EC4A009B6FAC /* DailyListModel.h */,
+				E1E3AA7120E0EC4A009B6FAC /* DailyListModel.m */,
+				E1E3AA7320E0EC68009B6FAC /* BookListModel.h */,
+				E1E3AA7420E0EC68009B6FAC /* BookListModel.m */,
+				E1E3AA7620E0ECAD009B6FAC /* EbBookModel.h */,
+				E1E3AA7720E0ECAD009B6FAC /* EbBookModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -302,6 +336,12 @@
 		E1E67E4220E08F1500D537E5 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E1E67EE820E0B96F00D537E5 /* HomeSubjectCell.h */,
+				E1E67EE920E0B96F00D537E5 /* HomeSubjectCell.m */,
+				E1E67EF020E0C8DF00D537E5 /* HomeSubjectCollectionCell.h */,
+				E1E67EF120E0C8DF00D537E5 /* HomeSubjectCollectionCell.m */,
+				E1E67EF320E0D61300D537E5 /* HomeSectionView.h */,
+				E1E67EF420E0D61300D537E5 /* HomeSectionView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -536,22 +576,9 @@
 			isa = PBXGroup;
 			children = (
 				E1E67EDE20E0B0B400D537E5 /* NetworkHelper */,
-				E1E67ED720E0B0B400D537E5 /* NetworkRequestManager */,
+				E1E67EFF20E0E65B00D537E5 /* NetworkRequest */,
 			);
 			path = Networking;
-			sourceTree = "<group>";
-		};
-		E1E67ED720E0B0B400D537E5 /* NetworkRequestManager */ = {
-			isa = PBXGroup;
-			children = (
-				E1E67ED820E0B0B400D537E5 /* NetWorkRequest.h */,
-				E1E67ED920E0B0B400D537E5 /* NetWorkRequest.m */,
-				E1E67EDA20E0B0B400D537E5 /* NetworkRequestManager.h */,
-				E1E67EDB20E0B0B400D537E5 /* NetworkRequestManager.m */,
-				E1E67EDC20E0B0B400D537E5 /* NetworkRequestModel.h */,
-				E1E67EDD20E0B0B400D537E5 /* NetworkRequestModel.m */,
-			);
-			path = NetworkRequestManager;
 			sourceTree = "<group>";
 		};
 		E1E67EDE20E0B0B400D537E5 /* NetworkHelper */ = {
@@ -561,8 +588,30 @@
 				E1E67EE020E0B0B400D537E5 /* NetworkCache.m */,
 				E1E67EE120E0B0B400D537E5 /* NetworkHelper.h */,
 				E1E67EE220E0B0B400D537E5 /* NetworkHelper.m */,
+				E1E67EFB20E0E63A00D537E5 /* NetworkRequestManager.h */,
+				E1E67EFA20E0E63A00D537E5 /* NetworkRequestManager.m */,
+				E1E67EFC20E0E63A00D537E5 /* NetworkRequestModel.h */,
+				E1E67EF920E0E63A00D537E5 /* NetworkRequestModel.m */,
 			);
 			path = NetworkHelper;
+			sourceTree = "<group>";
+		};
+		E1E67EFF20E0E65B00D537E5 /* NetworkRequest */ = {
+			isa = PBXGroup;
+			children = (
+				E1E67F0320E0E6BA00D537E5 /* HomeRequest */,
+			);
+			name = NetworkRequest;
+			path = ProjectDemo/Vendor/Networking/NetworkRequest;
+			sourceTree = SOURCE_ROOT;
+		};
+		E1E67F0320E0E6BA00D537E5 /* HomeRequest */ = {
+			isa = PBXGroup;
+			children = (
+				E1E67F0420E0E6D500D537E5 /* HomeRequest.h */,
+				E1E67F0520E0E6D500D537E5 /* HomeRequest.m */,
+			);
+			path = HomeRequest;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -690,20 +739,23 @@
 				E1E67ED220E09A8900D537E5 /* MyStudyViewController.m in Sources */,
 				E1E67EA420E0905E00D537E5 /* AYMenuView.m in Sources */,
 				E1E67EBB20E0905E00D537E5 /* AYTextView.m in Sources */,
-				E1E67EE420E0B0B400D537E5 /* NetworkRequestManager.m in Sources */,
 				E1E67E9920E0905E00D537E5 /* UIButton+AYCountdown.m in Sources */,
 				E1E67ECB20E092CD00D537E5 /* TabBarController.m in Sources */,
+				E1E67EF820E0DC8D00D537E5 /* SubjectListModel.m in Sources */,
 				E1E67EA220E0905E00D537E5 /* AYFileSessionModel.m in Sources */,
+				E1E3AA7220E0EC4A009B6FAC /* DailyListModel.m in Sources */,
 				E1E67EB820E0905E00D537E5 /* UILabel+AYLabelTextHelper.m in Sources */,
-				E1E67EE520E0B0B400D537E5 /* NetworkRequestModel.m in Sources */,
 				E1E67EB520E0905E00D537E5 /* AYScrollView.m in Sources */,
 				E1E67EA820E0905E00D537E5 /* MBProgressHUD.m in Sources */,
+				E1E67EFE20E0E63A00D537E5 /* NetworkRequestManager.m in Sources */,
 				E1E67EAA20E0905E00D537E5 /* AYQRCodeGenerateManager.m in Sources */,
 				E1E67EC220E0924800D537E5 /* BaseViewController.m in Sources */,
 				E1E67EBC20E0905E00D537E5 /* AYKeychain.m in Sources */,
 				E1E67E9C20E0905E00D537E5 /* UITableViewCell+AYFastCell.m in Sources */,
+				E1E67EF220E0C8DF00D537E5 /* HomeSubjectCollectionCell.m in Sources */,
 				E1E67EB720E0905E00D537E5 /* AYTextHelper.m in Sources */,
 				E1E67E9F20E0905E00D537E5 /* AYMatchUtils.m in Sources */,
+				E1E3AA7520E0EC68009B6FAC /* BookListModel.m in Sources */,
 				E1E67EB620E0905E00D537E5 /* AYTabMenu.m in Sources */,
 				E1E67E9A20E0905E00D537E5 /* UIColor+AYHex.m in Sources */,
 				E1E67EB420E0905E00D537E5 /* UIImage+AYImageSize.m in Sources */,
@@ -711,16 +763,21 @@
 				E1E67E3A20E08DDA00D537E5 /* main.m in Sources */,
 				E1E67ED520E09C6900D537E5 /* UIColor+Custom.m in Sources */,
 				E1E67EC820E092B800D537E5 /* NavigationController.m in Sources */,
-				E1E67EE320E0B0B400D537E5 /* NetWorkRequest.m in Sources */,
+				E1E67EFD20E0E63A00D537E5 /* NetworkRequestModel.m in Sources */,
 				E1E67EA120E0905E00D537E5 /* AYFileDownloadManager.m in Sources */,
 				E1E67EA920E0905E00D537E5 /* AYQRCodeAlbumManager.m in Sources */,
 				E1E67EAC20E0905E00D537E5 /* AYQRCodeScanningView.m in Sources */,
+				E1E67F0620E0E6D500D537E5 /* HomeRequest.m in Sources */,
+				E1E67EEA20E0B96F00D537E5 /* HomeSubjectCell.m in Sources */,
 				E1E67EE720E0B0B400D537E5 /* NetworkHelper.m in Sources */,
+				E1E67F0920E0E88600D537E5 /* HomeListModel.m in Sources */,
+				E1E67EF520E0D61300D537E5 /* HomeSectionView.m in Sources */,
 				E1E67EA320E0905E00D537E5 /* NSString+AYHash.m in Sources */,
 				E1E67ECF20E09A7800D537E5 /* HomeChoiceViewController.m in Sources */,
 				E1E67E9B20E0905E00D537E5 /* UINavigationController+Additions.m in Sources */,
 				E1E67EA020E0905E00D537E5 /* AYNotification.m in Sources */,
 				E1E67E9D20E0905E00D537E5 /* UITextView+Placeholder.m in Sources */,
+				E1E3AA7820E0ECAD009B6FAC /* EbBookModel.m in Sources */,
 				E1E67E1B20E08B9300D537E5 /* AppDelegate.m in Sources */,
 				E1E67E9E20E0905E00D537E5 /* UIView+AYView.m in Sources */,
 				E1E67EBA20E0905E00D537E5 /* AYTextField.m in Sources */,
