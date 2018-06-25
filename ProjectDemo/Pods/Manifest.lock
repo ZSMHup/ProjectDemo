@@ -14,7 +14,6 @@ PODS:
   - AFNetworking/Serialization (3.2.1)
   - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
-  - CYLTabBarController (1.17.8)
   - KMNavigationBarTransition (1.1.5)
   - Masonry (1.1.0)
   - MJRefresh (3.1.15.3)
@@ -26,7 +25,6 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking
-  - CYLTabBarController
   - KMNavigationBarTransition
   - Masonry
   - MJRefresh
@@ -37,7 +35,6 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - AFNetworking
-    - CYLTabBarController
     - KMNavigationBarTransition
     - Masonry
     - MJRefresh
@@ -47,7 +44,6 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
-  CYLTabBarController: c1377ee2d0ccb6c7ec642806dc04f883f7c2851e
   KMNavigationBarTransition: 7a52c9bc25b39b6e3343e980b453facee1591b82
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MJRefresh: b48380ae2b927b46c4ef000de9adb8dc748e1df7
@@ -55,6 +51,6 @@ SPEC CHECKSUMS:
   YYCache: 8105b6638f5e849296c71f331ff83891a4942952
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: 062c890d17ffcccb2c2edc68187ca7b82dc21d0d
+PODFILE CHECKSUM: 18c56b42df9d6f459c2342b1992829702399e86d
 
 COCOAPODS: 1.5.2

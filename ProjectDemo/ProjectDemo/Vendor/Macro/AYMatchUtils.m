@@ -11,8 +11,7 @@
 @implementation AYMatchUtils
 
 /// 手机号校验
-+ (BOOL)checkPhoneNumInput:(NSString *)input
-{
++ (BOOL)checkPhoneNumInput:(NSString *)input {
     NSString *regex = @"^(1)\\d{10}$";
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", regex];
     return [predicate evaluateWithObject:input];

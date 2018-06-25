@@ -10,7 +10,6 @@ pod 'MJRefresh'
 pod 'Masonry'
 pod 'AFNetworking'
 pod 'KMNavigationBarTransition'
-pod 'CYLTabBarController'
 pod 'YYCache'
 pod 'YYModel'
 

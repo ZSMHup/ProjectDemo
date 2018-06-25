@@ -10,4 +10,7 @@
 
 @interface BaseViewController : UIViewController
 
+- (void)setNavTransparent:(BOOL)isTransparent;
+- (void)setNavBlackLine:(BOOL)showLine;
+
 @end

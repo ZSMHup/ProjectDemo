@@ -52,6 +52,14 @@
 		E1E67EC220E0924800D537E5 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E67EC120E0924800D537E5 /* BaseViewController.m */; };
 		E1E67EC820E092B800D537E5 /* NavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E67EC720E092B800D537E5 /* NavigationController.m */; };
 		E1E67ECB20E092CD00D537E5 /* TabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E67ECA20E092CD00D537E5 /* TabBarController.m */; };
+		E1E67ECF20E09A7800D537E5 /* HomeChoiceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E67ECE20E09A7800D537E5 /* HomeChoiceViewController.m */; };
+		E1E67ED220E09A8900D537E5 /* MyStudyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E67ED120E09A8900D537E5 /* MyStudyViewController.m */; };
+		E1E67ED520E09C6900D537E5 /* UIColor+Custom.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E67ED420E09C6900D537E5 /* UIColor+Custom.m */; };
+		E1E67EE320E0B0B400D537E5 /* NetWorkRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E67ED920E0B0B400D537E5 /* NetWorkRequest.m */; };
+		E1E67EE420E0B0B400D537E5 /* NetworkRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E67EDB20E0B0B400D537E5 /* NetworkRequestManager.m */; };
+		E1E67EE520E0B0B400D537E5 /* NetworkRequestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E67EDD20E0B0B400D537E5 /* NetworkRequestModel.m */; };
+		E1E67EE620E0B0B400D537E5 /* NetworkCache.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E67EE020E0B0B400D537E5 /* NetworkCache.m */; };
+		E1E67EE720E0B0B400D537E5 /* NetworkHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E67EE220E0B0B400D537E5 /* NetworkHelper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -139,6 +147,22 @@
 		E1E67EC920E092CD00D537E5 /* TabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TabBarController.h; sourceTree = "<group>"; };
 		E1E67ECA20E092CD00D537E5 /* TabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TabBarController.m; sourceTree = "<group>"; };
 		E1E67ECC20E0932700D537E5 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		E1E67ECD20E09A7800D537E5 /* HomeChoiceViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeChoiceViewController.h; sourceTree = "<group>"; };
+		E1E67ECE20E09A7800D537E5 /* HomeChoiceViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeChoiceViewController.m; sourceTree = "<group>"; };
+		E1E67ED020E09A8900D537E5 /* MyStudyViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyStudyViewController.h; sourceTree = "<group>"; };
+		E1E67ED120E09A8900D537E5 /* MyStudyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyStudyViewController.m; sourceTree = "<group>"; };
+		E1E67ED320E09C6900D537E5 /* UIColor+Custom.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+Custom.h"; sourceTree = "<group>"; };
+		E1E67ED420E09C6900D537E5 /* UIColor+Custom.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Custom.m"; sourceTree = "<group>"; };
+		E1E67ED820E0B0B400D537E5 /* NetWorkRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetWorkRequest.h; sourceTree = "<group>"; };
+		E1E67ED920E0B0B400D537E5 /* NetWorkRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetWorkRequest.m; sourceTree = "<group>"; };
+		E1E67EDA20E0B0B400D537E5 /* NetworkRequestManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkRequestManager.h; sourceTree = "<group>"; };
+		E1E67EDB20E0B0B400D537E5 /* NetworkRequestManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkRequestManager.m; sourceTree = "<group>"; };
+		E1E67EDC20E0B0B400D537E5 /* NetworkRequestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkRequestModel.h; sourceTree = "<group>"; };
+		E1E67EDD20E0B0B400D537E5 /* NetworkRequestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkRequestModel.m; sourceTree = "<group>"; };
+		E1E67EDF20E0B0B400D537E5 /* NetworkCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkCache.h; sourceTree = "<group>"; };
+		E1E67EE020E0B0B400D537E5 /* NetworkCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkCache.m; sourceTree = "<group>"; };
+		E1E67EE120E0B0B400D537E5 /* NetworkHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkHelper.h; sourceTree = "<group>"; };
+		E1E67EE220E0B0B400D537E5 /* NetworkHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkHelper.m; sourceTree = "<group>"; };
 		FA6636864F2369525BAADBEE /* Pods-ProjectDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-ProjectDemo/Pods-ProjectDemo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -229,6 +253,8 @@
 		E1E67E3C20E08F1500D537E5 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				E1E67ED020E09A8900D537E5 /* MyStudyViewController.h */,
+				E1E67ED120E09A8900D537E5 /* MyStudyViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -260,6 +286,8 @@
 		E1E67E4020E08F1500D537E5 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				E1E67ECD20E09A7800D537E5 /* HomeChoiceViewController.h */,
+				E1E67ECE20E09A7800D537E5 /* HomeChoiceViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -281,6 +309,7 @@
 		E1E67E4320E0905E00D537E5 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				E1E67ED620E0AF0A00D537E5 /* Networking */,
 				E1E67E4420E0905E00D537E5 /* Category */,
 				E1E67E5320E0905E00D537E5 /* Macro */,
 				E1E67E5920E0905E00D537E5 /* Manager */,
@@ -319,6 +348,8 @@
 				E1E67E5620E0905E00D537E5 /* AYMatchUtils.m */,
 				E1E67E5720E0905E00D537E5 /* AYNotification.h */,
 				E1E67E5820E0905E00D537E5 /* AYNotification.m */,
+				E1E67ED320E09C6900D537E5 /* UIColor+Custom.h */,
+				E1E67ED420E09C6900D537E5 /* UIColor+Custom.m */,
 			);
 			path = Macro;
 			sourceTree = "<group>";
@@ -501,6 +532,39 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
+		E1E67ED620E0AF0A00D537E5 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				E1E67EDE20E0B0B400D537E5 /* NetworkHelper */,
+				E1E67ED720E0B0B400D537E5 /* NetworkRequestManager */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		E1E67ED720E0B0B400D537E5 /* NetworkRequestManager */ = {
+			isa = PBXGroup;
+			children = (
+				E1E67ED820E0B0B400D537E5 /* NetWorkRequest.h */,
+				E1E67ED920E0B0B400D537E5 /* NetWorkRequest.m */,
+				E1E67EDA20E0B0B400D537E5 /* NetworkRequestManager.h */,
+				E1E67EDB20E0B0B400D537E5 /* NetworkRequestManager.m */,
+				E1E67EDC20E0B0B400D537E5 /* NetworkRequestModel.h */,
+				E1E67EDD20E0B0B400D537E5 /* NetworkRequestModel.m */,
+			);
+			path = NetworkRequestManager;
+			sourceTree = "<group>";
+		};
+		E1E67EDE20E0B0B400D537E5 /* NetworkHelper */ = {
+			isa = PBXGroup;
+			children = (
+				E1E67EDF20E0B0B400D537E5 /* NetworkCache.h */,
+				E1E67EE020E0B0B400D537E5 /* NetworkCache.m */,
+				E1E67EE120E0B0B400D537E5 /* NetworkHelper.h */,
+				E1E67EE220E0B0B400D537E5 /* NetworkHelper.m */,
+			);
+			path = NetworkHelper;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -623,12 +687,15 @@
 				E1E67EA720E0905E00D537E5 /* MBProgressHUD+AYHUD.m in Sources */,
 				E1E67EB920E0905E00D537E5 /* AYWebView.m in Sources */,
 				E1E67E9820E0905E00D537E5 /* NSDate+AYDate.m in Sources */,
+				E1E67ED220E09A8900D537E5 /* MyStudyViewController.m in Sources */,
 				E1E67EA420E0905E00D537E5 /* AYMenuView.m in Sources */,
 				E1E67EBB20E0905E00D537E5 /* AYTextView.m in Sources */,
+				E1E67EE420E0B0B400D537E5 /* NetworkRequestManager.m in Sources */,
 				E1E67E9920E0905E00D537E5 /* UIButton+AYCountdown.m in Sources */,
 				E1E67ECB20E092CD00D537E5 /* TabBarController.m in Sources */,
 				E1E67EA220E0905E00D537E5 /* AYFileSessionModel.m in Sources */,
 				E1E67EB820E0905E00D537E5 /* UILabel+AYLabelTextHelper.m in Sources */,
+				E1E67EE520E0B0B400D537E5 /* NetworkRequestModel.m in Sources */,
 				E1E67EB520E0905E00D537E5 /* AYScrollView.m in Sources */,
 				E1E67EA820E0905E00D537E5 /* MBProgressHUD.m in Sources */,
 				E1E67EAA20E0905E00D537E5 /* AYQRCodeGenerateManager.m in Sources */,
@@ -642,17 +709,22 @@
 				E1E67EB420E0905E00D537E5 /* UIImage+AYImageSize.m in Sources */,
 				E1E67EAB20E0905E00D537E5 /* AYQRCodeScanManager.m in Sources */,
 				E1E67E3A20E08DDA00D537E5 /* main.m in Sources */,
+				E1E67ED520E09C6900D537E5 /* UIColor+Custom.m in Sources */,
 				E1E67EC820E092B800D537E5 /* NavigationController.m in Sources */,
+				E1E67EE320E0B0B400D537E5 /* NetWorkRequest.m in Sources */,
 				E1E67EA120E0905E00D537E5 /* AYFileDownloadManager.m in Sources */,
 				E1E67EA920E0905E00D537E5 /* AYQRCodeAlbumManager.m in Sources */,
 				E1E67EAC20E0905E00D537E5 /* AYQRCodeScanningView.m in Sources */,
+				E1E67EE720E0B0B400D537E5 /* NetworkHelper.m in Sources */,
 				E1E67EA320E0905E00D537E5 /* NSString+AYHash.m in Sources */,
+				E1E67ECF20E09A7800D537E5 /* HomeChoiceViewController.m in Sources */,
 				E1E67E9B20E0905E00D537E5 /* UINavigationController+Additions.m in Sources */,
 				E1E67EA020E0905E00D537E5 /* AYNotification.m in Sources */,
 				E1E67E9D20E0905E00D537E5 /* UITextView+Placeholder.m in Sources */,
 				E1E67E1B20E08B9300D537E5 /* AppDelegate.m in Sources */,
 				E1E67E9E20E0905E00D537E5 /* UIView+AYView.m in Sources */,
 				E1E67EBA20E0905E00D537E5 /* AYTextField.m in Sources */,
+				E1E67EE620E0B0B400D537E5 /* NetworkCache.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -788,6 +860,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				GCC_PREFIX_HEADER = /Users/zhangshumeng/Desktop/ProjectDemo/ProjectDemo/ProjectDemo/Other/PrefixHeader.pch;
 				INFOPLIST_FILE = "$(SRCROOT)/ProjectDemo/Other/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -806,6 +879,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				GCC_PREFIX_HEADER = /Users/zhangshumeng/Desktop/ProjectDemo/ProjectDemo/ProjectDemo/Other/PrefixHeader.pch;
 				INFOPLIST_FILE = "$(SRCROOT)/ProjectDemo/Other/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

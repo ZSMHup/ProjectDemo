@@ -9,7 +9,28 @@
 #ifndef PrefixHeader_pch
 #define PrefixHeader_pch
 
+#import "UIColor+Custom.h"
+#import "NSDate+AYDate.h"
+#import "UIColor+AYHex.h"
+#import "UITextView+Placeholder.h"
 
+#import "AYMacro.h"
+#import "AYMatchUtils.h"
+#import "AYNotification.h"
+#import "AYTextField.h"
+#import "AYTextView.h"
+#import "AYWebView.h"
+#import "AYProgressHUD.h"
+
+#import "NavigationController.h"
+#import "BaseViewController.h"
+
+#import <AFNetworking/AFNetworking.h>
+#import <Masonry/Masonry.h>
+#import <MJRefresh/MJRefresh.h>
+#import <SDWebImage/SDImageCache.h>
+#import <YYModel/YYModel.h>
+#import <YYCache/YYCache.h>
 
 
 #endif /* PrefixHeader_pch */

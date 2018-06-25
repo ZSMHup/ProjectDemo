@@ -16,22 +16,48 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    [self setupUI];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)setupUI {
+    self.view.backgroundColor = [UIColor whiteColor];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)setNavTransparent:(BOOL)isTransparent {
+    if (isTransparent) {
+        [self.navigationController.navigationBar setBackgroundColor:[UIColor clearColor]];
+        [self.navigationController.navigationBar setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault];
+    } else {
+        [self.navigationController.navigationBar setBackgroundImage:[self imageWithColor:[UIColor orangeColor]] forBarMetrics:UIBarMetricsDefault];
+    }
 }
-*/
+
+- (void)setNavBlackLine:(BOOL)showLine {
+    self.navigationController.navigationBar.shadowImage = showLine ? [[UIImage alloc] init] : nil;
+}
+
+- (UIImage *)imageWithColor:(UIColor *)color {
+    return [self imageWithColor:color bounds:CGRectMake(0, 0, 1, 1)];
+}
+
+- (UIImage *)imageWithColor:(UIColor *)color bounds:(CGRect)bounds {
+    UIGraphicsBeginImageContext(bounds.size);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextSetFillColorWithColor(context, [color CGColor]);
+    CGContextFillRect(context, bounds);
+    UIImage *outImg = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return outImg;
+}
+
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    ///这里设置白色
+    return UIStatusBarStyleLightContent;
+}
+
+- (BOOL)prefersStatusBarHidden {
+    return NO;
+}
 
 @end
