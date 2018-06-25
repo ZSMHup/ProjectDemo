@@ -33,7 +33,7 @@ DEPENDENCIES:
   - YYModel
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://github.com/CocoaPods/Specs.git:
     - AFNetworking
     - KMNavigationBarTransition
     - Masonry
@@ -53,4 +53,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 18c56b42df9d6f459c2342b1992829702399e86d
 
-COCOAPODS: 1.5.2
+COCOAPODS: 1.5.0

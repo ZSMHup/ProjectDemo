@@ -10,6 +10,7 @@
 
 @interface DailyListModel : NetworkRequestModel
 
+@property (nonatomic, copy) NSString *dailyCode;
 /**标题*/
 @property (nonatomic, copy) NSString *dailyTitle;
 /**封面图*/

@@ -10,19 +10,12 @@
 
 @interface SubjectListModel : NetworkRequestModel
 
-/**标题*/
-@property (nonatomic, copy) NSString *subjectTitle;
-/**ID*/
-@property (nonatomic, copy) NSString *idx;
-@property (nonatomic, copy) NSString *categoryId;
-/***/
-@property (nonatomic, copy) NSString *subjectCode;
-/**封面图*/
-@property (nonatomic, copy) NSString *bgImageUrl;
-@property (nonatomic, copy) NSString *status;
-@property (nonatomic, copy) NSString *createTime;
-@property (nonatomic, copy) NSString *targetType;
-@property (nonatomic, copy) NSString *targetPage;
-@property (nonatomic, copy) NSString *bgImageUpUrl;
+@property (nonatomic, copy) NSString *subjectCode; // 专题编号
+@property (nonatomic, copy) NSString *subjectTitle; // 专题标题
+@property (nonatomic, copy) NSString *bgImageUrl; //  背景图片地址
+@property (nonatomic, copy) NSString *bgImageUpUrl; // 背景图片图标地址
+@property (nonatomic, copy) NSString *targetType; // 跳转的目标类型 BOOK_DETAIL:图书详情 ,H5:H5页面,SYSTEM_INTERFACE:系统界面 ,BOOK_LIST:图书列表页
+@property (nonatomic, copy) NSString *targetPage; // 跳转内容
+@property (nonatomic, copy) NSString *idx; // idx
 
 @end

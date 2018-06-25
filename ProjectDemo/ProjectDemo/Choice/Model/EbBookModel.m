@@ -10,4 +10,8 @@
 
 @implementation EbBookModel
 
++ (NSDictionary *)modelCustomPropertyMapper {
+    return @{@"statu": @"status"};
+}
+
 @end

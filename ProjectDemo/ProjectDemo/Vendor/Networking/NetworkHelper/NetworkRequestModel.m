@@ -12,7 +12,7 @@
 - (BOOL)success {
     NSString *code = [NSString stringWithFormat:@"%@", self.code];
     NSString *staus = [NSString stringWithFormat:@"%@", self.code];
-    return [code isEqualToString:@"00000"] || [staus isEqualToString:@"1"];
+    return [code isEqualToString:@"200"] || [staus isEqualToString:@"1"];
 }
 
 - (NSString *)responseMessage {

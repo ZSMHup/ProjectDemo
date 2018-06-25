@@ -31,13 +31,13 @@
     [NetworkHelper openLog];
     
     return [NetworkHelper POST:kApiPrefix parameters:parameter responseCache:^(id responseCache) {
-//        if (responseCache) {
-//            id object = [manager convertToModel:[responseCache yy_modelToJSONString]];
-//            
-//            if (responseCaches) {
-//                responseCaches(object);
-//            }
-//        }
+        if (responseCache) {
+            id object = [manager convertToModel:[responseCache yy_modelToJSONString]];
+            
+            if (responseCaches) {
+                responseCaches(object);
+            }
+        }
     } success:^(id responseObject) {
         id object = [manager convertToModel:[responseObject yy_modelToJSONString]];
         if (success) {
