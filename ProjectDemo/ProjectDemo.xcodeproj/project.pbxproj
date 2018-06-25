@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		CA2227DEAB586D43E24A4783 /* libPods-ProjectDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 785549A2330789233A55F4C5 /* libPods-ProjectDemo.a */; };
 		E1E67E1B20E08B9300D537E5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E67E1A20E08B9300D537E5 /* AppDelegate.m */; };
-		E1E67E1E20E08B9300D537E5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E67E1D20E08B9300D537E5 /* ViewController.m */; };
 		E1E67E3720E08DDA00D537E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1E67E3120E08DDA00D537E5 /* Assets.xcassets */; };
 		E1E67E3820E08DDA00D537E5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1E67E3220E08DDA00D537E5 /* LaunchScreen.storyboard */; };
 		E1E67E3A20E08DDA00D537E5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E67E3620E08DDA00D537E5 /* main.m */; };
@@ -50,6 +49,9 @@
 		E1E67EBA20E0905E00D537E5 /* AYTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E67E9020E0905E00D537E5 /* AYTextField.m */; };
 		E1E67EBB20E0905E00D537E5 /* AYTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E67E9320E0905E00D537E5 /* AYTextView.m */; };
 		E1E67EBC20E0905E00D537E5 /* AYKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E67E9620E0905E00D537E5 /* AYKeychain.m */; };
+		E1E67EC220E0924800D537E5 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E67EC120E0924800D537E5 /* BaseViewController.m */; };
+		E1E67EC820E092B800D537E5 /* NavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E67EC720E092B800D537E5 /* NavigationController.m */; };
+		E1E67ECB20E092CD00D537E5 /* TabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E67ECA20E092CD00D537E5 /* TabBarController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,8 +60,6 @@
 		E1E67E1620E08B9300D537E5 /* ProjectDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjectDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1E67E1920E08B9300D537E5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E1E67E1A20E08B9300D537E5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		E1E67E1C20E08B9300D537E5 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		E1E67E1D20E08B9300D537E5 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		E1E67E2720E08B9500D537E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E1E67E3120E08DDA00D537E5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E1E67E3320E08DDA00D537E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -132,6 +132,13 @@
 		E1E67E9520E0905E00D537E5 /* AYKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AYKeychain.h; sourceTree = "<group>"; };
 		E1E67E9620E0905E00D537E5 /* AYKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AYKeychain.m; sourceTree = "<group>"; };
 		E1E67E9720E0905E00D537E5 /* AYSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AYSingleton.h; sourceTree = "<group>"; };
+		E1E67EC020E0924800D537E5 /* BaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		E1E67EC120E0924800D537E5 /* BaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		E1E67EC620E092B800D537E5 /* NavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NavigationController.h; sourceTree = "<group>"; };
+		E1E67EC720E092B800D537E5 /* NavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NavigationController.m; sourceTree = "<group>"; };
+		E1E67EC920E092CD00D537E5 /* TabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TabBarController.h; sourceTree = "<group>"; };
+		E1E67ECA20E092CD00D537E5 /* TabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TabBarController.m; sourceTree = "<group>"; };
+		E1E67ECC20E0932700D537E5 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		FA6636864F2369525BAADBEE /* Pods-ProjectDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-ProjectDemo/Pods-ProjectDemo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -187,8 +194,8 @@
 			children = (
 				E1E67E1920E08B9300D537E5 /* AppDelegate.h */,
 				E1E67E1A20E08B9300D537E5 /* AppDelegate.m */,
-				E1E67E1C20E08B9300D537E5 /* ViewController.h */,
-				E1E67E1D20E08B9300D537E5 /* ViewController.m */,
+				E1E67EBD20E091BC00D537E5 /* Base */,
+				E1E67EBE20E091BC00D537E5 /* Main */,
 				E1E67E3F20E08F1500D537E5 /* Choice */,
 				E1E67E3B20E08F1500D537E5 /* MyStudy */,
 				E1E67E4320E0905E00D537E5 /* Vendor */,
@@ -204,6 +211,7 @@
 				E1E67E3120E08DDA00D537E5 /* Assets.xcassets */,
 				E1E67E3220E08DDA00D537E5 /* LaunchScreen.storyboard */,
 				E1E67E3620E08DDA00D537E5 /* main.m */,
+				E1E67ECC20E0932700D537E5 /* PrefixHeader.pch */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -473,6 +481,26 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		E1E67EBD20E091BC00D537E5 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				E1E67EC020E0924800D537E5 /* BaseViewController.h */,
+				E1E67EC120E0924800D537E5 /* BaseViewController.m */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		E1E67EBE20E091BC00D537E5 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				E1E67EC920E092CD00D537E5 /* TabBarController.h */,
+				E1E67ECA20E092CD00D537E5 /* TabBarController.m */,
+				E1E67EC620E092B800D537E5 /* NavigationController.h */,
+				E1E67EC720E092B800D537E5 /* NavigationController.m */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -598,12 +626,13 @@
 				E1E67EA420E0905E00D537E5 /* AYMenuView.m in Sources */,
 				E1E67EBB20E0905E00D537E5 /* AYTextView.m in Sources */,
 				E1E67E9920E0905E00D537E5 /* UIButton+AYCountdown.m in Sources */,
+				E1E67ECB20E092CD00D537E5 /* TabBarController.m in Sources */,
 				E1E67EA220E0905E00D537E5 /* AYFileSessionModel.m in Sources */,
 				E1E67EB820E0905E00D537E5 /* UILabel+AYLabelTextHelper.m in Sources */,
 				E1E67EB520E0905E00D537E5 /* AYScrollView.m in Sources */,
-				E1E67E1E20E08B9300D537E5 /* ViewController.m in Sources */,
 				E1E67EA820E0905E00D537E5 /* MBProgressHUD.m in Sources */,
 				E1E67EAA20E0905E00D537E5 /* AYQRCodeGenerateManager.m in Sources */,
+				E1E67EC220E0924800D537E5 /* BaseViewController.m in Sources */,
 				E1E67EBC20E0905E00D537E5 /* AYKeychain.m in Sources */,
 				E1E67E9C20E0905E00D537E5 /* UITableViewCell+AYFastCell.m in Sources */,
 				E1E67EB720E0905E00D537E5 /* AYTextHelper.m in Sources */,
@@ -613,6 +642,7 @@
 				E1E67EB420E0905E00D537E5 /* UIImage+AYImageSize.m in Sources */,
 				E1E67EAB20E0905E00D537E5 /* AYQRCodeScanManager.m in Sources */,
 				E1E67E3A20E08DDA00D537E5 /* main.m in Sources */,
+				E1E67EC820E092B800D537E5 /* NavigationController.m in Sources */,
 				E1E67EA120E0905E00D537E5 /* AYFileDownloadManager.m in Sources */,
 				E1E67EA920E0905E00D537E5 /* AYQRCodeAlbumManager.m in Sources */,
 				E1E67EAC20E0905E00D537E5 /* AYQRCodeScanningView.m in Sources */,
@@ -756,6 +786,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				GCC_PREFIX_HEADER = /Users/zhangshumeng/Desktop/ProjectDemo/ProjectDemo/ProjectDemo/Other/PrefixHeader.pch;
 				INFOPLIST_FILE = "$(SRCROOT)/ProjectDemo/Other/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -773,6 +804,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				GCC_PREFIX_HEADER = /Users/zhangshumeng/Desktop/ProjectDemo/ProjectDemo/ProjectDemo/Other/PrefixHeader.pch;
 				INFOPLIST_FILE = "$(SRCROOT)/ProjectDemo/Other/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

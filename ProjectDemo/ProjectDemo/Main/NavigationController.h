@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  NavigationController.h
 //  ProjectDemo
 //
 //  Created by 张书孟 on 2018/6/25.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface NavigationController : UINavigationController
 
 @end
-

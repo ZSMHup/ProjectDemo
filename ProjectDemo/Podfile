@@ -3,7 +3,7 @@ platform :ios, '8.0'
 #屏蔽三方框架警告
 inhibit_all_warnings!
 
-target 'ProjectDemo'do
+target 'ProjectDemo' do
     
 pod 'SDWebImage'
 pod 'MJRefresh'
