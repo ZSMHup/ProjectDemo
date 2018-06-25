@@ -10,4 +10,7 @@
 
 @interface HomeSectionView : UIView
 
+@property (nonatomic, copy) NSString *title;
+@property (nonatomic, strong) UIColor *lineColor;
+
 @end

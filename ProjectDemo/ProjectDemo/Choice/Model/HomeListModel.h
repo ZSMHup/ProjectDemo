@@ -15,7 +15,7 @@
 
 @property (nonatomic, copy) NSString *partCode; // 栏目编号
 @property (nonatomic, copy) NSString *partTitle; // 栏目标题
-@property (nonatomic, copy) NSString *partStyle; // LIST_HAND:手动列表 ,LIST_AUTO:自动列表
+@property (nonatomic, copy) NSString *partStyle; // DAILY_BOOK, IMAGE_TEXT, SLIDE_HORIZONTAL: 手动列表; SLIDE_PORTRAIT: 自动列表
 @property (nonatomic, copy) NSString *partType;
 @property (nonatomic, copy) NSString *partSource; // 展示数据地址
 @property (nonatomic, copy) NSString *partSourceNum; // 展示数量

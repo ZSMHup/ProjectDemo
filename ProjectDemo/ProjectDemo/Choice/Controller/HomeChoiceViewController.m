@@ -20,6 +20,7 @@
 
 @property (nonatomic, strong) UICollectionViewFlowLayout *flowLayout;
 @property (nonatomic, strong) UICollectionView *collectionView;
+@property (nonatomic, strong) HomeSectionView *sectionView;
 
 @property (nonatomic, strong) NSMutableArray *dataSource;
 @property (nonatomic, strong) NSMutableArray <SubjectListModel *>*subjectArray;
@@ -95,17 +96,38 @@
     
 }
 
+/*
+ 1. targetType = H5;
+    partStyle = DAILY_BOOK;
+ 
+ 2. targetType = BOOK_LIST;
+ partStyle = IMAGE_TEXT;
+ 
+ 3. targetType = BOOK_LIST;
+    partStyle = SLIDE_HORIZONTAL; 横向
+ 
+ 5. targetType = BOOK_LIST;
+    partStyle = SLIDE_PORTRAIT;
+ 
+*/
+
 #pragma mark - UICollectionView DataSource, delegate
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
     return self.dataSource.count + (kArrayIsEmpty(self.subjectArray) ? 0 : 1);
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    switch (section) {
-            case 0:
-            return 1;
-        default:
-            return 1;
+    
+    if (section == 0) {
+        return 1;
+    }
+    
+    HomeListModel *model = self.dataSource[section - 1];
+    
+    if ([model.partStyle isEqualToString:@"SLIDE_PORTRAIT"]) { // 竖向
+        return model.bookList.count;
+    } else { // 单个或者横向
+        return 1;
     }
 }
 
@@ -127,11 +149,10 @@
     if ([kind isEqualToString:UICollectionElementKindSectionHeader]) {
         // 头部
         if (indexPath.section != 0) {
+            HomeListModel *model = self.dataSource[indexPath.section - 1];
             UICollectionReusableView *view = [collectionView dequeueReusableSupplementaryViewOfKind:kind   withReuseIdentifier:@"UICollectionReusableViewHeader" forIndexPath:indexPath];
-            UILabel *sectionLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 0, 200.0, 40.0)];
-            sectionLabel.text = @"精彩";
-            sectionLabel.font = [UIFont systemFontOfSize:20.0];
-            [view addSubview:sectionLabel];
+            [self.sectionView setTitle:model.partTitle];
+            [view addSubview:self.sectionView];
             return view;
         } else {
             UICollectionReusableView *view = [collectionView dequeueReusableSupplementaryViewOfKind:kind   withReuseIdentifier:@"UICollectionReusableViewHeaderDefault" forIndexPath:indexPath];
@@ -146,7 +167,7 @@
     
     switch (indexPath.section) {
             case 0:
-            return CGSizeMake(kScreenWidth, AdaptH(130));
+            return CGSizeMake(kScreenWidth, AdaptH(143));
         default:
             return CGSizeMake(kScreenWidth, AdaptH(130));
     }
@@ -160,7 +181,7 @@
 /** 头部的尺寸 */
 -(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section {
     if (section != 0) {
-        return CGSizeMake(kScreenWidth, 60.0);
+        return CGSizeMake(kScreenWidth, 54.0);
     }
     return CGSizeMake(kScreenWidth, CGFLOAT_MIN);
 }
@@ -183,6 +204,13 @@
         [_collectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"UICollectionReusableViewHeaderDefault"];
     }
     return _collectionView;
+}
+
+- (HomeSectionView *)sectionView {
+    if (!_sectionView) {
+        _sectionView = [[HomeSectionView alloc] initWithFrame:CGRectMake(0, 12, kScreenWidth, 44)];
+    }
+    return _sectionView;
 }
 
 - (NSMutableArray *)dataSource {
