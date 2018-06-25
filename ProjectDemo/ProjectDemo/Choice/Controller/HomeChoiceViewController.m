@@ -12,6 +12,7 @@
 #import "HomeSectionView.h"
 
 #import "SubjectListModel.h"
+#import "HomeListModel.h"
 
 #import "HomeRequest.h"
 
@@ -21,8 +22,8 @@
 @property (nonatomic, strong) UICollectionView *collectionView;
 
 @property (nonatomic, strong) NSMutableArray *dataSource;
-@property (nonatomic, strong) NSMutableArray *subjectArray;
-@property (nonatomic, strong) NSMutableArray *homeListArray;
+@property (nonatomic, strong) NSMutableArray <SubjectListModel *>*subjectArray;
+@property (nonatomic, strong) NSMutableArray <HomeListModel *>*homeListArray;
 
 @end
 
@@ -44,7 +45,7 @@
     }];
     
     kWeakSelf(self)
-    self.collectionView.mj_header = [MJRefreshHeader headerWithRefreshingBlock:^{
+    self.collectionView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         [weakself loadDate];
     }];
                                      
@@ -60,11 +61,12 @@
         
     } success:^(SubjectListModel *model) {
         
+        self.subjectArray = [model.responseResultList mutableCopy];
+        
         dispatch_group_leave(group);
     } failure:^(NSError *error) {
         [AYProgressHUD showNetworkError];
         dispatch_group_leave(group);
-        
     }];
     
     dispatch_group_enter(group);
@@ -72,6 +74,7 @@
         
     } success:^(HomeListModel *model) {
         
+        self.homeListArray = [model.responseResultList mutableCopy];
         
         dispatch_group_leave(group);
     } failure:^(NSError *error) {
@@ -84,7 +87,9 @@
         if ([weakself.collectionView.mj_header isRefreshing]) {
             [weakself.collectionView.mj_header endRefreshing];
         }
-        
+        [self.dataSource removeAllObjects];
+        [self.dataSource addObjectsFromArray:self.homeListArray];
+        NSLog(@"%@", self.dataSource);
         [weakself.collectionView reloadData];
     });
     
@@ -92,7 +97,7 @@
 
 #pragma mark - UICollectionView DataSource, delegate
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-    return 9;
+    return self.dataSource.count + (kArrayIsEmpty(self.subjectArray) ? 0 : 1);
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
@@ -192,6 +197,13 @@
         _subjectArray = [NSMutableArray array];
     }
     return _subjectArray;
+}
+
+- (NSMutableArray *)homeListArray {
+    if (!_homeListArray) {
+        _homeListArray = [NSMutableArray array];
+    }
+    return _homeListArray;
 }
 
 @end

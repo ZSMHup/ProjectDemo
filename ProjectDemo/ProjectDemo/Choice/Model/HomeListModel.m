@@ -13,8 +13,7 @@
 
 @implementation HomeListModel
 
-+ (NSDictionary *)modelContainerPropertyGenericClass
-{
++ (NSDictionary *)modelContainerPropertyGenericClass {
     return @{@"dailyList" : [DailyListModel class],
              @"bookList" : [BookListModel class]};
 }
