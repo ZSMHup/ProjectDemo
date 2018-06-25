@@ -7,25 +7,132 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CA2227DEAB586D43E24A4783 /* libPods-ProjectDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 785549A2330789233A55F4C5 /* libPods-ProjectDemo.a */; };
 		E1E67E1B20E08B9300D537E5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E67E1A20E08B9300D537E5 /* AppDelegate.m */; };
 		E1E67E1E20E08B9300D537E5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E67E1D20E08B9300D537E5 /* ViewController.m */; };
-		E1E67E2120E08B9300D537E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1E67E1F20E08B9300D537E5 /* Main.storyboard */; };
-		E1E67E2320E08B9500D537E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1E67E2220E08B9500D537E5 /* Assets.xcassets */; };
-		E1E67E2620E08B9500D537E5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1E67E2420E08B9500D537E5 /* LaunchScreen.storyboard */; };
-		E1E67E2920E08B9500D537E5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E67E2820E08B9500D537E5 /* main.m */; };
+		E1E67E3720E08DDA00D537E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1E67E3120E08DDA00D537E5 /* Assets.xcassets */; };
+		E1E67E3820E08DDA00D537E5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1E67E3220E08DDA00D537E5 /* LaunchScreen.storyboard */; };
+		E1E67E3A20E08DDA00D537E5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E67E3620E08DDA00D537E5 /* main.m */; };
+		E1E67E9820E0905E00D537E5 /* NSDate+AYDate.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E67E4620E0905E00D537E5 /* NSDate+AYDate.m */; };
+		E1E67E9920E0905E00D537E5 /* UIButton+AYCountdown.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E67E4820E0905E00D537E5 /* UIButton+AYCountdown.m */; };
+		E1E67E9A20E0905E00D537E5 /* UIColor+AYHex.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E67E4A20E0905E00D537E5 /* UIColor+AYHex.m */; };
+		E1E67E9B20E0905E00D537E5 /* UINavigationController+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E67E4C20E0905E00D537E5 /* UINavigationController+Additions.m */; };
+		E1E67E9C20E0905E00D537E5 /* UITableViewCell+AYFastCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E67E4E20E0905E00D537E5 /* UITableViewCell+AYFastCell.m */; };
+		E1E67E9D20E0905E00D537E5 /* UITextView+Placeholder.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E67E5020E0905E00D537E5 /* UITextView+Placeholder.m */; };
+		E1E67E9E20E0905E00D537E5 /* UIView+AYView.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E67E5220E0905E00D537E5 /* UIView+AYView.m */; };
+		E1E67E9F20E0905E00D537E5 /* AYMatchUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E67E5620E0905E00D537E5 /* AYMatchUtils.m */; };
+		E1E67EA020E0905E00D537E5 /* AYNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E67E5820E0905E00D537E5 /* AYNotification.m */; };
+		E1E67EA120E0905E00D537E5 /* AYFileDownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E67E5C20E0905E00D537E5 /* AYFileDownloadManager.m */; };
+		E1E67EA220E0905E00D537E5 /* AYFileSessionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E67E5E20E0905E00D537E5 /* AYFileSessionModel.m */; };
+		E1E67EA320E0905E00D537E5 /* NSString+AYHash.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E67E6120E0905E00D537E5 /* NSString+AYHash.m */; };
+		E1E67EA420E0905E00D537E5 /* AYMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E67E6420E0905E00D537E5 /* AYMenuView.m */; };
+		E1E67EA520E0905E00D537E5 /* AYProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E1E67E6620E0905E00D537E5 /* AYProgressHUD.bundle */; };
+		E1E67EA620E0905E00D537E5 /* AYProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E67E6820E0905E00D537E5 /* AYProgressHUD.m */; };
+		E1E67EA720E0905E00D537E5 /* MBProgressHUD+AYHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E67E6A20E0905E00D537E5 /* MBProgressHUD+AYHUD.m */; };
+		E1E67EA820E0905E00D537E5 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E67E6C20E0905E00D537E5 /* MBProgressHUD.m */; };
+		E1E67EA920E0905E00D537E5 /* AYQRCodeAlbumManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E67E6F20E0905E00D537E5 /* AYQRCodeAlbumManager.m */; };
+		E1E67EAA20E0905E00D537E5 /* AYQRCodeGenerateManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E67E7120E0905E00D537E5 /* AYQRCodeGenerateManager.m */; };
+		E1E67EAB20E0905E00D537E5 /* AYQRCodeScanManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E67E7320E0905E00D537E5 /* AYQRCodeScanManager.m */; };
+		E1E67EAC20E0905E00D537E5 /* AYQRCodeScanningView.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E67E7520E0905E00D537E5 /* AYQRCodeScanningView.m */; };
+		E1E67EAD20E0905E00D537E5 /* QRCodeFlashlightCloseImage.png in Resources */ = {isa = PBXBuildFile; fileRef = E1E67E7720E0905E00D537E5 /* QRCodeFlashlightCloseImage.png */; };
+		E1E67EAE20E0905E00D537E5 /* QRCodeFlashlightOpenImage.png in Resources */ = {isa = PBXBuildFile; fileRef = E1E67E7820E0905E00D537E5 /* QRCodeFlashlightOpenImage.png */; };
+		E1E67EAF20E0905E00D537E5 /* QRCodeScanningLine@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1E67E7920E0905E00D537E5 /* QRCodeScanningLine@2x.png */; };
+		E1E67EB020E0905E00D537E5 /* QRCodeScanningLine@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1E67E7A20E0905E00D537E5 /* QRCodeScanningLine@3x.png */; };
+		E1E67EB120E0905E00D537E5 /* QRCodeScanningLineGrid@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1E67E7B20E0905E00D537E5 /* QRCodeScanningLineGrid@2x.png */; };
+		E1E67EB220E0905E00D537E5 /* QRCodeScanningLineGrid@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1E67E7C20E0905E00D537E5 /* QRCodeScanningLineGrid@3x.png */; };
+		E1E67EB320E0905E00D537E5 /* sound.caf in Resources */ = {isa = PBXBuildFile; fileRef = E1E67E7D20E0905E00D537E5 /* sound.caf */; };
+		E1E67EB420E0905E00D537E5 /* UIImage+AYImageSize.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E67E7F20E0905E00D537E5 /* UIImage+AYImageSize.m */; };
+		E1E67EB520E0905E00D537E5 /* AYScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E67E8220E0905E00D537E5 /* AYScrollView.m */; };
+		E1E67EB620E0905E00D537E5 /* AYTabMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E67E8420E0905E00D537E5 /* AYTabMenu.m */; };
+		E1E67EB720E0905E00D537E5 /* AYTextHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E67E8720E0905E00D537E5 /* AYTextHelper.m */; };
+		E1E67EB820E0905E00D537E5 /* UILabel+AYLabelTextHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E67E8920E0905E00D537E5 /* UILabel+AYLabelTextHelper.m */; };
+		E1E67EB920E0905E00D537E5 /* AYWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E67E8C20E0905E00D537E5 /* AYWebView.m */; };
+		E1E67EBA20E0905E00D537E5 /* AYTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E67E9020E0905E00D537E5 /* AYTextField.m */; };
+		E1E67EBB20E0905E00D537E5 /* AYTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E67E9320E0905E00D537E5 /* AYTextView.m */; };
+		E1E67EBC20E0905E00D537E5 /* AYKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E67E9620E0905E00D537E5 /* AYKeychain.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1A63463A904B078FD69E2E32 /* Pods-ProjectDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ProjectDemo/Pods-ProjectDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		785549A2330789233A55F4C5 /* libPods-ProjectDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ProjectDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1E67E1620E08B9300D537E5 /* ProjectDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjectDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1E67E1920E08B9300D537E5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E1E67E1A20E08B9300D537E5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		E1E67E1C20E08B9300D537E5 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		E1E67E1D20E08B9300D537E5 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		E1E67E2020E08B9300D537E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		E1E67E2220E08B9500D537E5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		E1E67E2520E08B9500D537E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E1E67E2720E08B9500D537E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E1E67E2820E08B9500D537E5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E1E67E3120E08DDA00D537E5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E1E67E3320E08DDA00D537E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E1E67E3620E08DDA00D537E5 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E1E67E4520E0905E00D537E5 /* NSDate+AYDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+AYDate.h"; sourceTree = "<group>"; };
+		E1E67E4620E0905E00D537E5 /* NSDate+AYDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+AYDate.m"; sourceTree = "<group>"; };
+		E1E67E4720E0905E00D537E5 /* UIButton+AYCountdown.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+AYCountdown.h"; sourceTree = "<group>"; };
+		E1E67E4820E0905E00D537E5 /* UIButton+AYCountdown.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+AYCountdown.m"; sourceTree = "<group>"; };
+		E1E67E4920E0905E00D537E5 /* UIColor+AYHex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+AYHex.h"; sourceTree = "<group>"; };
+		E1E67E4A20E0905E00D537E5 /* UIColor+AYHex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+AYHex.m"; sourceTree = "<group>"; };
+		E1E67E4B20E0905E00D537E5 /* UINavigationController+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+Additions.h"; sourceTree = "<group>"; };
+		E1E67E4C20E0905E00D537E5 /* UINavigationController+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+Additions.m"; sourceTree = "<group>"; };
+		E1E67E4D20E0905E00D537E5 /* UITableViewCell+AYFastCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+AYFastCell.h"; sourceTree = "<group>"; };
+		E1E67E4E20E0905E00D537E5 /* UITableViewCell+AYFastCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+AYFastCell.m"; sourceTree = "<group>"; };
+		E1E67E4F20E0905E00D537E5 /* UITextView+Placeholder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+Placeholder.h"; sourceTree = "<group>"; };
+		E1E67E5020E0905E00D537E5 /* UITextView+Placeholder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+Placeholder.m"; sourceTree = "<group>"; };
+		E1E67E5120E0905E00D537E5 /* UIView+AYView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+AYView.h"; sourceTree = "<group>"; };
+		E1E67E5220E0905E00D537E5 /* UIView+AYView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+AYView.m"; sourceTree = "<group>"; };
+		E1E67E5420E0905E00D537E5 /* AYMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AYMacro.h; sourceTree = "<group>"; };
+		E1E67E5520E0905E00D537E5 /* AYMatchUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AYMatchUtils.h; sourceTree = "<group>"; };
+		E1E67E5620E0905E00D537E5 /* AYMatchUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AYMatchUtils.m; sourceTree = "<group>"; };
+		E1E67E5720E0905E00D537E5 /* AYNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AYNotification.h; sourceTree = "<group>"; };
+		E1E67E5820E0905E00D537E5 /* AYNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AYNotification.m; sourceTree = "<group>"; };
+		E1E67E5B20E0905E00D537E5 /* AYFileDownloadManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AYFileDownloadManager.h; sourceTree = "<group>"; };
+		E1E67E5C20E0905E00D537E5 /* AYFileDownloadManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AYFileDownloadManager.m; sourceTree = "<group>"; };
+		E1E67E5D20E0905E00D537E5 /* AYFileSessionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AYFileSessionModel.h; sourceTree = "<group>"; };
+		E1E67E5E20E0905E00D537E5 /* AYFileSessionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AYFileSessionModel.m; sourceTree = "<group>"; };
+		E1E67E6020E0905E00D537E5 /* NSString+AYHash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+AYHash.h"; sourceTree = "<group>"; };
+		E1E67E6120E0905E00D537E5 /* NSString+AYHash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+AYHash.m"; sourceTree = "<group>"; };
+		E1E67E6320E0905E00D537E5 /* AYMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AYMenuView.h; sourceTree = "<group>"; };
+		E1E67E6420E0905E00D537E5 /* AYMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AYMenuView.m; sourceTree = "<group>"; };
+		E1E67E6620E0905E00D537E5 /* AYProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AYProgressHUD.bundle; sourceTree = "<group>"; };
+		E1E67E6720E0905E00D537E5 /* AYProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AYProgressHUD.h; sourceTree = "<group>"; };
+		E1E67E6820E0905E00D537E5 /* AYProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AYProgressHUD.m; sourceTree = "<group>"; };
+		E1E67E6920E0905E00D537E5 /* MBProgressHUD+AYHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+AYHUD.h"; sourceTree = "<group>"; };
+		E1E67E6A20E0905E00D537E5 /* MBProgressHUD+AYHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+AYHUD.m"; sourceTree = "<group>"; };
+		E1E67E6B20E0905E00D537E5 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		E1E67E6C20E0905E00D537E5 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		E1E67E6E20E0905E00D537E5 /* AYQRCodeAlbumManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AYQRCodeAlbumManager.h; sourceTree = "<group>"; };
+		E1E67E6F20E0905E00D537E5 /* AYQRCodeAlbumManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AYQRCodeAlbumManager.m; sourceTree = "<group>"; };
+		E1E67E7020E0905E00D537E5 /* AYQRCodeGenerateManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AYQRCodeGenerateManager.h; sourceTree = "<group>"; };
+		E1E67E7120E0905E00D537E5 /* AYQRCodeGenerateManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AYQRCodeGenerateManager.m; sourceTree = "<group>"; };
+		E1E67E7220E0905E00D537E5 /* AYQRCodeScanManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AYQRCodeScanManager.h; sourceTree = "<group>"; };
+		E1E67E7320E0905E00D537E5 /* AYQRCodeScanManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AYQRCodeScanManager.m; sourceTree = "<group>"; };
+		E1E67E7420E0905E00D537E5 /* AYQRCodeScanningView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AYQRCodeScanningView.h; sourceTree = "<group>"; };
+		E1E67E7520E0905E00D537E5 /* AYQRCodeScanningView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AYQRCodeScanningView.m; sourceTree = "<group>"; };
+		E1E67E7720E0905E00D537E5 /* QRCodeFlashlightCloseImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = QRCodeFlashlightCloseImage.png; sourceTree = "<group>"; };
+		E1E67E7820E0905E00D537E5 /* QRCodeFlashlightOpenImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = QRCodeFlashlightOpenImage.png; sourceTree = "<group>"; };
+		E1E67E7920E0905E00D537E5 /* QRCodeScanningLine@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "QRCodeScanningLine@2x.png"; sourceTree = "<group>"; };
+		E1E67E7A20E0905E00D537E5 /* QRCodeScanningLine@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "QRCodeScanningLine@3x.png"; sourceTree = "<group>"; };
+		E1E67E7B20E0905E00D537E5 /* QRCodeScanningLineGrid@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "QRCodeScanningLineGrid@2x.png"; sourceTree = "<group>"; };
+		E1E67E7C20E0905E00D537E5 /* QRCodeScanningLineGrid@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "QRCodeScanningLineGrid@3x.png"; sourceTree = "<group>"; };
+		E1E67E7D20E0905E00D537E5 /* sound.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = sound.caf; sourceTree = "<group>"; };
+		E1E67E7E20E0905E00D537E5 /* UIImage+AYImageSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+AYImageSize.h"; sourceTree = "<group>"; };
+		E1E67E7F20E0905E00D537E5 /* UIImage+AYImageSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+AYImageSize.m"; sourceTree = "<group>"; };
+		E1E67E8120E0905E00D537E5 /* AYScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AYScrollView.h; sourceTree = "<group>"; };
+		E1E67E8220E0905E00D537E5 /* AYScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AYScrollView.m; sourceTree = "<group>"; };
+		E1E67E8320E0905E00D537E5 /* AYTabMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AYTabMenu.h; sourceTree = "<group>"; };
+		E1E67E8420E0905E00D537E5 /* AYTabMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AYTabMenu.m; sourceTree = "<group>"; };
+		E1E67E8620E0905E00D537E5 /* AYTextHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AYTextHelper.h; sourceTree = "<group>"; };
+		E1E67E8720E0905E00D537E5 /* AYTextHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AYTextHelper.m; sourceTree = "<group>"; };
+		E1E67E8820E0905E00D537E5 /* UILabel+AYLabelTextHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+AYLabelTextHelper.h"; sourceTree = "<group>"; };
+		E1E67E8920E0905E00D537E5 /* UILabel+AYLabelTextHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+AYLabelTextHelper.m"; sourceTree = "<group>"; };
+		E1E67E8B20E0905E00D537E5 /* AYWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AYWebView.h; sourceTree = "<group>"; };
+		E1E67E8C20E0905E00D537E5 /* AYWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AYWebView.m; sourceTree = "<group>"; };
+		E1E67E8F20E0905E00D537E5 /* AYTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AYTextField.h; sourceTree = "<group>"; };
+		E1E67E9020E0905E00D537E5 /* AYTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AYTextField.m; sourceTree = "<group>"; };
+		E1E67E9220E0905E00D537E5 /* AYTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AYTextView.h; sourceTree = "<group>"; };
+		E1E67E9320E0905E00D537E5 /* AYTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AYTextView.m; sourceTree = "<group>"; };
+		E1E67E9520E0905E00D537E5 /* AYKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AYKeychain.h; sourceTree = "<group>"; };
+		E1E67E9620E0905E00D537E5 /* AYKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AYKeychain.m; sourceTree = "<group>"; };
+		E1E67E9720E0905E00D537E5 /* AYSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AYSingleton.h; sourceTree = "<group>"; };
+		FA6636864F2369525BAADBEE /* Pods-ProjectDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-ProjectDemo/Pods-ProjectDemo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +140,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA2227DEAB586D43E24A4783 /* libPods-ProjectDemo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4425AD4D365CF9735E08B34F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1A63463A904B078FD69E2E32 /* Pods-ProjectDemo.debug.xcconfig */,
+				FA6636864F2369525BAADBEE /* Pods-ProjectDemo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		7B871C9794FEDD9231970215 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				785549A2330789233A55F4C5 /* libPods-ProjectDemo.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E1E67E0D20E08B9300D537E5 = {
 			isa = PBXGroup;
 			children = (
 				E1E67E1820E08B9300D537E5 /* ProjectDemo */,
 				E1E67E1720E08B9300D537E5 /* Products */,
+				4425AD4D365CF9735E08B34F /* Pods */,
+				7B871C9794FEDD9231970215 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -62,13 +189,288 @@
 				E1E67E1A20E08B9300D537E5 /* AppDelegate.m */,
 				E1E67E1C20E08B9300D537E5 /* ViewController.h */,
 				E1E67E1D20E08B9300D537E5 /* ViewController.m */,
-				E1E67E1F20E08B9300D537E5 /* Main.storyboard */,
-				E1E67E2220E08B9500D537E5 /* Assets.xcassets */,
-				E1E67E2420E08B9500D537E5 /* LaunchScreen.storyboard */,
-				E1E67E2720E08B9500D537E5 /* Info.plist */,
-				E1E67E2820E08B9500D537E5 /* main.m */,
+				E1E67E3F20E08F1500D537E5 /* Choice */,
+				E1E67E3B20E08F1500D537E5 /* MyStudy */,
+				E1E67E4320E0905E00D537E5 /* Vendor */,
+				E1E67E3020E08DDA00D537E5 /* Other */,
 			);
 			path = ProjectDemo;
+			sourceTree = "<group>";
+		};
+		E1E67E3020E08DDA00D537E5 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				E1E67E2720E08B9500D537E5 /* Info.plist */,
+				E1E67E3120E08DDA00D537E5 /* Assets.xcassets */,
+				E1E67E3220E08DDA00D537E5 /* LaunchScreen.storyboard */,
+				E1E67E3620E08DDA00D537E5 /* main.m */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		E1E67E3B20E08F1500D537E5 /* MyStudy */ = {
+			isa = PBXGroup;
+			children = (
+				E1E67E3C20E08F1500D537E5 /* Controller */,
+				E1E67E3D20E08F1500D537E5 /* Model */,
+				E1E67E3E20E08F1500D537E5 /* View */,
+			);
+			path = MyStudy;
+			sourceTree = "<group>";
+		};
+		E1E67E3C20E08F1500D537E5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		E1E67E3D20E08F1500D537E5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E1E67E3E20E08F1500D537E5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E1E67E3F20E08F1500D537E5 /* Choice */ = {
+			isa = PBXGroup;
+			children = (
+				E1E67E4020E08F1500D537E5 /* Controller */,
+				E1E67E4120E08F1500D537E5 /* Model */,
+				E1E67E4220E08F1500D537E5 /* View */,
+			);
+			path = Choice;
+			sourceTree = "<group>";
+		};
+		E1E67E4020E08F1500D537E5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		E1E67E4120E08F1500D537E5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E1E67E4220E08F1500D537E5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E1E67E4320E0905E00D537E5 /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				E1E67E4420E0905E00D537E5 /* Category */,
+				E1E67E5320E0905E00D537E5 /* Macro */,
+				E1E67E5920E0905E00D537E5 /* Manager */,
+				E1E67E8D20E0905E00D537E5 /* UI */,
+				E1E67E9420E0905E00D537E5 /* Utils */,
+			);
+			path = Vendor;
+			sourceTree = "<group>";
+		};
+		E1E67E4420E0905E00D537E5 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				E1E67E4520E0905E00D537E5 /* NSDate+AYDate.h */,
+				E1E67E4620E0905E00D537E5 /* NSDate+AYDate.m */,
+				E1E67E4720E0905E00D537E5 /* UIButton+AYCountdown.h */,
+				E1E67E4820E0905E00D537E5 /* UIButton+AYCountdown.m */,
+				E1E67E4920E0905E00D537E5 /* UIColor+AYHex.h */,
+				E1E67E4A20E0905E00D537E5 /* UIColor+AYHex.m */,
+				E1E67E4B20E0905E00D537E5 /* UINavigationController+Additions.h */,
+				E1E67E4C20E0905E00D537E5 /* UINavigationController+Additions.m */,
+				E1E67E4D20E0905E00D537E5 /* UITableViewCell+AYFastCell.h */,
+				E1E67E4E20E0905E00D537E5 /* UITableViewCell+AYFastCell.m */,
+				E1E67E4F20E0905E00D537E5 /* UITextView+Placeholder.h */,
+				E1E67E5020E0905E00D537E5 /* UITextView+Placeholder.m */,
+				E1E67E5120E0905E00D537E5 /* UIView+AYView.h */,
+				E1E67E5220E0905E00D537E5 /* UIView+AYView.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		E1E67E5320E0905E00D537E5 /* Macro */ = {
+			isa = PBXGroup;
+			children = (
+				E1E67E5420E0905E00D537E5 /* AYMacro.h */,
+				E1E67E5520E0905E00D537E5 /* AYMatchUtils.h */,
+				E1E67E5620E0905E00D537E5 /* AYMatchUtils.m */,
+				E1E67E5720E0905E00D537E5 /* AYNotification.h */,
+				E1E67E5820E0905E00D537E5 /* AYNotification.m */,
+			);
+			path = Macro;
+			sourceTree = "<group>";
+		};
+		E1E67E5920E0905E00D537E5 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				E1E67E5A20E0905E00D537E5 /* AYFileDownloadManager */,
+				E1E67E6220E0905E00D537E5 /* AYMenuView */,
+				E1E67E6520E0905E00D537E5 /* AYProgressHUD */,
+				E1E67E6D20E0905E00D537E5 /* AYQRCodeManager */,
+				E1E67E8020E0905E00D537E5 /* AYSwitchVC */,
+				E1E67E8520E0905E00D537E5 /* AYTextHelper */,
+				E1E67E8A20E0905E00D537E5 /* AYWebView */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		E1E67E5A20E0905E00D537E5 /* AYFileDownloadManager */ = {
+			isa = PBXGroup;
+			children = (
+				E1E67E5B20E0905E00D537E5 /* AYFileDownloadManager.h */,
+				E1E67E5C20E0905E00D537E5 /* AYFileDownloadManager.m */,
+				E1E67E5D20E0905E00D537E5 /* AYFileSessionModel.h */,
+				E1E67E5E20E0905E00D537E5 /* AYFileSessionModel.m */,
+				E1E67E5F20E0905E00D537E5 /* MD5 */,
+			);
+			path = AYFileDownloadManager;
+			sourceTree = "<group>";
+		};
+		E1E67E5F20E0905E00D537E5 /* MD5 */ = {
+			isa = PBXGroup;
+			children = (
+				E1E67E6020E0905E00D537E5 /* NSString+AYHash.h */,
+				E1E67E6120E0905E00D537E5 /* NSString+AYHash.m */,
+			);
+			path = MD5;
+			sourceTree = "<group>";
+		};
+		E1E67E6220E0905E00D537E5 /* AYMenuView */ = {
+			isa = PBXGroup;
+			children = (
+				E1E67E6320E0905E00D537E5 /* AYMenuView.h */,
+				E1E67E6420E0905E00D537E5 /* AYMenuView.m */,
+			);
+			path = AYMenuView;
+			sourceTree = "<group>";
+		};
+		E1E67E6520E0905E00D537E5 /* AYProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				E1E67E6620E0905E00D537E5 /* AYProgressHUD.bundle */,
+				E1E67E6720E0905E00D537E5 /* AYProgressHUD.h */,
+				E1E67E6820E0905E00D537E5 /* AYProgressHUD.m */,
+				E1E67E6920E0905E00D537E5 /* MBProgressHUD+AYHUD.h */,
+				E1E67E6A20E0905E00D537E5 /* MBProgressHUD+AYHUD.m */,
+				E1E67E6B20E0905E00D537E5 /* MBProgressHUD.h */,
+				E1E67E6C20E0905E00D537E5 /* MBProgressHUD.m */,
+			);
+			path = AYProgressHUD;
+			sourceTree = "<group>";
+		};
+		E1E67E6D20E0905E00D537E5 /* AYQRCodeManager */ = {
+			isa = PBXGroup;
+			children = (
+				E1E67E6E20E0905E00D537E5 /* AYQRCodeAlbumManager.h */,
+				E1E67E6F20E0905E00D537E5 /* AYQRCodeAlbumManager.m */,
+				E1E67E7020E0905E00D537E5 /* AYQRCodeGenerateManager.h */,
+				E1E67E7120E0905E00D537E5 /* AYQRCodeGenerateManager.m */,
+				E1E67E7220E0905E00D537E5 /* AYQRCodeScanManager.h */,
+				E1E67E7320E0905E00D537E5 /* AYQRCodeScanManager.m */,
+				E1E67E7420E0905E00D537E5 /* AYQRCodeScanningView.h */,
+				E1E67E7520E0905E00D537E5 /* AYQRCodeScanningView.m */,
+				E1E67E7620E0905E00D537E5 /* Resource */,
+				E1E67E7E20E0905E00D537E5 /* UIImage+AYImageSize.h */,
+				E1E67E7F20E0905E00D537E5 /* UIImage+AYImageSize.m */,
+			);
+			path = AYQRCodeManager;
+			sourceTree = "<group>";
+		};
+		E1E67E7620E0905E00D537E5 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				E1E67E7720E0905E00D537E5 /* QRCodeFlashlightCloseImage.png */,
+				E1E67E7820E0905E00D537E5 /* QRCodeFlashlightOpenImage.png */,
+				E1E67E7920E0905E00D537E5 /* QRCodeScanningLine@2x.png */,
+				E1E67E7A20E0905E00D537E5 /* QRCodeScanningLine@3x.png */,
+				E1E67E7B20E0905E00D537E5 /* QRCodeScanningLineGrid@2x.png */,
+				E1E67E7C20E0905E00D537E5 /* QRCodeScanningLineGrid@3x.png */,
+				E1E67E7D20E0905E00D537E5 /* sound.caf */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		E1E67E8020E0905E00D537E5 /* AYSwitchVC */ = {
+			isa = PBXGroup;
+			children = (
+				E1E67E8120E0905E00D537E5 /* AYScrollView.h */,
+				E1E67E8220E0905E00D537E5 /* AYScrollView.m */,
+				E1E67E8320E0905E00D537E5 /* AYTabMenu.h */,
+				E1E67E8420E0905E00D537E5 /* AYTabMenu.m */,
+			);
+			path = AYSwitchVC;
+			sourceTree = "<group>";
+		};
+		E1E67E8520E0905E00D537E5 /* AYTextHelper */ = {
+			isa = PBXGroup;
+			children = (
+				E1E67E8620E0905E00D537E5 /* AYTextHelper.h */,
+				E1E67E8720E0905E00D537E5 /* AYTextHelper.m */,
+				E1E67E8820E0905E00D537E5 /* UILabel+AYLabelTextHelper.h */,
+				E1E67E8920E0905E00D537E5 /* UILabel+AYLabelTextHelper.m */,
+			);
+			path = AYTextHelper;
+			sourceTree = "<group>";
+		};
+		E1E67E8A20E0905E00D537E5 /* AYWebView */ = {
+			isa = PBXGroup;
+			children = (
+				E1E67E8B20E0905E00D537E5 /* AYWebView.h */,
+				E1E67E8C20E0905E00D537E5 /* AYWebView.m */,
+			);
+			path = AYWebView;
+			sourceTree = "<group>";
+		};
+		E1E67E8D20E0905E00D537E5 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				E1E67E8E20E0905E00D537E5 /* UITextField */,
+				E1E67E9120E0905E00D537E5 /* UITextView */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		E1E67E8E20E0905E00D537E5 /* UITextField */ = {
+			isa = PBXGroup;
+			children = (
+				E1E67E8F20E0905E00D537E5 /* AYTextField.h */,
+				E1E67E9020E0905E00D537E5 /* AYTextField.m */,
+			);
+			path = UITextField;
+			sourceTree = "<group>";
+		};
+		E1E67E9120E0905E00D537E5 /* UITextView */ = {
+			isa = PBXGroup;
+			children = (
+				E1E67E9220E0905E00D537E5 /* AYTextView.h */,
+				E1E67E9320E0905E00D537E5 /* AYTextView.m */,
+			);
+			path = UITextView;
+			sourceTree = "<group>";
+		};
+		E1E67E9420E0905E00D537E5 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				E1E67E9520E0905E00D537E5 /* AYKeychain.h */,
+				E1E67E9620E0905E00D537E5 /* AYKeychain.m */,
+				E1E67E9720E0905E00D537E5 /* AYSingleton.h */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -78,9 +480,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E1E67E2C20E08B9500D537E5 /* Build configuration list for PBXNativeTarget "ProjectDemo" */;
 			buildPhases = (
+				1A7D924FD801D6756B19E898 /* [CP] Check Pods Manifest.lock */,
 				E1E67E1220E08B9300D537E5 /* Sources */,
 				E1E67E1320E08B9300D537E5 /* Frameworks */,
 				E1E67E1420E08B9300D537E5 /* Resources */,
+				C4E2543E116B8A34367F6F36 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -128,40 +532,107 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E1E67E2620E08B9500D537E5 /* LaunchScreen.storyboard in Resources */,
-				E1E67E2320E08B9500D537E5 /* Assets.xcassets in Resources */,
-				E1E67E2120E08B9300D537E5 /* Main.storyboard in Resources */,
+				E1E67EA520E0905E00D537E5 /* AYProgressHUD.bundle in Resources */,
+				E1E67E3720E08DDA00D537E5 /* Assets.xcassets in Resources */,
+				E1E67EB320E0905E00D537E5 /* sound.caf in Resources */,
+				E1E67EB020E0905E00D537E5 /* QRCodeScanningLine@3x.png in Resources */,
+				E1E67EAE20E0905E00D537E5 /* QRCodeFlashlightOpenImage.png in Resources */,
+				E1E67EAD20E0905E00D537E5 /* QRCodeFlashlightCloseImage.png in Resources */,
+				E1E67E3820E08DDA00D537E5 /* LaunchScreen.storyboard in Resources */,
+				E1E67EAF20E0905E00D537E5 /* QRCodeScanningLine@2x.png in Resources */,
+				E1E67EB120E0905E00D537E5 /* QRCodeScanningLineGrid@2x.png in Resources */,
+				E1E67EB220E0905E00D537E5 /* QRCodeScanningLineGrid@3x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1A7D924FD801D6756B19E898 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ProjectDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C4E2543E116B8A34367F6F36 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ProjectDemo/Pods-ProjectDemo-resources.sh",
+				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ProjectDemo/Pods-ProjectDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E1E67E1220E08B9300D537E5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1E67EA620E0905E00D537E5 /* AYProgressHUD.m in Sources */,
+				E1E67EA720E0905E00D537E5 /* MBProgressHUD+AYHUD.m in Sources */,
+				E1E67EB920E0905E00D537E5 /* AYWebView.m in Sources */,
+				E1E67E9820E0905E00D537E5 /* NSDate+AYDate.m in Sources */,
+				E1E67EA420E0905E00D537E5 /* AYMenuView.m in Sources */,
+				E1E67EBB20E0905E00D537E5 /* AYTextView.m in Sources */,
+				E1E67E9920E0905E00D537E5 /* UIButton+AYCountdown.m in Sources */,
+				E1E67EA220E0905E00D537E5 /* AYFileSessionModel.m in Sources */,
+				E1E67EB820E0905E00D537E5 /* UILabel+AYLabelTextHelper.m in Sources */,
+				E1E67EB520E0905E00D537E5 /* AYScrollView.m in Sources */,
 				E1E67E1E20E08B9300D537E5 /* ViewController.m in Sources */,
-				E1E67E2920E08B9500D537E5 /* main.m in Sources */,
+				E1E67EA820E0905E00D537E5 /* MBProgressHUD.m in Sources */,
+				E1E67EAA20E0905E00D537E5 /* AYQRCodeGenerateManager.m in Sources */,
+				E1E67EBC20E0905E00D537E5 /* AYKeychain.m in Sources */,
+				E1E67E9C20E0905E00D537E5 /* UITableViewCell+AYFastCell.m in Sources */,
+				E1E67EB720E0905E00D537E5 /* AYTextHelper.m in Sources */,
+				E1E67E9F20E0905E00D537E5 /* AYMatchUtils.m in Sources */,
+				E1E67EB620E0905E00D537E5 /* AYTabMenu.m in Sources */,
+				E1E67E9A20E0905E00D537E5 /* UIColor+AYHex.m in Sources */,
+				E1E67EB420E0905E00D537E5 /* UIImage+AYImageSize.m in Sources */,
+				E1E67EAB20E0905E00D537E5 /* AYQRCodeScanManager.m in Sources */,
+				E1E67E3A20E08DDA00D537E5 /* main.m in Sources */,
+				E1E67EA120E0905E00D537E5 /* AYFileDownloadManager.m in Sources */,
+				E1E67EA920E0905E00D537E5 /* AYQRCodeAlbumManager.m in Sources */,
+				E1E67EAC20E0905E00D537E5 /* AYQRCodeScanningView.m in Sources */,
+				E1E67EA320E0905E00D537E5 /* NSString+AYHash.m in Sources */,
+				E1E67E9B20E0905E00D537E5 /* UINavigationController+Additions.m in Sources */,
+				E1E67EA020E0905E00D537E5 /* AYNotification.m in Sources */,
+				E1E67E9D20E0905E00D537E5 /* UITextView+Placeholder.m in Sources */,
 				E1E67E1B20E08B9300D537E5 /* AppDelegate.m in Sources */,
+				E1E67E9E20E0905E00D537E5 /* UIView+AYView.m in Sources */,
+				E1E67EBA20E0905E00D537E5 /* AYTextField.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		E1E67E1F20E08B9300D537E5 /* Main.storyboard */ = {
+		E1E67E3220E08DDA00D537E5 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				E1E67E2020E08B9300D537E5 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		E1E67E2420E08B9500D537E5 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E1E67E2520E08B9500D537E5 /* Base */,
+				E1E67E3320E08DDA00D537E5 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -281,10 +752,11 @@
 		};
 		E1E67E2D20E08B9500D537E5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1A63463A904B078FD69E2E32 /* Pods-ProjectDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = ProjectDemo/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/ProjectDemo/Other/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -297,10 +769,11 @@
 		};
 		E1E67E2E20E08B9500D537E5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FA6636864F2369525BAADBEE /* Pods-ProjectDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = ProjectDemo/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/ProjectDemo/Other/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

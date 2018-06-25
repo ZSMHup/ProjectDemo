@@ -1,0 +1,17 @@
+platform :ios, '8.0'
+
+#屏蔽三方框架警告
+inhibit_all_warnings!
+
+target 'ProjectDemo'do
+    
+pod 'SDWebImage'
+pod 'MJRefresh'
+pod 'Masonry'
+pod 'AFNetworking'
+pod 'KMNavigationBarTransition'
+pod 'CYLTabBarController'
+pod 'YYCache'
+pod 'YYModel'
+
+end
