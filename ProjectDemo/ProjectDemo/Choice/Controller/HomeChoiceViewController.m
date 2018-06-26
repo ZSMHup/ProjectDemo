@@ -210,9 +210,9 @@
         if ([model.partStyle isEqualToString:@"DAILY_BOOK"]) {
             return CGSizeMake(kScreenWidth, AdaptH(397.5));
         } else if ([model.partStyle isEqualToString:@"IMAGE_TEXT"]) {
-            return CGSizeMake(kScreenWidth, AdaptH(174));
+            return CGSizeMake(kScreenWidth, AdaptH(175));
         } else {
-            return CGSizeMake(kScreenWidth, AdaptH(162));
+            return CGSizeMake(kScreenWidth, AdaptH(165));
         }
     }
 }
@@ -237,7 +237,7 @@
     }
     HomeListModel *model = self.dataSource[section - (kArrayIsEmpty(self.subjectArray) ? 0 : 1)];
     if ([model.partStyle isEqualToString:@"SLIDE_PORTRAIT"]) { // 竖向
-        return UIEdgeInsetsMake(10, AdaptW(36), AdaptH(12), AdaptW(36));
+        return UIEdgeInsetsMake(10, AdaptW(36), 12, AdaptW(36));
     }
     return UIEdgeInsetsMake(0, 0, 0, 0);
 }

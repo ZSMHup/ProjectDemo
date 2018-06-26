@@ -68,7 +68,7 @@
         _flowLayout = [[UICollectionViewFlowLayout alloc] init];
         _flowLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
         _collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:_flowLayout];
-        _collectionView.contentInset = UIEdgeInsetsMake(10.f, AdaptW(36), 0, AdaptW(36));
+        _collectionView.contentInset = UIEdgeInsetsMake(0, AdaptW(36), 0, AdaptW(36));
         _collectionView.backgroundColor = [UIColor backgroundColor];
         _collectionView.showsHorizontalScrollIndicator = NO;
         _collectionView.dataSource = self;
