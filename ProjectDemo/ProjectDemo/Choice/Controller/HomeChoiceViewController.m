@@ -9,6 +9,7 @@
 #import "HomeChoiceViewController.h"
 
 #import "CommenWebViewController.h"
+#import "BookDetailViewController.h"
 
 #import "HomeSubjectCell.h"
 #import "HomeH5Cell.h"
@@ -23,7 +24,8 @@
 
 #import "HomeRequest.h"
 
-@interface HomeChoiceViewController () <UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
+
+@interface HomeChoiceViewController () <UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, DidSelectItemDelegate>
 
 @property (nonatomic, strong) UICollectionViewFlowLayout *flowLayout;
 @property (nonatomic, strong) UICollectionView *collectionView;
@@ -146,6 +148,7 @@
     if (!kArrayIsEmpty(self.subjectArray)) {
         if (indexPath.section == 0) {
             HomeSubjectCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"HomeSubjectCell" forIndexPath:indexPath];
+            cell.delegate = self;
             return cell;
         }
     }
@@ -161,14 +164,17 @@
         if ([model.partStyle isEqualToString:@"DAILY_BOOK"]) {
             HomeH5Cell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"HomeH5Cell" forIndexPath:indexPath];
             [cell setModel:model.dailyList.firstObject];
+            
             return cell;
         } else if ([model.partStyle isEqualToString:@"IMAGE_TEXT"]) {
             HomeHorizontalHasButtonCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"HomeHorizontalHasButtonCell" forIndexPath:indexPath];
             [cell setDataSource:model.bookList];
+            cell.delegate = self;
             return cell;
         } else {
             HomeHorizontalCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"HomeHorizontalCell" forIndexPath:indexPath];
             [cell setDataSource:model.bookList];
+            cell.delegate = self;
             return cell;
         }
     }
@@ -203,12 +209,7 @@
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    if (!kArrayIsEmpty(self.subjectArray)) {
-        if (indexPath.section == 0) {
-            
-        }
-    }
-    
+
     HomeListModel *model = self.dataSource[indexPath.section - (kArrayIsEmpty(self.subjectArray) ? 0 : 1)];
     
     if ([model.targetType isEqualToString:@"H5"]) {
@@ -218,13 +219,9 @@
         webViewVc.navigationItem.title = @"每日读绘本";
         [self.navigationController pushViewController:webViewVc animated:YES];
     } else { // 单个或者横向
-        if ([model.partStyle isEqualToString:@"DAILY_BOOK"]) {
-            
-        } else if ([model.partStyle isEqualToString:@"IMAGE_TEXT"]) {
-            
-        } else {
-            
-        }
+
+        BookDetailViewController *bookDetailVC = [[BookDetailViewController alloc] init];
+        [self.navigationController pushViewController:bookDetailVC animated:YES];
     }
 }
 
@@ -278,6 +275,18 @@
         return UIEdgeInsetsMake(10, AdaptW(36), 12, AdaptW(36));
     }
     return UIEdgeInsetsMake(0, 0, 0, 0);
+}
+
+#pragma mark - DidSelectItemDelegate
+- (void)view:(UICollectionViewCell *)view didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if ([view isKindOfClass:[HomeSubjectCell class]]) {
+        NSLog(@"HomeSubjectCell: %ld", indexPath.item);
+    } else {
+        BookDetailViewController *bookDetailVC = [[BookDetailViewController alloc] init];
+        [self.navigationController pushViewController:bookDetailVC animated:YES];
+    }
+    
 }
 
 #pragma mark - getter

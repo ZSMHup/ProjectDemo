@@ -14,6 +14,7 @@
 		E10924BA20E1FD6700C6BC30 /* HomeHorizontalCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E10924B920E1FD6700C6BC30 /* HomeHorizontalCell.m */; };
 		E10924BD20E1FD8600C6BC30 /* HomeHorizontalCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E10924BC20E1FD8600C6BC30 /* HomeHorizontalCollectionCell.m */; };
 		E10924C320E2163900C6BC30 /* CommenWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E10924C220E2163900C6BC30 /* CommenWebViewController.m */; };
+		E168775620E23B4B00E284DA /* BookDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E168775520E23B4B00E284DA /* BookDetailViewController.m */; };
 		E1E3AA7220E0EC4A009B6FAC /* DailyListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E3AA7120E0EC4A009B6FAC /* DailyListModel.m */; };
 		E1E3AA7520E0EC68009B6FAC /* BookListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E3AA7420E0EC68009B6FAC /* BookListModel.m */; };
 		E1E3AA7820E0ECAD009B6FAC /* EbBookModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E3AA7720E0ECAD009B6FAC /* EbBookModel.m */; };
@@ -91,6 +92,9 @@
 		E10924BC20E1FD8600C6BC30 /* HomeHorizontalCollectionCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeHorizontalCollectionCell.m; sourceTree = "<group>"; };
 		E10924C120E2163900C6BC30 /* CommenWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommenWebViewController.h; sourceTree = "<group>"; };
 		E10924C220E2163900C6BC30 /* CommenWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommenWebViewController.m; sourceTree = "<group>"; };
+		E168775420E23B4B00E284DA /* BookDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BookDetailViewController.h; sourceTree = "<group>"; };
+		E168775520E23B4B00E284DA /* BookDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BookDetailViewController.m; sourceTree = "<group>"; };
+		E168775C20E23E5E00E284DA /* CommonProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonProtocol.h; sourceTree = "<group>"; };
 		E1E3AA7020E0EC4A009B6FAC /* DailyListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DailyListModel.h; sourceTree = "<group>"; };
 		E1E3AA7120E0EC4A009B6FAC /* DailyListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DailyListModel.m; sourceTree = "<group>"; };
 		E1E3AA7320E0EC68009B6FAC /* BookListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BookListModel.h; sourceTree = "<group>"; };
@@ -276,6 +280,8 @@
 		E168775120E23A9100E284DA /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				E168775420E23B4B00E284DA /* BookDetailViewController.h */,
+				E168775520E23B4B00E284DA /* BookDetailViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -292,6 +298,14 @@
 			children = (
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		E168775720E23D9C00E284DA /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				E168775C20E23E5E00E284DA /* CommonProtocol.h */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 		E1E67E0D20E08B9300D537E5 = {
@@ -319,6 +333,7 @@
 				E1E67E1A20E08B9300D537E5 /* AppDelegate.m */,
 				E1E67EBD20E091BC00D537E5 /* Base */,
 				E1E67EBE20E091BC00D537E5 /* Main */,
+				E168775720E23D9C00E284DA /* Common */,
 				E1E67E3F20E08F1500D537E5 /* Choice */,
 				E1E67E3B20E08F1500D537E5 /* MyStudy */,
 				E1E67E4320E0905E00D537E5 /* Vendor */,
@@ -841,6 +856,7 @@
 				E10924B720E1E2AB00C6BC30 /* HomeHorizontalHasButtonCollectionCell.m in Sources */,
 				E1E67E9C20E0905E00D537E5 /* UITableViewCell+AYFastCell.m in Sources */,
 				E1E67EF220E0C8DF00D537E5 /* HomeSubjectCollectionCell.m in Sources */,
+				E168775620E23B4B00E284DA /* BookDetailViewController.m in Sources */,
 				E1E67EB720E0905E00D537E5 /* AYTextHelper.m in Sources */,
 				E1E67E9F20E0905E00D537E5 /* AYMatchUtils.m in Sources */,
 				E1E3AA7520E0EC68009B6FAC /* BookListModel.m in Sources */,

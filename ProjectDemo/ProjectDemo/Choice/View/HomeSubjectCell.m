@@ -49,6 +49,13 @@
     return cell;
 }
 
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    if (self.delegate && [self.delegate respondsToSelector:@selector(view:didSelectItemAtIndexPath:)]) {
+        [self.delegate view:self didSelectItemAtIndexPath:indexPath];
+    }
+}
+
+
 #pragma mark - UICollectionView flowlayout
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
     return CGSizeMake(AdaptW(176), AdaptH(121));

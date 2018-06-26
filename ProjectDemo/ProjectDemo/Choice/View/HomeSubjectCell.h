@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CommonProtocol.h"
 
 @interface HomeSubjectCell : UICollectionViewCell
+@property (nonatomic, weak) id <DidSelectItemDelegate> delegate;
 
 @end

@@ -7,10 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CommonProtocol.h"
 
 @class BookListModel;
 @interface HomeHorizontalHasButtonCell : UICollectionViewCell
 
 @property (nonatomic, strong) NSArray <BookListModel *>*dataSource;
+
+@property (nonatomic, weak) id <DidSelectItemDelegate> delegate;
 
 @end
