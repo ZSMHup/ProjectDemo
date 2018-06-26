@@ -12,7 +12,6 @@
 @class BookListModel;
 @interface HomeListModel : NetworkRequestModel
 
-
 @property (nonatomic, copy) NSString *partCode; // 栏目编号
 @property (nonatomic, copy) NSString *partTitle; // 栏目标题
 @property (nonatomic, copy) NSString *partStyle; // DAILY_BOOK, IMAGE_TEXT, SLIDE_HORIZONTAL: 手动列表; SLIDE_PORTRAIT: 自动列表

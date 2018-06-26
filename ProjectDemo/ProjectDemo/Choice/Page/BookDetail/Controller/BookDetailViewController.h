@@ -8,6 +8,10 @@
 
 #import "BaseViewController.h"
 
+#import "BookListModel.h"
+
 @interface BookDetailViewController : BaseViewController
+
+@property (nonatomic, strong) BookListModel *bookListModel;
 
 @end
