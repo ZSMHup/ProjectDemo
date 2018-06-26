@@ -171,19 +171,21 @@
     if ([kind isEqualToString:UICollectionElementKindSectionHeader]) {
         // 头部
         UICollectionReusableView *reusableview = nil;
-        if (indexPath.section != 0) {
-            HomeListModel *model = self.dataSource[indexPath.section - 1];
-            HomeSectionView *view = (HomeSectionView *)[collectionView dequeueReusableSupplementaryViewOfKind:kind   withReuseIdentifier:@"UICollectionReusableViewHeader" forIndexPath:indexPath];
-            [view setModel:model];
-            view.sectionViewClick = ^{
-                // MARK: 点击section
-            };
-            reusableview = view;
-            return reusableview;
-        } else {
-            UICollectionReusableView *view = [collectionView dequeueReusableSupplementaryViewOfKind:kind   withReuseIdentifier:@"UICollectionReusableViewHeaderDefault" forIndexPath:indexPath];
-            return view;
+        
+        if (!kArrayIsEmpty(self.subjectArray)) {
+            if (indexPath.section == 0) {
+                UICollectionReusableView *view = [collectionView dequeueReusableSupplementaryViewOfKind:kind   withReuseIdentifier:@"UICollectionReusableViewHeaderDefault" forIndexPath:indexPath];
+                return view;
+            }
         }
+        HomeListModel *model = self.dataSource[indexPath.section - (kArrayIsEmpty(self.subjectArray) ? 0 : 1)];
+        HomeSectionView *view = (HomeSectionView *)[collectionView dequeueReusableSupplementaryViewOfKind:kind   withReuseIdentifier:@"UICollectionReusableViewHeader" forIndexPath:indexPath];
+        [view setModel:model];
+        view.sectionViewClick = ^{
+            // MARK: 点击section
+        };
+        reusableview = view;
+        return reusableview;
     }
     return nil;
 }
@@ -223,10 +225,13 @@
 
 /** 头部的尺寸 */
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section {
-    if (section != 0) {
-        return CGSizeMake(kScreenWidth, 64.0);
+    
+    if (!kArrayIsEmpty(self.subjectArray)) {
+        if (section == 0) {
+            return CGSizeMake(kScreenWidth, CGFLOAT_MIN);
+        }
     }
-    return CGSizeMake(kScreenWidth, CGFLOAT_MIN);
+    return CGSizeMake(kScreenWidth, 64.0);
 }
 
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
