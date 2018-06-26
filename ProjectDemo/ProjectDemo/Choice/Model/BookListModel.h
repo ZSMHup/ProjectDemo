@@ -11,7 +11,6 @@
 @class EbBookModel;
 @interface BookListModel : NetworkRequestModel
 
-/**图书code 请求书籍详情需要*/
 @property (nonatomic, copy) NSString *bookCode; // 图书编号
 @property (nonatomic, copy) NSString *bookName; // 图书名称
 @property (nonatomic, copy) NSString *bookIntroduction; // 图书简介

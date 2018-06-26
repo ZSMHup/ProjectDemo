@@ -36,7 +36,7 @@
 #define kScreenWidth [[UIScreen mainScreen] bounds].size.width
 #define kScreenHeight [[UIScreen mainScreen] bounds].size.height
 
-#if UIUserInterfaceIdiomPad
+#if UIUserInterfaceIdiomPhone
 
 #define AdaptW(w) [UIScreen mainScreen].bounds.size.width / 375 * (w) * 1.0
 #define AdaptH(h) [UIScreen mainScreen].bounds.size.height == 812 ? 1.0 : ([UIScreen mainScreen].bounds.size.height / 812) * (h) * 1.0

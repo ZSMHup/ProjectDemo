@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HomeSectionView : UIView
+@class HomeListModel;
+@interface HomeSectionView : UICollectionReusableView
 
-@property (nonatomic, copy) NSString *title;
-@property (nonatomic, strong) UIColor *lineColor;
+@property (nonatomic, strong) HomeListModel *model;
+
+@property (nonatomic, strong) void(^sectionViewClick)(void);
 
 @end

@@ -36,8 +36,8 @@
 - (void)addImgView {
     if (!_imgView) {
         _imgView = [[UIImageView alloc] init];
-        [self.contentView addSubview:self.imgView];
-        [self.imgView mas_makeConstraints:^(MASConstraintMaker *make) {
+        [self.contentView addSubview:_imgView];
+        [_imgView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.right.equalTo(self.contentView);
             make.top.equalTo(self.contentView.mas_top).offset(5);
             make.bottom.equalTo(self.contentView.mas_bottom).offset(-5);

@@ -20,4 +20,11 @@
  */
 + (UIColor *)backgroundColor;
 
+/**
+ 白色 带alpha
+
+ @param alpha 透明度
+ */
++ (UIColor *)whiteColor:(CGFloat)alpha;
+
 @end

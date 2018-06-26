@@ -18,5 +18,9 @@
     return kRGBColor(246, 246, 246);
 }
 
++ (UIColor *)whiteColor:(CGFloat)alpha {
+    return [UIColor colorWithHexString:@"#000000" alpha:alpha];
+}
+
 
 @end

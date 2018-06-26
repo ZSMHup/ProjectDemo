@@ -9,6 +9,10 @@
 #import "HomeChoiceViewController.h"
 
 #import "HomeSubjectCell.h"
+#import "HomeH5Cell.h"
+#import "HomeHorizontalHasButtonCell.h"
+#import "HomeHorizontalCell.h"
+#import "HomeHorizontalCollectionCell.h"
 #import "HomeSectionView.h"
 
 #import "SubjectListModel.h"
@@ -20,7 +24,6 @@
 
 @property (nonatomic, strong) UICollectionViewFlowLayout *flowLayout;
 @property (nonatomic, strong) UICollectionView *collectionView;
-@property (nonatomic, strong) HomeSectionView *sectionView;
 
 @property (nonatomic, strong) NSMutableArray *dataSource;
 @property (nonatomic, strong) NSMutableArray <SubjectListModel *>*subjectArray;
@@ -101,12 +104,12 @@
     partStyle = DAILY_BOOK;
  
  2. targetType = BOOK_LIST;
- partStyle = IMAGE_TEXT;
+ partStyle = IMAGE_TEXT;      btn
  
  3. targetType = BOOK_LIST;
     partStyle = SLIDE_HORIZONTAL; 横向
  
- 5. targetType = BOOK_LIST;
+ 4. targetType = BOOK_LIST;
     partStyle = SLIDE_PORTRAIT;
  
 */
@@ -118,12 +121,12 @@
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     
-    if (section == 0) {
-        return 1;
+    if (!kArrayIsEmpty(self.subjectArray)) {
+        if (section == 0) {
+            return 1;
+        }
     }
-    
-    HomeListModel *model = self.dataSource[section - 1];
-    
+    HomeListModel *model = self.dataSource[section - (kArrayIsEmpty(self.subjectArray) ? 0 : 1)];
     if ([model.partStyle isEqualToString:@"SLIDE_PORTRAIT"]) { // 竖向
         return model.bookList.count;
     } else { // 单个或者横向
@@ -133,13 +136,32 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     
-    switch (indexPath.section) {
-            case 0:{
+    if (!kArrayIsEmpty(self.subjectArray)) {
+        if (indexPath.section == 0) {
             HomeSubjectCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"HomeSubjectCell" forIndexPath:indexPath];
             return cell;
-            }
-        default: {
-            UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"UICollectionViewCell" forIndexPath:indexPath];
+        }
+    }
+    
+    HomeListModel *model = self.dataSource[indexPath.section - (kArrayIsEmpty(self.subjectArray) ? 0 : 1)];
+    
+    if ([model.partStyle isEqualToString:@"SLIDE_PORTRAIT"]) { // 竖向
+        HomeHorizontalCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"HomeHorizontalCollectionCell" forIndexPath:indexPath];
+        [cell setBookListModel:model.bookList[indexPath.item]];
+        return cell;
+        
+    } else { // 单个或者横向
+        if ([model.partStyle isEqualToString:@"DAILY_BOOK"]) {
+            HomeH5Cell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"HomeH5Cell" forIndexPath:indexPath];
+            [cell setModel:model.dailyList.firstObject];
+            return cell;
+        } else if ([model.partStyle isEqualToString:@"IMAGE_TEXT"]) {
+            HomeHorizontalHasButtonCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"HomeHorizontalHasButtonCell" forIndexPath:indexPath];
+            [cell setDataSource:model.bookList];
+            return cell;
+        } else {
+            HomeHorizontalCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"HomeHorizontalCell" forIndexPath:indexPath];
+            [cell setDataSource:model.bookList];
             return cell;
         }
     }
@@ -148,12 +170,16 @@
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
     if ([kind isEqualToString:UICollectionElementKindSectionHeader]) {
         // 头部
+        UICollectionReusableView *reusableview = nil;
         if (indexPath.section != 0) {
             HomeListModel *model = self.dataSource[indexPath.section - 1];
-            UICollectionReusableView *view = [collectionView dequeueReusableSupplementaryViewOfKind:kind   withReuseIdentifier:@"UICollectionReusableViewHeader" forIndexPath:indexPath];
-            [self.sectionView setTitle:model.partTitle];
-            [view addSubview:self.sectionView];
-            return view;
+            HomeSectionView *view = (HomeSectionView *)[collectionView dequeueReusableSupplementaryViewOfKind:kind   withReuseIdentifier:@"UICollectionReusableViewHeader" forIndexPath:indexPath];
+            [view setModel:model];
+            view.sectionViewClick = ^{
+                // MARK: 点击section
+            };
+            reusableview = view;
+            return reusableview;
         } else {
             UICollectionReusableView *view = [collectionView dequeueReusableSupplementaryViewOfKind:kind   withReuseIdentifier:@"UICollectionReusableViewHeaderDefault" forIndexPath:indexPath];
             return view;
@@ -162,28 +188,58 @@
     return nil;
 }
 
+// 处理滚动跳被 UICollectionReusableView 遮挡
+- (void)collectionView:(UICollectionView *)collectionView willDisplaySupplementaryView:(UICollectionReusableView *)view forElementKind:(NSString *)elementKind atIndexPath:(NSIndexPath *)indexPath {
+    view.layer.zPosition = 0.0;
+}
+
 #pragma mark - UICollectionView flowlayout
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
     
-    switch (indexPath.section) {
-            case 0:
+    if (!kArrayIsEmpty(self.subjectArray)) {
+        if (indexPath.section == 0) {
             return CGSizeMake(kScreenWidth, AdaptH(143));
-        default:
-            return CGSizeMake(kScreenWidth, AdaptH(130));
+        }
     }
-    
+    HomeListModel *model = self.dataSource[indexPath.section - (kArrayIsEmpty(self.subjectArray) ? 0 : 1)];
+
+    if ([model.partStyle isEqualToString:@"SLIDE_PORTRAIT"]) { // 竖向
+        return CGSizeMake(AdaptW(156), AdaptH(258.5));
+        
+    } else { // 单个或者横向
+        if ([model.partStyle isEqualToString:@"DAILY_BOOK"]) {
+            return CGSizeMake(kScreenWidth, AdaptH(397.5));
+        } else if ([model.partStyle isEqualToString:@"IMAGE_TEXT"]) {
+            return CGSizeMake(kScreenWidth, AdaptH(174));
+        } else {
+            return CGSizeMake(kScreenWidth, AdaptH(162));
+        }
+    }
 }
 
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section {
-    return 6.0;
+    return AdaptW(24);
 }
 
 /** 头部的尺寸 */
--(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section {
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section {
     if (section != 0) {
-        return CGSizeMake(kScreenWidth, 54.0);
+        return CGSizeMake(kScreenWidth, 64.0);
     }
     return CGSizeMake(kScreenWidth, CGFLOAT_MIN);
+}
+
+- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
+    if (!kArrayIsEmpty(self.subjectArray)) {
+        if (section == 0) {
+            return UIEdgeInsetsMake(0, 0, 0, 0);
+        }
+    }
+    HomeListModel *model = self.dataSource[section - (kArrayIsEmpty(self.subjectArray) ? 0 : 1)];
+    if ([model.partStyle isEqualToString:@"SLIDE_PORTRAIT"]) { // 竖向
+        return UIEdgeInsetsMake(10, AdaptW(36), AdaptH(12), AdaptW(36));
+    }
+    return UIEdgeInsetsMake(0, 0, 0, 0);
 }
 
 #pragma mark - getter
@@ -196,21 +252,16 @@
         _collectionView.showsHorizontalScrollIndicator = NO;
         _collectionView.dataSource = self;
         _collectionView.delegate = self;
-        _collectionView.backgroundColor = [UIColor backgroundColor];
         [_collectionView registerClass:[HomeSubjectCell class] forCellWithReuseIdentifier:@"HomeSubjectCell"];
-        [_collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"UICollectionViewCell"];
+        [_collectionView registerClass:[HomeH5Cell class] forCellWithReuseIdentifier:@"HomeH5Cell"];
+        [_collectionView registerClass:[HomeHorizontalHasButtonCell class] forCellWithReuseIdentifier:@"HomeHorizontalHasButtonCell"];
+        [_collectionView registerClass:[HomeHorizontalCell class] forCellWithReuseIdentifier:@"HomeHorizontalCell"];
+        [_collectionView registerClass:[HomeHorizontalCollectionCell class] forCellWithReuseIdentifier:@"HomeHorizontalCollectionCell"];
         
-        [_collectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"UICollectionReusableViewHeader"];
+        [_collectionView registerClass:[HomeSectionView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"UICollectionReusableViewHeader"];
         [_collectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"UICollectionReusableViewHeaderDefault"];
     }
     return _collectionView;
-}
-
-- (HomeSectionView *)sectionView {
-    if (!_sectionView) {
-        _sectionView = [[HomeSectionView alloc] initWithFrame:CGRectMake(0, 12, kScreenWidth, 44)];
-    }
-    return _sectionView;
 }
 
 - (NSMutableArray *)dataSource {
