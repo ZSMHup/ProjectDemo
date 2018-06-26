@@ -50,8 +50,8 @@
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    if (self.delegate && [self.delegate respondsToSelector:@selector(view:didSelectItemAtIndexPath:)]) {
-        [self.delegate view:self didSelectItemAtIndexPath:indexPath];
+    if (self.delegate && [self.delegate respondsToSelector:@selector(view:didSelectItemAtIndexPath:model:)]) {
+        [self.delegate view:self didSelectItemAtIndexPath:indexPath model:nil];
     }
 }
 

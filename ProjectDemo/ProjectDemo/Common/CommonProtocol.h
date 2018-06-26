@@ -11,6 +11,6 @@
 @protocol DidSelectItemDelegate <NSObject>
 @optional
 
-- (void)view:(UICollectionViewCell *)view didSelectItemAtIndexPath:(NSIndexPath *)indexPath;
+- (void)view:(UICollectionViewCell *)view didSelectItemAtIndexPath:(NSIndexPath *)indexPath model:(id)mdoel;
 
 @end
