@@ -8,6 +8,8 @@
 
 #import "HomeChoiceViewController.h"
 
+#import "CommenWebViewController.h"
+
 #import "HomeSubjectCell.h"
 #import "HomeH5Cell.h"
 #import "HomeHorizontalHasButtonCell.h"
@@ -17,6 +19,7 @@
 
 #import "SubjectListModel.h"
 #import "HomeListModel.h"
+#import "DailyListModel.h"
 
 #import "HomeRequest.h"
 
@@ -63,6 +66,10 @@
     dispatch_group_enter(group);
     [HomeRequest requestSubjectListWithParameters:nil responseCaches:^(SubjectListModel *model) {
         
+        if ([self.collectionView.mj_header isRefreshing]) {
+            self.subjectArray = [model.responseResultList mutableCopy];
+        }
+        
     } success:^(SubjectListModel *model) {
         
         self.subjectArray = [model.responseResultList mutableCopy];
@@ -75,7 +82,9 @@
     
     dispatch_group_enter(group);
     [HomeRequest requestHomeListWithParameters:nil responseCaches:^(HomeListModel *model) {
-        
+        if ([self.collectionView.mj_header isRefreshing]) {
+            self.homeListArray = [model.responseResultList mutableCopy];
+        }
     } success:^(HomeListModel *model) {
         
         self.homeListArray = [model.responseResultList mutableCopy];
@@ -93,10 +102,8 @@
         }
         [self.dataSource removeAllObjects];
         [self.dataSource addObjectsFromArray:self.homeListArray];
-        NSLog(@"%@", self.dataSource);
         [weakself.collectionView reloadData];
     });
-    
 }
 
 /*
@@ -190,9 +197,35 @@
     return nil;
 }
 
-// 处理滚动跳被 UICollectionReusableView 遮挡
+// 处理滚动条被 UICollectionReusableView 遮挡
 - (void)collectionView:(UICollectionView *)collectionView willDisplaySupplementaryView:(UICollectionReusableView *)view forElementKind:(NSString *)elementKind atIndexPath:(NSIndexPath *)indexPath {
     view.layer.zPosition = 0.0;
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    if (!kArrayIsEmpty(self.subjectArray)) {
+        if (indexPath.section == 0) {
+            
+        }
+    }
+    
+    HomeListModel *model = self.dataSource[indexPath.section - (kArrayIsEmpty(self.subjectArray) ? 0 : 1)];
+    
+    if ([model.targetType isEqualToString:@"H5"]) {
+        DailyListModel *h5Model = model.dailyList.firstObject;
+        CommenWebViewController *webViewVc = [[CommenWebViewController alloc] init];
+        webViewVc.webUrl = h5Model.targetPage;
+        webViewVc.navigationItem.title = @"每日读绘本";
+        [self.navigationController pushViewController:webViewVc animated:YES];
+    } else { // 单个或者横向
+        if ([model.partStyle isEqualToString:@"DAILY_BOOK"]) {
+            
+        } else if ([model.partStyle isEqualToString:@"IMAGE_TEXT"]) {
+            
+        } else {
+            
+        }
+    }
 }
 
 #pragma mark - UICollectionView flowlayout

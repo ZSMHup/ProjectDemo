@@ -10,13 +10,10 @@
 
 #define kAYNavigationBarHeight ([[UIApplication sharedApplication] statusBarFrame].size.height + 44.f)
 
-@interface AYWebView ()  <WKNavigationDelegate, WKUIDelegate>
+@interface AYWebView () <WKNavigationDelegate, WKUIDelegate>
 
-// WKWebView
-@property (nonatomic, strong) WKWebView *wkWebView;
 // 进度条
 @property (nonatomic, strong) UIProgressView *progressView;
-@property (nonatomic, strong) WKWebViewConfiguration *config;
 
 @end
 
@@ -27,16 +24,14 @@ static CGFloat const progressViewHeight = 2;
 /// dealloc
 - (void)dealloc
 {
-    [self.wkWebView removeObserver:self forKeyPath:NSStringFromSelector(@selector(estimatedProgress))];
-    self.wkWebView = nil;
+    [self removeObserver:self forKeyPath:NSStringFromSelector(@selector(estimatedProgress))];
 }
 
 - (instancetype)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
-        self.config = [[WKWebViewConfiguration alloc] init];
-        [self addWkWebView];
+        [self addObserver:self forKeyPath:NSStringFromSelector(@selector(estimatedProgress)) options:0 context:nil];
         [self addProgressView];
     }
     return self;
@@ -44,10 +39,9 @@ static CGFloat const progressViewHeight = 2;
 
 - (instancetype)initWithFrame:(CGRect)frame configuration:(WKWebViewConfiguration *)configuration
 {
-    self = [super initWithFrame:frame];
+    self = [super initWithFrame:frame configuration:configuration];
     if (self) {
-        self.config = !configuration ? [[WKWebViewConfiguration alloc] init] : configuration;
-        [self addWkWebView];
+        [self addObserver:self forKeyPath:NSStringFromSelector(@selector(estimatedProgress)) options:0 context:nil];
         [self addProgressView];
     }
     return self;
@@ -75,30 +69,20 @@ static CGFloat const progressViewHeight = 2;
 }
 
 #pragma mark Public
-+ (instancetype)webViewWithFrame:(CGRect)frame
-{
-    return [[self alloc] initWithFrame:frame];
-}
-
-+ (instancetype)webViewWithFrame:(CGRect)frame configuration:(WKWebViewConfiguration *)configuration
-{
-    return [[self alloc] initWithFrame:frame configuration:configuration];
-}
-
 // 加载 web
 - (void)loadRequestWithUrlString:(NSString *)urlString
 {
-    [self.wkWebView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:urlString]]];
+    NSString *encodedString = [urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    [self loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:encodedString]]];
 }
 
 // 加载本地资源
 - (void)loadFileName:(NSString *)fileName
 {
-    
     NSString *fileURL = [[NSBundle mainBundle] pathForResource:fileName ofType:nil];
     NSString *readAccessToURL = [fileURL stringByDeletingLastPathComponent]; // 获取上一级路径
     if (@available(iOS 9.0, *)) {
-        [self.wkWebView loadFileURL:[NSURL fileURLWithPath:fileURL] allowingReadAccessToURL:[NSURL fileURLWithPath:readAccessToURL]];
+        [self loadFileURL:[NSURL fileURLWithPath:fileURL] allowingReadAccessToURL:[NSURL fileURLWithPath:readAccessToURL]];
     } else { // 9.0以下
         NSURL *fileUrl = [NSURL fileURLWithPath:fileURL];
         // 把文件夹转到tmp目录
@@ -106,7 +90,7 @@ static CGFloat const progressViewHeight = 2;
         if (fileURL) {
             NSURL *realUrl = [NSURL fileURLWithPath:fileUrl.path];
             NSURLRequest *request = [NSURLRequest requestWithURL:realUrl];
-            [self.wkWebView loadRequest:request];
+            [self loadRequest:request];
         }
     }
 }
@@ -117,7 +101,7 @@ static CGFloat const progressViewHeight = 2;
     NSString *readAccessToURL = [filePath stringByDeletingLastPathComponent]; // 获取上一级路径
     
     if (@available(iOS 9.0, *)) {
-        [self.wkWebView loadFileURL:[NSURL fileURLWithPath:filePath] allowingReadAccessToURL:[NSURL fileURLWithPath:readAccessToURL]];
+        [self loadFileURL:[NSURL fileURLWithPath:filePath] allowingReadAccessToURL:[NSURL fileURLWithPath:readAccessToURL]];
     } else { // 9.0以下
         if(filePath) {
             NSURL *fileUrl = [NSURL fileURLWithPath:filePath];
@@ -126,7 +110,7 @@ static CGFloat const progressViewHeight = 2;
             if (fileUrl) {
                 NSURL *realUrl = [NSURL fileURLWithPath:fileUrl.path];
                 NSURLRequest *request = [NSURLRequest requestWithURL:realUrl];
-                [self.wkWebView loadRequest:request];
+                [self loadRequest:request];
             }
         }
     }
@@ -135,22 +119,22 @@ static CGFloat const progressViewHeight = 2;
 // 刷新数据
 - (void)reloadData
 {
-    [self.wkWebView reload];
+    [self reload];
 }
 
 // 返回
 - (void)goBack
 {
-    if ([self.wkWebView canGoBack]) {
-        [self.wkWebView goBack];
+    if ([self canGoBack]) {
+        [self goBack];
     }
 }
 
 // 前进
 - (void)goForward
 {
-    if ([self.wkWebView canGoForward]) {
-        [self.wkWebView goForward];
+    if ([self canGoForward]) {
+        [self goForward];
     }
 }
 
@@ -174,11 +158,11 @@ static CGFloat const progressViewHeight = 2;
 // KVO
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context
 {
-    if ([keyPath isEqualToString:NSStringFromSelector(@selector(estimatedProgress))] && object == self.wkWebView) {
+    if ([keyPath isEqualToString:NSStringFromSelector(@selector(estimatedProgress))] && object == self) {
         self.progressView.alpha = 1.0;
-        BOOL animated = self.wkWebView.estimatedProgress > self.progressView.progress;
-        [self.progressView setProgress:self.wkWebView.estimatedProgress animated:animated];
-        if (self.wkWebView.estimatedProgress >= 0.97) {
+        BOOL animated = self.estimatedProgress > self.progressView.progress;
+        [self.progressView setProgress:self.estimatedProgress animated:animated];
+        if (self.estimatedProgress >= 0.97) {
             [UIView animateWithDuration:0.1 delay:0.3 options:UIViewAnimationOptionCurveEaseOut animations:^{
                 self.progressView.alpha = 0.0;
             } completion:^(BOOL finished) {
@@ -195,33 +179,19 @@ static CGFloat const progressViewHeight = 2;
 // 页面开始加载时调用
 - (void)webView:(WKWebView *)webView didStartProvisionalNavigation:(WKNavigation *)navigation
 {
-    if (self.delegate && [self.delegate respondsToSelector:@selector(webViewDidStartLoad:)]) {
-        [self.delegate webViewDidStartLoad:self];
-    }
 }
 // 当内容开始返回时调用
 - (void)webView:(WKWebView *)webView didCommitNavigation:(WKNavigation *)navigation
 {
-    self.navigationItemTitle = webView.title;
-    if (self.delegate && [self.delegate respondsToSelector:@selector(webView:didCommitWithURL:)]) {
-        [self.delegate webView:self didCommitWithURL:webView.URL];
-    }
 }
 // 页面加载完成之后调用
 - (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation
 {
-    self.navigationItemTitle = webView.title;
-    if (self.delegate && [self.delegate respondsToSelector:@selector(webView:didFinishLoadWithURL:)]) {
-        [self.delegate webView:self didFinishLoadWithURL:webView.URL];
-    }
     self.progressView.alpha = 0.0;
 }
 // 页面加载失败时调用
 - (void)webView:(WKWebView *)webView didFailNavigation:(WKNavigation *)navigation withError:(NSError *)error
 {
-    if (self.delegate && [self.delegate respondsToSelector:@selector(webView:didFailLoadWithError:)]) {
-        [self.delegate webView:self didFailLoadWithError:error];
-    }
     self.progressView.alpha = 0.0;
 }
 
@@ -230,9 +200,7 @@ static CGFloat const progressViewHeight = 2;
 // 在原生得到结果后，需要回调js，是通过completionHandler回调
 - (void)webView:(WKWebView *)webView runJavaScriptAlertPanelWithMessage:(NSString *)message initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(void))completionHandler
 {
-    if (self.delegate && [self.delegate respondsToSelector:@selector(webView:runJavaScriptAlertPanelWithMessage:initiatedByFrame:completionHandler:)]) {
-        [self.delegate webView:self runJavaScriptAlertPanelWithMessage:message initiatedByFrame:frame completionHandler:completionHandler ? : nil];
-    }
+
 }
 //
 // 在js端调用Confirm函数时，会触发此方法
@@ -241,9 +209,7 @@ static CGFloat const progressViewHeight = 2;
 // 在原生得到结果后，需要回调js，是通过completionHandler回调
 - (void)webView:(WKWebView *)webView runJavaScriptConfirmPanelWithMessage:(NSString *)message initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(BOOL))completionHandler
 {
-    if (self.delegate && [self.delegate respondsToSelector:@selector(webView:runJavaScriptConfirmPanelWithMessage:initiatedByFrame:completionHandler:)]) {
-        [self.delegate webView:self runJavaScriptConfirmPanelWithMessage:message initiatedByFrame:frame completionHandler:completionHandler];
-    }
+
 }
 
 // 在js端调用Prompt函数时，会触发此方法
@@ -251,24 +217,10 @@ static CGFloat const progressViewHeight = 2;
 // 在原生输入得到内容后，通过completionHandler回调给js
 - (void)webView:(WKWebView *)webView runJavaScriptTextInputPanelWithPrompt:(NSString *)prompt defaultText:(NSString *)defaultText initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(NSString * _Nullable))completionHandler
 {
-    if (self.delegate && [self.delegate respondsToSelector:@selector(webView:runJavaScriptTextInputPanelWithPrompt:defaultText:initiatedByFrame:completionHandler:)]) {
-        [self.delegate webView:self runJavaScriptTextInputPanelWithPrompt:prompt defaultText:defaultText initiatedByFrame:frame completionHandler:completionHandler];
-    }
+
 }
 
 #pragma mark getter
-- (void)addWkWebView
-{
-    if (!_wkWebView) {
-        _wkWebView = [[WKWebView alloc] initWithFrame:self.bounds configuration:self.config];
-        _wkWebView.UIDelegate = self;
-        _wkWebView.navigationDelegate = self;
-        [self addSubview:_wkWebView];
-        // KVO
-        [_wkWebView addObserver:self forKeyPath:NSStringFromSelector(@selector(estimatedProgress)) options:0 context:nil];
-    }
-}
-
 - (void)addProgressView
 {
     if (!_progressView) {

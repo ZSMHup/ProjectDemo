@@ -49,7 +49,7 @@
     UINavigationBar *navigationBarAppearance = [UINavigationBar appearance];
     [navigationBarAppearance setBackgroundImage:[self imageWithColor:[UIColor mainColor]] forBarMetrics:UIBarMetricsDefault];
     NSDictionary *textAttributes = @{
-                                     NSFontAttributeName: [UIFont systemFontOfSize:16.0],
+                                     NSFontAttributeName: [UIFont systemFontOfSize:20.0],
                                      NSForegroundColorAttributeName: [UIColor whiteColor]
                                      };
     [navigationBarAppearance setTitleTextAttributes:textAttributes];
