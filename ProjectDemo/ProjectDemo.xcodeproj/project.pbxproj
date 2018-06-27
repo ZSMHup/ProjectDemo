@@ -14,7 +14,18 @@
 		E10924BA20E1FD6700C6BC30 /* HomeHorizontalCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E10924B920E1FD6700C6BC30 /* HomeHorizontalCell.m */; };
 		E10924BD20E1FD8600C6BC30 /* HomeHorizontalCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E10924BC20E1FD8600C6BC30 /* HomeHorizontalCollectionCell.m */; };
 		E10924C320E2163900C6BC30 /* CommenWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E10924C220E2163900C6BC30 /* CommenWebViewController.m */; };
+		E1263EF720E332E800D587FE /* BookDetailHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = E1263EF620E332E800D587FE /* BookDetailHeadView.m */; };
+		E15152ED20E3589500EB009B /* TQStarRatingView.m in Sources */ = {isa = PBXBuildFile; fileRef = E15152EC20E3589500EB009B /* TQStarRatingView.m */; };
 		E168775620E23B4B00E284DA /* BookDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E168775520E23B4B00E284DA /* BookDetailViewController.m */; };
+		E16A063920E36706004314B9 /* BookDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E16A063820E36706004314B9 /* BookDetailModel.m */; };
+		E16A063C20E367EB004314B9 /* BookAuthorModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E16A063B20E367EB004314B9 /* BookAuthorModel.m */; };
+		E16A063F20E367F5004314B9 /* BookPriceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E16A063E20E367F5004314B9 /* BookPriceModel.m */; };
+		E16A064320E375DE004314B9 /* BookDetailDescCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E16A064220E375DE004314B9 /* BookDetailDescCell.m */; };
+		E16A064620E37B60004314B9 /* SectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = E16A064520E37B60004314B9 /* SectionView.m */; };
+		E16A064920E37E1D004314B9 /* BookDetailRecCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E16A064820E37E1D004314B9 /* BookDetailRecCell.m */; };
+		E16A064C20E3841B004314B9 /* BookDetailPreviewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E16A064B20E3841B004314B9 /* BookDetailPreviewModel.m */; };
+		E16A064F20E388C7004314B9 /* BookDetailPreviewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E16A064E20E388C7004314B9 /* BookDetailPreviewCell.m */; };
+		E16A065220E389A6004314B9 /* BookDetailPreviewCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E16A065120E389A6004314B9 /* BookDetailPreviewCollectionCell.m */; };
 		E1E3AA7220E0EC4A009B6FAC /* DailyListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E3AA7120E0EC4A009B6FAC /* DailyListModel.m */; };
 		E1E3AA7520E0EC68009B6FAC /* BookListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E3AA7420E0EC68009B6FAC /* BookListModel.m */; };
 		E1E3AA7820E0ECAD009B6FAC /* EbBookModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E3AA7720E0ECAD009B6FAC /* EbBookModel.m */; };
@@ -92,9 +103,31 @@
 		E10924BC20E1FD8600C6BC30 /* HomeHorizontalCollectionCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeHorizontalCollectionCell.m; sourceTree = "<group>"; };
 		E10924C120E2163900C6BC30 /* CommenWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommenWebViewController.h; sourceTree = "<group>"; };
 		E10924C220E2163900C6BC30 /* CommenWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommenWebViewController.m; sourceTree = "<group>"; };
+		E1263EF520E332E800D587FE /* BookDetailHeadView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BookDetailHeadView.h; sourceTree = "<group>"; };
+		E1263EF620E332E800D587FE /* BookDetailHeadView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BookDetailHeadView.m; sourceTree = "<group>"; };
+		E15152EB20E3589500EB009B /* TQStarRatingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQStarRatingView.h; sourceTree = "<group>"; };
+		E15152EC20E3589500EB009B /* TQStarRatingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TQStarRatingView.m; sourceTree = "<group>"; };
 		E168775420E23B4B00E284DA /* BookDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BookDetailViewController.h; sourceTree = "<group>"; };
 		E168775520E23B4B00E284DA /* BookDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BookDetailViewController.m; sourceTree = "<group>"; };
 		E168775C20E23E5E00E284DA /* CommonProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonProtocol.h; sourceTree = "<group>"; };
+		E16A063720E36706004314B9 /* BookDetailModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BookDetailModel.h; sourceTree = "<group>"; };
+		E16A063820E36706004314B9 /* BookDetailModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BookDetailModel.m; sourceTree = "<group>"; };
+		E16A063A20E367EB004314B9 /* BookAuthorModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BookAuthorModel.h; sourceTree = "<group>"; };
+		E16A063B20E367EB004314B9 /* BookAuthorModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BookAuthorModel.m; sourceTree = "<group>"; };
+		E16A063D20E367F5004314B9 /* BookPriceModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BookPriceModel.h; sourceTree = "<group>"; };
+		E16A063E20E367F5004314B9 /* BookPriceModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BookPriceModel.m; sourceTree = "<group>"; };
+		E16A064120E375DE004314B9 /* BookDetailDescCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BookDetailDescCell.h; sourceTree = "<group>"; };
+		E16A064220E375DE004314B9 /* BookDetailDescCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BookDetailDescCell.m; sourceTree = "<group>"; };
+		E16A064420E37B60004314B9 /* SectionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SectionView.h; sourceTree = "<group>"; };
+		E16A064520E37B60004314B9 /* SectionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SectionView.m; sourceTree = "<group>"; };
+		E16A064720E37E1D004314B9 /* BookDetailRecCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BookDetailRecCell.h; sourceTree = "<group>"; };
+		E16A064820E37E1D004314B9 /* BookDetailRecCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BookDetailRecCell.m; sourceTree = "<group>"; };
+		E16A064A20E3841B004314B9 /* BookDetailPreviewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BookDetailPreviewModel.h; sourceTree = "<group>"; };
+		E16A064B20E3841B004314B9 /* BookDetailPreviewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BookDetailPreviewModel.m; sourceTree = "<group>"; };
+		E16A064D20E388C7004314B9 /* BookDetailPreviewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BookDetailPreviewCell.h; sourceTree = "<group>"; };
+		E16A064E20E388C7004314B9 /* BookDetailPreviewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BookDetailPreviewCell.m; sourceTree = "<group>"; };
+		E16A065020E389A6004314B9 /* BookDetailPreviewCollectionCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BookDetailPreviewCollectionCell.h; sourceTree = "<group>"; };
+		E16A065120E389A6004314B9 /* BookDetailPreviewCollectionCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BookDetailPreviewCollectionCell.m; sourceTree = "<group>"; };
 		E1E3AA7020E0EC4A009B6FAC /* DailyListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DailyListModel.h; sourceTree = "<group>"; };
 		E1E3AA7120E0EC4A009B6FAC /* DailyListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DailyListModel.m; sourceTree = "<group>"; };
 		E1E3AA7320E0EC68009B6FAC /* BookListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BookListModel.h; sourceTree = "<group>"; };
@@ -267,6 +300,23 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		E15152DB20E356B400EB009B /* ThirdSDK */ = {
+			isa = PBXGroup;
+			children = (
+				E15152EA20E3589500EB009B /* TQStarRating */,
+			);
+			path = ThirdSDK;
+			sourceTree = "<group>";
+		};
+		E15152EA20E3589500EB009B /* TQStarRating */ = {
+			isa = PBXGroup;
+			children = (
+				E15152EB20E3589500EB009B /* TQStarRatingView.h */,
+				E15152EC20E3589500EB009B /* TQStarRatingView.m */,
+			);
+			path = TQStarRating;
+			sourceTree = "<group>";
+		};
 		E168775020E23A9100E284DA /* BookDetail */ = {
 			isa = PBXGroup;
 			children = (
@@ -289,6 +339,14 @@
 		E168775220E23A9100E284DA /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E16A063720E36706004314B9 /* BookDetailModel.h */,
+				E16A063820E36706004314B9 /* BookDetailModel.m */,
+				E16A063A20E367EB004314B9 /* BookAuthorModel.h */,
+				E16A063B20E367EB004314B9 /* BookAuthorModel.m */,
+				E16A063D20E367F5004314B9 /* BookPriceModel.h */,
+				E16A063E20E367F5004314B9 /* BookPriceModel.m */,
+				E16A064A20E3841B004314B9 /* BookDetailPreviewModel.h */,
+				E16A064B20E3841B004314B9 /* BookDetailPreviewModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -296,6 +354,18 @@
 		E168775320E23A9100E284DA /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E1263EF520E332E800D587FE /* BookDetailHeadView.h */,
+				E1263EF620E332E800D587FE /* BookDetailHeadView.m */,
+				E16A064420E37B60004314B9 /* SectionView.h */,
+				E16A064520E37B60004314B9 /* SectionView.m */,
+				E16A064120E375DE004314B9 /* BookDetailDescCell.h */,
+				E16A064220E375DE004314B9 /* BookDetailDescCell.m */,
+				E16A064720E37E1D004314B9 /* BookDetailRecCell.h */,
+				E16A064820E37E1D004314B9 /* BookDetailRecCell.m */,
+				E16A064D20E388C7004314B9 /* BookDetailPreviewCell.h */,
+				E16A064E20E388C7004314B9 /* BookDetailPreviewCell.m */,
+				E16A065020E389A6004314B9 /* BookDetailPreviewCollectionCell.h */,
+				E16A065120E389A6004314B9 /* BookDetailPreviewCollectionCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -337,6 +407,7 @@
 				E1E67E3F20E08F1500D537E5 /* Choice */,
 				E1E67E3B20E08F1500D537E5 /* MyStudy */,
 				E1E67E4320E0905E00D537E5 /* Vendor */,
+				E15152DB20E356B400EB009B /* ThirdSDK */,
 				E1E67E3020E08DDA00D537E5 /* Other */,
 			);
 			path = ProjectDemo;
@@ -834,6 +905,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E1E67EA620E0905E00D537E5 /* AYProgressHUD.m in Sources */,
+				E16A063C20E367EB004314B9 /* BookAuthorModel.m in Sources */,
 				E1E67EA720E0905E00D537E5 /* MBProgressHUD+AYHUD.m in Sources */,
 				E1E67EB920E0905E00D537E5 /* AYWebView.m in Sources */,
 				E1E67E9820E0905E00D537E5 /* NSDate+AYDate.m in Sources */,
@@ -844,9 +916,11 @@
 				E1E67ECB20E092CD00D537E5 /* TabBarController.m in Sources */,
 				E1E67EF820E0DC8D00D537E5 /* SubjectListModel.m in Sources */,
 				E1E67EA220E0905E00D537E5 /* AYFileSessionModel.m in Sources */,
+				E16A063F20E367F5004314B9 /* BookPriceModel.m in Sources */,
 				E10924BD20E1FD8600C6BC30 /* HomeHorizontalCollectionCell.m in Sources */,
 				E1E3AA7220E0EC4A009B6FAC /* DailyListModel.m in Sources */,
 				E1E67EB820E0905E00D537E5 /* UILabel+AYLabelTextHelper.m in Sources */,
+				E16A065220E389A6004314B9 /* BookDetailPreviewCollectionCell.m in Sources */,
 				E1E67EB520E0905E00D537E5 /* AYScrollView.m in Sources */,
 				E1E67EA820E0905E00D537E5 /* MBProgressHUD.m in Sources */,
 				E1E67EFE20E0E63A00D537E5 /* NetworkRequestManager.m in Sources */,
@@ -854,12 +928,15 @@
 				E1E67EC220E0924800D537E5 /* BaseViewController.m in Sources */,
 				E1E67EBC20E0905E00D537E5 /* AYKeychain.m in Sources */,
 				E10924B720E1E2AB00C6BC30 /* HomeHorizontalHasButtonCollectionCell.m in Sources */,
+				E16A064920E37E1D004314B9 /* BookDetailRecCell.m in Sources */,
 				E1E67E9C20E0905E00D537E5 /* UITableViewCell+AYFastCell.m in Sources */,
+				E16A064620E37B60004314B9 /* SectionView.m in Sources */,
 				E1E67EF220E0C8DF00D537E5 /* HomeSubjectCollectionCell.m in Sources */,
 				E168775620E23B4B00E284DA /* BookDetailViewController.m in Sources */,
 				E1E67EB720E0905E00D537E5 /* AYTextHelper.m in Sources */,
 				E1E67E9F20E0905E00D537E5 /* AYMatchUtils.m in Sources */,
 				E1E3AA7520E0EC68009B6FAC /* BookListModel.m in Sources */,
+				E16A063920E36706004314B9 /* BookDetailModel.m in Sources */,
 				E1E67EB620E0905E00D537E5 /* AYTabMenu.m in Sources */,
 				E1E67E9A20E0905E00D537E5 /* UIColor+AYHex.m in Sources */,
 				E1E67EB420E0905E00D537E5 /* UIImage+AYImageSize.m in Sources */,
@@ -874,6 +951,7 @@
 				E1E67EA920E0905E00D537E5 /* AYQRCodeAlbumManager.m in Sources */,
 				E1E67EAC20E0905E00D537E5 /* AYQRCodeScanningView.m in Sources */,
 				E1E67F0620E0E6D500D537E5 /* HomeRequest.m in Sources */,
+				E16A064F20E388C7004314B9 /* BookDetailPreviewCell.m in Sources */,
 				E1E67EEA20E0B96F00D537E5 /* HomeSubjectCell.m in Sources */,
 				E1E67EE720E0B0B400D537E5 /* NetworkHelper.m in Sources */,
 				E1E67F0920E0E88600D537E5 /* HomeListModel.m in Sources */,
@@ -888,7 +966,11 @@
 				E1E3AA7820E0ECAD009B6FAC /* EbBookModel.m in Sources */,
 				E1E67E1B20E08B9300D537E5 /* AppDelegate.m in Sources */,
 				E1E67E9E20E0905E00D537E5 /* UIView+AYView.m in Sources */,
+				E15152ED20E3589500EB009B /* TQStarRatingView.m in Sources */,
+				E16A064320E375DE004314B9 /* BookDetailDescCell.m in Sources */,
+				E16A064C20E3841B004314B9 /* BookDetailPreviewModel.m in Sources */,
 				E1E67EBA20E0905E00D537E5 /* AYTextField.m in Sources */,
+				E1263EF720E332E800D587FE /* BookDetailHeadView.m in Sources */,
 				E1E67EE620E0B0B400D537E5 /* NetworkCache.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

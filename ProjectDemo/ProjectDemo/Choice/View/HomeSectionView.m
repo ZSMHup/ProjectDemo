@@ -122,7 +122,7 @@
     if (!_rightLabel) {
         _rightLabel = [[UILabel alloc] init];
         _rightLabel.text = @"更多";
-        _rightLabel.textColor = [UIColor whiteColor:0.5];
+        _rightLabel.textColor = [UIColor blackColor:0.5];
         _rightLabel.font = [UIFont systemFontOfSize:20];
         [self addSubview:_rightLabel];
         [_rightLabel mas_makeConstraints:^(MASConstraintMaker *make) {

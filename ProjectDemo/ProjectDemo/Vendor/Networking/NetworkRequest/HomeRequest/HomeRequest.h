@@ -10,6 +10,9 @@
 
 @class SubjectListModel;
 @class HomeListModel;
+@class BookDetailModel;
+@class BookListModel;
+@class BookDetailPreviewModel;
 
 @interface HomeRequest : NSObject
 
@@ -17,9 +20,22 @@
                           responseCaches:(void (^)(SubjectListModel *model))responseCaches
                                  success:(void (^)(SubjectListModel *model))success
                                  failure:(void (^)(NSError *error))failure;
-
+// 首页全部数据
 + (void)requestHomeListWithParameters:(NSDictionary *)parameters
                        responseCaches:(void (^)(HomeListModel *model))responseCaches
                               success:(void (^)(HomeListModel *model))success
                               failure:(void (^)(NSError *error))failure;
+// 图书详情
++ (void)requestBookDetailWithBookCode:(NSString *)bookCode
+                              success:(void (^)(BookDetailModel *model))success
+                              failure:(void (^)(NSError *error))failure;
+// 图书详情 -- 推荐
++ (void)requestBookDetailRecWithBookCode:(NSString *)bookCode
+                                 success:(void (^)(BookListModel *model))success
+                                 failure:(void (^)(NSError *error))failure;
+// 图书详情 -- 绘本预览
++ (void)requestBookDetailPreviewWithBookCode:(NSString *)bookCode
+                                    resource:(NSString *)resource
+                                     success:(void (^)(BookDetailPreviewModel *model))success
+                                     failure:(void (^)(NSError *error))failure;
 @end

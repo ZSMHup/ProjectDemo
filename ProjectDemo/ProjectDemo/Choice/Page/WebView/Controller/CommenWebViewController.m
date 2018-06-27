@@ -13,7 +13,7 @@
 
 #import "BookListModel.h"
 
-@interface CommenWebViewController () <WKNavigationDelegate, WKUIDelegate, WKScriptMessageHandler>
+@interface CommenWebViewController () <WKNavigationDelegate, WKUIDelegate/*, WKScriptMessageHandler*/>
 
 @property (nonatomic, strong) AYWebView *wkWebView;
 @property (nonatomic, strong) WKWebViewConfiguration *configuration;
@@ -36,12 +36,14 @@
     [self.view addSubview:self.wkWebView];
 }
 
+/*
 - (WKWebViewConfiguration *)config {
     self.configuration = [[WKWebViewConfiguration alloc] init];
     self.configuration.userContentController = [[WKUserContentController alloc] init];
     [self.configuration.userContentController addScriptMessageHandler:[[WeakScriptMessageDelegate alloc] initWithDelegate:self] name:@"PushToBookDetails"];
     return self.configuration;
 }
+*/
 
 - (void)customActionHandler:(NSURL *)url {
     NSString *host = [url host];
@@ -65,11 +67,13 @@
     [webView evaluateJavaScript:str completionHandler:nil];
 }
 
+/*
 - (void)userContentController:(WKUserContentController *)userContentController didReceiveScriptMessage:(WKScriptMessage *)message{
     if ([message.name isEqualToString:@"PushToBookDetails"]) {
         NSLog(@"PushToBookDetails");
     }
 }
+*/
 
 - (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
     NSURL *url = navigationAction.request.URL;
@@ -84,7 +88,7 @@
 
 - (AYWebView *)wkWebView {
     if (!_wkWebView) {
-        _wkWebView = [[AYWebView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight - 64) configuration:[self config]];
+        _wkWebView = [[AYWebView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight - 64)];
         _wkWebView.UIDelegate = self;
         _wkWebView.navigationDelegate = self;
         _wkWebView.isNavigationBarOrTranslucent = NO;

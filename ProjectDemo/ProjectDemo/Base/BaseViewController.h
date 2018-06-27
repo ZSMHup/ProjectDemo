@@ -13,4 +13,11 @@
 - (void)setNavTransparent:(BOOL)isTransparent;
 - (void)setNavBlackLine:(BOOL)showLine;
 
+/**
+ 导航栏背景渐变
+
+ @param alpha 透明度
+ */
+- (void)setNavBarAlpha:(CGFloat)alpha;
+
 @end

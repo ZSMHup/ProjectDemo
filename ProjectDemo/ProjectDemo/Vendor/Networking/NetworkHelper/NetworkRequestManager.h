@@ -20,5 +20,6 @@
                                         success:(HttpRequestSuccess)success
                                         failure:(HttpRequestFailed)failure;
 
++ (NSString *)convertToJsonData:(NSDictionary *)dict;
 
 @end

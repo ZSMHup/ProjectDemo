@@ -15,4 +15,13 @@
     return @{@"ebBookResource" : [EbBookModel class]};
 }
 
+- (CGFloat)bookScoreFormatter {
+    CGFloat score = 0;
+    if (self.bookScore) {
+        score = [self.bookScore floatValue];
+        score = score / 5.0;
+    }
+    return score;
+}
+
 @end

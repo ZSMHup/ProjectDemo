@@ -21,6 +21,7 @@
 #import "SubjectListModel.h"
 #import "HomeListModel.h"
 #import "DailyListModel.h"
+#import "BookListModel.h"
 
 #import "HomeRequest.h"
 
@@ -107,21 +108,6 @@
         [weakself.collectionView reloadData];
     });
 }
-
-/*
- 1. targetType = H5;
-    partStyle = DAILY_BOOK;
- 
- 2. targetType = BOOK_LIST;
- partStyle = IMAGE_TEXT;      btn
- 
- 3. targetType = BOOK_LIST;
-    partStyle = SLIDE_HORIZONTAL; 横向
- 
- 4. targetType = BOOK_LIST;
-    partStyle = SLIDE_PORTRAIT;
- 
-*/
 
 #pragma mark - UICollectionView DataSource, delegate
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
@@ -221,6 +207,7 @@
     } else { // 单个或者横向
 
         BookDetailViewController *bookDetailVC = [[BookDetailViewController alloc] init];
+        bookDetailVC.bookListModel = model.bookList[indexPath.row];
         [self.navigationController pushViewController:bookDetailVC animated:YES];
     }
 }
@@ -278,7 +265,7 @@
 }
 
 #pragma mark - DidSelectItemDelegate
-- (void)view:(UICollectionViewCell *)view didSelectItemAtIndexPath:(NSIndexPath *)indexPath model:(id)mdoel {
+- (void)view:(UIView *)view didSelectItemAtIndexPath:(NSIndexPath *)indexPath model:(id)mdoel {
     
     if ([view isKindOfClass:[HomeSubjectCell class]]) {
         

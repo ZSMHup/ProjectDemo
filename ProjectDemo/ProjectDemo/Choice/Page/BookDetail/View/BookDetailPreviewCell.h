@@ -1,0 +1,21 @@
+//
+//  BookDetailPreviewCell.h
+//  ProjectDemo
+//
+//  Created by 张书孟 on 2018/6/27.
+//  Copyright © 2018年 ZSM. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+
+#import "CommonProtocol.h"
+
+@class BookDetailPreviewModel;
+
+@interface BookDetailPreviewCell : UITableViewCell
+
+@property (nonatomic, strong) NSArray <BookDetailPreviewModel *>*dataSource;
+
+@property (nonatomic, weak) id <DidSelectItemDelegate> delegate;
+
+@end

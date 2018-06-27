@@ -11,6 +11,9 @@
 
 #import "SubjectListModel.h"
 #import "HomeListModel.h"
+#import "BookDetailModel.h"
+#import "BookListModel.h"
+#import "BookDetailPreviewModel.h"
 
 @implementation HomeRequest
 
@@ -38,6 +41,7 @@
     }];
 }
 
+// 首页全部数据
 + (void)requestHomeListWithParameters:(NSDictionary *)parameters
                           responseCaches:(void (^)(HomeListModel *model))responseCaches
                                  success:(void (^)(HomeListModel *model))success
@@ -61,5 +65,78 @@
         }
     }];
 }
+
+// 图书详情
++ (void)requestBookDetailWithBookCode:(NSString *)bookCode
+                              success:(void (^)(BookDetailModel *model))success
+                              failure:(void (^)(NSError *error))failure {
+    NSMutableDictionary *parameter = [NSMutableDictionary dictionary];
+    [parameter setObject:bookCode forKey:@"bookCode"];
+    [parameter setObject:@"normal" forKey:@"resource"];
+    
+    NSMutableDictionary *dic = [NSMutableDictionary dictionary];
+    [dic setObject:[NetworkRequestManager convertToJsonData:parameter] forKey:@"content"];
+    [dic setObject:@"ella.book.getBookByCode" forKey:@"method"];
+    
+    [NetworkRequestManager postRequestWithParameters:dic modelClass:[BookDetailModel class] responseCaches:nil success:^(id responseObject) {
+        BookDetailModel *model = (BookDetailModel *)responseObject;
+        if (success) {
+            success(model);
+        }
+    } failure:^(NSError *error) {
+        if (failure) {
+            failure(error);
+        }
+    }];
+}
+
+// 图书详情 -- 推荐
++ (void)requestBookDetailRecWithBookCode:(NSString *)bookCode
+                              success:(void (^)(BookListModel *model))success
+                              failure:(void (^)(NSError *error))failure {
+    NSMutableDictionary *param = [NSMutableDictionary dictionary];
+    [param setObject:@(0) forKey:@"pageIndex"];
+    [param setObject:@(20) forKey:@"pageSize"];
+    [param setObject:bookCode forKey:@"bookCode"];
+    NSMutableDictionary *dic = [NSMutableDictionary dictionary];
+    [dic setObject:[NetworkRequestManager convertToJsonData:param] forKey:@"content"];
+    [dic setObject:@"ella.book.listBooksRecommend" forKey:@"method"];
+    
+    [NetworkRequestManager postRequestWithParameters:dic modelClass:[BookListModel class] responseCaches:nil success:^(id responseObject) {
+        BookListModel *model = (BookListModel *)responseObject;
+        if (success) {
+            success(model);
+        }
+    } failure:^(NSError *error) {
+        if (failure) {
+            failure(error);
+        }
+    }];
+}
+
+// 图书详情 -- 绘本预览
++ (void)requestBookDetailPreviewWithBookCode:(NSString *)bookCode
+                                    resource:(NSString *)resource
+                                 success:(void (^)(BookDetailPreviewModel *model))success
+                                 failure:(void (^)(NSError *error))failure {
+    NSMutableDictionary *param = [NSMutableDictionary dictionary];
+    [param setObject:bookCode forKey:@"bookCode"];
+    [param setObject:resource forKey:@"resource"];
+    NSMutableDictionary *dic = [NSMutableDictionary dictionary];
+    [dic setObject:[NetworkRequestManager convertToJsonData:param] forKey:@"content"];
+    [dic setObject:@"ella.book.listBookPreview" forKey:@"method"];
+    
+    [NetworkRequestManager postRequestWithParameters:dic modelClass:[BookDetailPreviewModel class] responseCaches:nil success:^(id responseObject) {
+        BookDetailPreviewModel *model = (BookDetailPreviewModel *)responseObject;
+        if (success) {
+            success(model);
+        }
+    } failure:^(NSError *error) {
+        if (failure) {
+            failure(error);
+        }
+    }];
+}
+
 
 @end

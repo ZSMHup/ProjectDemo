@@ -13,6 +13,5 @@
 @interface BookDetailViewController : BaseViewController
 
 @property (nonatomic, strong) BookListModel *bookListModel;
-@property (nonatomic, copy) NSString *bookCode;
 
 @end

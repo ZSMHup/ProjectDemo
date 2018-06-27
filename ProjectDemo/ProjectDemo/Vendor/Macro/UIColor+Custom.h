@@ -27,4 +27,11 @@
  */
 + (UIColor *)whiteColor:(CGFloat)alpha;
 
+/**
+ 黑色 带alpha
+ 
+ @param alpha 透明度
+ */
++ (UIColor *)blackColor:(CGFloat)alpha;
+
 @end

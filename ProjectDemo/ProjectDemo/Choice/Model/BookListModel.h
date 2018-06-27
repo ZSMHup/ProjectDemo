@@ -15,7 +15,9 @@
 @property (nonatomic, copy) NSString *bookName; // 图书名称
 @property (nonatomic, copy) NSString *bookIntroduction; // 图书简介
 @property (nonatomic, copy) NSString *bookScore; // 图书评分
+@property (nonatomic, assign) CGFloat bookScoreFormatter; // 图书评分
 @property (nonatomic, copy) NSString *scoreNum; // 评分人数
+@property (nonatomic, copy) NSString *bookPressName; // 系列名称
 @property (nonatomic, copy) NSString *downloadNum; // 下载次数
 @property (nonatomic, copy) NSString *readNum; // 阅读人数
 @property (nonatomic, copy) NSString *realReadNum;
