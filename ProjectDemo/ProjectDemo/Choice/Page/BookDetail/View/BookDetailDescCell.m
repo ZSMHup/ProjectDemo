@@ -42,10 +42,10 @@
         _descLabel.font = [UIFont systemFontOfSize:14.0];
         [self.contentView addSubview:_descLabel];
         [_descLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(self.contentView.mas_left).offset(AdaptW(36));
             make.top.equalTo(self.contentView.mas_top).offset(AdaptH(10));
+            make.left.equalTo(self.contentView.mas_left).offset(AdaptW(36));
             make.right.equalTo(self.contentView.mas_right).offset(AdaptW(-36));
-//            make.bottom.equalTo(self.contentView.mas_bottom).offset(AdaptH(-10));
+            make.bottom.equalTo(self.contentView.mas_bottom).offset(-10);
         }];
     }
 }

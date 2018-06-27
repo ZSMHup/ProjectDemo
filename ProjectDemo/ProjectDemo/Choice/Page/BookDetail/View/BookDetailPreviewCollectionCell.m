@@ -31,12 +31,12 @@
 - (void)setModel:(BookDetailPreviewModel *)model {
     _model = model;
     
-    [self.imgView sd_setImageWithURL:[NSURL URLWithString:model.coverUrl]];
-    
     if ([model.resourceType isEqualToString:@"PREVIEW_VIDEO"]) { // 视频
+        [self.imgView sd_setImageWithURL:[NSURL URLWithString:model.coverUrl]];
         self.maskView.hidden = NO;
         self.videoImgView.hidden = NO;
     } else {
+        [self.imgView sd_setImageWithURL:[NSURL URLWithString:model.ossUrl]];
         self.maskView.hidden = YES;
         self.videoImgView.hidden = YES;
     }
@@ -53,6 +53,8 @@
 - (void)addImgView {
     if (!_imgView) {
         _imgView = [[UIImageView alloc] init];
+        _imgView.contentMode = UIViewContentModeScaleAspectFill;
+        _imgView.layer.masksToBounds = YES;
         [self.contentView addSubview:_imgView];
         [_imgView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.top.right.bottom.equalTo(self.contentView);

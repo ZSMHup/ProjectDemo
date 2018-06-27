@@ -238,6 +238,7 @@
         _tableView = [[UITableView alloc] initWithFrame:CGRectZero style:(UITableViewStylePlain)];
         _tableView.delegate = self;
         _tableView.dataSource = self;
+        _tableView.rowHeight = UITableViewAutomaticDimension;
         _tableView.estimatedRowHeight = 80;
         _tableView.estimatedSectionFooterHeight = 0;
         _tableView.estimatedSectionHeaderHeight = 0;

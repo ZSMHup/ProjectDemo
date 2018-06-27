@@ -152,8 +152,8 @@ static AFHTTPSessionManager *_sessionManager;
         
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         if (_isOpenLog)
-            DeBugLog(@"url: %@", URL);
-            DeBugLog(@"responseObject: \n%@", responseObject);
+//            DeBugLog(@"url: %@", URL);
+//            DeBugLog(@"responseObject: \n%@", responseObject);
         [[self allSessionTask] removeObject:task];
         success ? success(responseObject) : nil;
         //对数据进行异步缓存
