@@ -22,6 +22,8 @@ PODS:
   - SDWebImage/Core (4.3.3)
   - YYCache (1.0.4)
   - YYModel (1.0.4)
+  - ZFPlayer (2.1.6):
+    - Masonry
 
 DEPENDENCIES:
   - AFNetworking
@@ -31,6 +33,7 @@ DEPENDENCIES:
   - SDWebImage
   - YYCache
   - YYModel
+  - ZFPlayer
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
@@ -41,6 +44,7 @@ SPEC REPOS:
     - SDWebImage
     - YYCache
     - YYModel
+    - ZFPlayer
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
@@ -50,7 +54,8 @@ SPEC CHECKSUMS:
   SDWebImage: de4d90b5bff3571eae7bd16202b1f43135409fa5
   YYCache: 8105b6638f5e849296c71f331ff83891a4942952
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
+  ZFPlayer: 833cb3974b619bfd01a0ec1ebaabfe6f629e85b4
 
-PODFILE CHECKSUM: 18c56b42df9d6f459c2342b1992829702399e86d
+PODFILE CHECKSUM: b935c8cf650bfe557f720c37a0c06a3f7ad5dc55
 
 COCOAPODS: 1.5.0

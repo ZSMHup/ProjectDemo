@@ -217,7 +217,7 @@
             flag = NO;
             [UIView animateWithDuration:self.animationTimeInterval animations:^{
                 frame.origin.y += 1;
-                _scanningline.frame = frame;
+                self.scanningline.frame = frame;
             } completion:nil];
         } else {
             if (_scanningline.frame.origin.y >= - scanBorderW) {
@@ -225,13 +225,13 @@
                 if (_scanningline.frame.origin.y >= scanContent_MaxY) {
                     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                         frame.origin.y = - scanBorderW;
-                        _scanningline.frame = frame;
+                        self.scanningline.frame = frame;
                         flag = YES;
                     });
                 } else {
                     [UIView animateWithDuration:self.animationTimeInterval animations:^{
                         frame.origin.y += 1;
-                        _scanningline.frame = frame;
+                        self.scanningline.frame = frame;
                     } completion:nil];
                 }
             } else {
@@ -244,7 +244,7 @@
             flag = NO;
             [UIView animateWithDuration:self.animationTimeInterval animations:^{
                 frame.origin.y += 1;
-                _scanningline.frame = frame;
+                self.scanningline.frame = frame;
             } completion:nil];
         } else {
             if (_scanningline.frame.origin.y >= scanBorderY) {
@@ -256,7 +256,7 @@
                 } else {
                     [UIView animateWithDuration:self.animationTimeInterval animations:^{
                         frame.origin.y += 1;
-                        _scanningline.frame = frame;
+                        self.scanningline.frame = frame;
                     } completion:nil];
                 }
             } else {

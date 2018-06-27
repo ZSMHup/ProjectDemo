@@ -10,6 +10,7 @@
 
 #import "BookDetailHeadView.h"
 #import "SectionView.h"
+#import "VideoPlayer.h"
 #import "BookDetailDescCell.h"
 #import "BookDetailRecCell.h"
 #import "BookDetailPreviewCell.h"
@@ -207,13 +208,18 @@
 }
 
 #pragma mark - DidSelectItemDelegate
-- (void)view:(UIView *)view didSelectItemAtIndexPath:(NSIndexPath *)indexPath model:(id)mdoel {
+- (void)view:(UIView *)view didSelectItemAtIndexPath:(NSIndexPath *)indexPath model:(id)model {
     if ([view isKindOfClass:[BookDetailPreviewCell class]]) {
-
-        NSLog(@"BookDetailPreviewCell: %ld", indexPath.item);
+        
+        BookDetailPreviewModel *previewModel = (BookDetailPreviewModel *)model;
+        
+        VideoPlayer *videoPlayer = [[VideoPlayer alloc] initWithFrame:[UIScreen mainScreen].bounds];
+        videoPlayer.url = previewModel.ossUrl;
+        [self.view addSubview:videoPlayer];
+        
     } else {
         BookDetailViewController *bookDetailVC = [[BookDetailViewController alloc] init];
-        bookDetailVC.bookListModel = (BookListModel *)mdoel;
+        bookDetailVC.bookListModel = (BookListModel *)model;
         [self.navigationController pushViewController:bookDetailVC animated:YES];
     }
 }

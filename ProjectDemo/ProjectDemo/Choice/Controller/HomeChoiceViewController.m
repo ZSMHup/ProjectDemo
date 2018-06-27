@@ -265,14 +265,14 @@
 }
 
 #pragma mark - DidSelectItemDelegate
-- (void)view:(UIView *)view didSelectItemAtIndexPath:(NSIndexPath *)indexPath model:(id)mdoel {
+- (void)view:(UIView *)view didSelectItemAtIndexPath:(NSIndexPath *)indexPath model:(id)model {
     
     if ([view isKindOfClass:[HomeSubjectCell class]]) {
         
         NSLog(@"HomeSubjectCell: %ld", indexPath.item);
     } else {
         BookDetailViewController *bookDetailVC = [[BookDetailViewController alloc] init];
-        bookDetailVC.bookListModel = (BookListModel *)mdoel;
+        bookDetailVC.bookListModel = (BookListModel *)model;
         [self.navigationController pushViewController:bookDetailVC animated:YES];
     }
     

@@ -68,7 +68,6 @@ static AYQRCodeAlbumManager *_instance;
         PHAuthorizationStatus status = [PHPhotoLibrary authorizationStatus];
         if (status == PHAuthorizationStatusNotDetermined) { // 用户还没有做出选择
             [PHPhotoLibrary requestAuthorization:^(PHAuthorizationStatus status) {
-                __strong typeof(weakSelf) strongSelf = weakSelf;
                 if (status == PHAuthorizationStatusAuthorized) {  // 用户第一次同意了访问相册权限
                     weakSelf.isPHAuthorization = YES;
                     [weakSelf enterImagePickerController];

@@ -9,6 +9,7 @@
 #import "BookDetailPreviewCell.h"
 
 #import "BookDetailPreviewCollectionCell.h"
+#import "VideoPlayer.h"
 
 #import "BookDetailPreviewModel.h"
 

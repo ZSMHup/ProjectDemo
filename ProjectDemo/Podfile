@@ -12,5 +12,6 @@ pod 'AFNetworking'
 pod 'KMNavigationBarTransition'
 pod 'YYCache'
 pod 'YYModel'
+pod 'ZFPlayer'
 
 end

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6B2D0AA020E3CC1E0079BDBE /* VideoPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B2D0A9F20E3CC1E0079BDBE /* VideoPlayer.m */; };
 		CA2227DEAB586D43E24A4783 /* libPods-ProjectDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 785549A2330789233A55F4C5 /* libPods-ProjectDemo.a */; };
 		E10924B120E1D5C100C6BC30 /* HomeH5Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = E10924B020E1D5C100C6BC30 /* HomeH5Cell.m */; };
 		E10924B420E1E01100C6BC30 /* HomeHorizontalHasButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E10924B320E1E01100C6BC30 /* HomeHorizontalHasButtonCell.m */; };
@@ -90,6 +91,8 @@
 
 /* Begin PBXFileReference section */
 		1A63463A904B078FD69E2E32 /* Pods-ProjectDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ProjectDemo/Pods-ProjectDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		6B2D0A9E20E3CC1E0079BDBE /* VideoPlayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VideoPlayer.h; sourceTree = "<group>"; };
+		6B2D0A9F20E3CC1E0079BDBE /* VideoPlayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VideoPlayer.m; sourceTree = "<group>"; };
 		785549A2330789233A55F4C5 /* libPods-ProjectDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ProjectDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E10924AF20E1D5C100C6BC30 /* HomeH5Cell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeH5Cell.h; sourceTree = "<group>"; };
 		E10924B020E1D5C100C6BC30 /* HomeH5Cell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeH5Cell.m; sourceTree = "<group>"; };
@@ -264,6 +267,15 @@
 				FA6636864F2369525BAADBEE /* Pods-ProjectDemo.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		6B2D0A9D20E3CC070079BDBE /* VideoPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				6B2D0A9E20E3CC1E0079BDBE /* VideoPlayer.h */,
+				6B2D0A9F20E3CC1E0079BDBE /* VideoPlayer.m */,
+			);
+			path = VideoPlayer;
 			sourceTree = "<group>";
 		};
 		7B871C9794FEDD9231970215 /* Frameworks */ = {
@@ -569,6 +581,7 @@
 		E1E67E5920E0905E00D537E5 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
+				6B2D0A9D20E3CC070079BDBE /* VideoPlayer */,
 				E1E67E5A20E0905E00D537E5 /* AYFileDownloadManager */,
 				E1E67E6220E0905E00D537E5 /* AYMenuView */,
 				E1E67E6520E0905E00D537E5 /* AYProgressHUD */,
@@ -887,10 +900,12 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-ProjectDemo/Pods-ProjectDemo-resources.sh",
 				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
+				"${PODS_ROOT}/ZFPlayer/ZFPlayer/ZFPlayer.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ZFPlayer.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -912,6 +927,7 @@
 				E1E67ED220E09A8900D537E5 /* MyStudyViewController.m in Sources */,
 				E1E67EA420E0905E00D537E5 /* AYMenuView.m in Sources */,
 				E1E67EBB20E0905E00D537E5 /* AYTextView.m in Sources */,
+				6B2D0AA020E3CC1E0079BDBE /* VideoPlayer.m in Sources */,
 				E1E67E9920E0905E00D537E5 /* UIButton+AYCountdown.m in Sources */,
 				E1E67ECB20E092CD00D537E5 /* TabBarController.m in Sources */,
 				E1E67EF820E0DC8D00D537E5 /* SubjectListModel.m in Sources */,

@@ -86,7 +86,7 @@
             self.selectesTabBtn.backgroundColor = _tabBgColorSelected;
             [self.selectesTabBtn setTitleColor:_titleColorSelected forState:(UIControlStateNormal)];
             [UIView animateWithDuration:0.25 animations:^{
-                _tabLineView.frame = CGRectMake(kWidth / self.tabTitleArray.count * i + 20, kHeight - _tabLineHeight, kWidth / self.tabTitleArray.count - 40, _tabLineHeight);
+                self.tabLineView.frame = CGRectMake(kWidth / self.tabTitleArray.count * i + 20, kHeight - self.tabLineHeight, kWidth / self.tabTitleArray.count - 40, self.tabLineHeight);
             }];
             if (_index) {
                 _index(i);
@@ -166,7 +166,7 @@
             _selectesTabBtn.backgroundColor = _tabBgColorSelected;
             [_selectesTabBtn setTitleColor:_titleColorSelected forState:(UIControlStateNormal)];
             [UIView animateWithDuration:0.25 animations:^{
-                _tabLineView.frame = CGRectMake(kWidth / self.tabTitleArray.count * selectedIndex + 20, kHeight - _tabLineHeight, kWidth / _tabTitleArray.count - 40, _tabLineHeight);
+                self.tabLineView.frame = CGRectMake(kWidth / self.tabTitleArray.count * selectedIndex + 20, kHeight - self.tabLineHeight, kWidth / self.tabTitleArray.count - 40, self.tabLineHeight);
             }];
         } else {
             _selectesTabBtn.backgroundColor = _tabBgColorNormal;
