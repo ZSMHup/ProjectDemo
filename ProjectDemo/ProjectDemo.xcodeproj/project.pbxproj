@@ -1024,7 +1024,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5ZB67NUCDZ;
-				GCC_PREFIX_HEADER = /Users/zhangshumeng/Desktop/ProjectDemo/ProjectDemo/ProjectDemo/Other/PrefixHeader.pch;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/ProjectDemo/Other/PrefixHeader.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/ProjectDemo/Other/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1044,7 +1044,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5ZB67NUCDZ;
-				GCC_PREFIX_HEADER = /Users/zhangshumeng/Desktop/ProjectDemo/ProjectDemo/ProjectDemo/Other/PrefixHeader.pch;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/ProjectDemo/Other/PrefixHeader.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/ProjectDemo/Other/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (

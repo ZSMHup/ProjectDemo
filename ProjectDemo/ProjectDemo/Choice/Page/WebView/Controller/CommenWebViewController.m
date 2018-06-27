@@ -7,8 +7,11 @@
 //
 
 #import "CommenWebViewController.h"
+#import "BookDetailViewController.h"
 
 #import "AYWebView.h"
+
+#import "BookListModel.h"
 
 @interface CommenWebViewController () <WKNavigationDelegate, WKUIDelegate, WKScriptMessageHandler>
 
@@ -40,6 +43,21 @@
     return self.configuration;
 }
 
+- (void)customActionHandler:(NSURL *)url {
+    NSString *host = [url host];
+    if ([host isEqualToString:@"detail.book"]) {
+        NSArray *tempArr1 = [[url query] componentsSeparatedByString:@"&"];
+        NSArray *tempArr2 = [[tempArr1 firstObject] componentsSeparatedByString:@"="];
+        NSString *bookCode = tempArr2.lastObject;
+        BookListModel *bookListModel = [[BookListModel alloc] init];
+        bookListModel.bookCode = bookCode;
+        BookDetailViewController *detailVC = [[BookDetailViewController alloc] init];
+        detailVC.bookListModel = bookListModel;
+        [self.navigationController pushViewController:detailVC animated:YES];
+    }
+    
+}
+
 - (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation {
     self.navigationItem.title = webView.title;
 
@@ -51,6 +69,17 @@
     if ([message.name isEqualToString:@"PushToBookDetails"]) {
         NSLog(@"PushToBookDetails");
     }
+}
+
+- (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
+    NSURL *url = navigationAction.request.URL;
+    NSString *scheme = [url scheme];
+    if ([scheme isEqualToString:@"ellabook2"]) {
+        [self customActionHandler:url];
+        decisionHandler(WKNavigationActionPolicyCancel);
+        return;
+    }
+    decisionHandler(WKNavigationActionPolicyAllow);
 }
 
 - (AYWebView *)wkWebView {
