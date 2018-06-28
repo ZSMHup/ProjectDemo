@@ -11,5 +11,6 @@
 @interface SectionView : UIView
 
 @property (nonatomic, copy) NSString *title;
+@property (nonatomic, assign) BOOL isHiddenRightBtn;
 
 @end

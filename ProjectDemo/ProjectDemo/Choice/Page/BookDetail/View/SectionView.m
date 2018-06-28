@@ -12,6 +12,7 @@
 
 @property (nonatomic, strong) UIView *lineView;
 @property (nonatomic, strong) UILabel *titleLabel;
+@property (nonatomic, strong) UIButton *rightBtn;
 
 @end
 
@@ -29,11 +30,17 @@
     self.backgroundColor = [UIColor whiteColor];
     [self addLineView];
     [self addTitleLabel];
+    [self addRightBtn];
 }
 
 - (void)setTitle:(NSString *)title {
     _title = title;
     self.titleLabel.text = title;
+}
+
+- (void)setIsHiddenRightBtn:(BOOL)isHiddenRightBtn {
+    _isHiddenRightBtn = isHiddenRightBtn;
+    self.rightBtn.hidden = isHiddenRightBtn;
 }
 
 - (void)addLineView {
@@ -59,6 +66,25 @@
         [_titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(self.lineView.mas_right).offset(6);
             make.centerY.equalTo(self.lineView.mas_centerY);
+        }];
+    }
+}
+
+- (void)addRightBtn {
+    if (!_rightBtn) {
+        _rightBtn = [[UIButton alloc] init];
+        [_rightBtn setTitle:@"写评论" forState:(UIControlStateNormal)];
+        [_rightBtn setTitleColor:[UIColor mainColor] forState:(UIControlStateNormal)];
+        _rightBtn.layer.borderColor = [UIColor mainColor].CGColor;
+        _rightBtn.layer.borderWidth = 1.0;
+        _rightBtn.layer.cornerRadius = AdaptH(14);
+        _rightBtn.layer.masksToBounds = YES;
+        _rightBtn.hidden = YES;
+        [self addSubview:_rightBtn];
+        [_rightBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.centerY.equalTo(self.lineView.mas_centerY);
+            make.right.equalTo(self.mas_right).offset(AdaptW(-36));
+            make.size.mas_equalTo(CGSizeMake(AdaptW(80), AdaptH(28)));
         }];
     }
 }

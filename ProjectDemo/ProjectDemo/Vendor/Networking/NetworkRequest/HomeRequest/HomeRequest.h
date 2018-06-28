@@ -43,4 +43,8 @@
 + (void)requestBookDetailCommentWithBookCode:(NSString *)bookCode
                                      success:(void (^)(BookDetailEvaluateModel *model))success
                                      failure:(void (^)(NSError *error))failure;
+// 图书详情 -- 获取评论总数
++ (void)requestBookDetailAllCommentCountWithBookCode:(NSString *)bookCode
+                                             success:(void (^)(BookDetailEvaluateModel *model))success
+                                             failure:(void (^)(NSError *error))failure;
 @end

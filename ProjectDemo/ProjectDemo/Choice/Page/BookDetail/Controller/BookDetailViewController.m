@@ -14,6 +14,7 @@
 #import "BookDetailDescCell.h"
 #import "BookDetailRecCell.h"
 #import "BookDetailPreviewCell.h"
+#import "BookDetailCommentCell.h"
 
 #import "BookDetailModel.h"
 #import "BookListModel.h"
@@ -27,12 +28,14 @@
 
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) BookDetailHeadView *headerView;
+@property (nonatomic, strong) UIView *bottomView;
 
 @property (nonatomic, strong) BookDetailModel *bookDetailModel;
 
 @property (nonatomic, strong) NSMutableArray <BookListModel *>*bookListArray;
 @property (nonatomic, strong) NSMutableArray <BookDetailPreviewModel *>*bookPreviewArray;
 @property (nonatomic, strong) NSMutableArray <BookDetailEvaluateModel *>*evaluateArray;
+@property (nonatomic, assign) NSInteger commentCount;
 
 @end
 
@@ -56,7 +59,9 @@
 }
 
 - (void)addSubViews {
+    self.commentCount = 0;
     [self addTableView];
+    [self addBottomView];
     
 }
 
@@ -111,12 +116,18 @@
         dispatch_group_leave(group);
     }];
     
+    dispatch_group_enter(group);
+    [HomeRequest requestBookDetailAllCommentCountWithBookCode:self.bookListModel.bookCode success:^(BookDetailEvaluateModel *model) {
+        self.commentCount = [model.commentCount integerValue];
+        dispatch_group_leave(group);
+    } failure:^(NSError *error) {
+        [AYProgressHUD showNetworkError];
+        dispatch_group_leave(group);
+    }];
     
     kWeakSelf(self)
     dispatch_group_notify(group, dispatch_get_main_queue(), ^{
         [AYProgressHUD dismiss];
-        
-        
         [weakself.tableView reloadData];
     });
     
@@ -158,8 +169,8 @@
             return cell;
         }
         default: {
-            UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UITableViewCell"];
-            
+            BookDetailCommentCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BookDetailCommentCell"];
+            [cell setModel:self.evaluateArray[indexPath.item]];
             return cell;
         }
     }
@@ -173,7 +184,28 @@
     NSArray *titles = @[@"绘本预览", @"更多推荐", @"评价"];
     SectionView *sectionView = [[SectionView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 54)];
     [sectionView setTitle:titles[section - 1]];
+    if (section == 3) {
+        [sectionView setIsHiddenRightBtn:NO];
+    }
     return sectionView;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
+    
+    if (section == 3) {
+        UIView *footer = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, AdaptH(50))];
+        footer.backgroundColor = [UIColor whiteColor];
+        UILabel *label = [[UILabel alloc] init];
+        label.text = NSStringFormat(@"查看全部%ld条评论", self.commentCount);
+        label.textColor = [UIColor blackColor];
+        label.font = [UIFont systemFontOfSize:16];
+        [footer addSubview:label];
+        [label mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.centerX.centerY.equalTo(footer);
+        }];
+        return footer;
+    }
+    return nil;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -184,6 +216,7 @@
     
     switch (indexPath.section) {
         case 0:
+        case 3:
             return UITableViewAutomaticDimension;
         case 1:
             return AdaptH(184);
@@ -202,6 +235,9 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+    if (section == 3) {
+        return AdaptH(50);
+    }
     return 10;
 }
 
@@ -253,6 +289,7 @@
         _tableView = [[UITableView alloc] initWithFrame:CGRectZero style:(UITableViewStylePlain)];
         _tableView.delegate = self;
         _tableView.dataSource = self;
+        _tableView.backgroundColor = [UIColor backgroundColor];
         _tableView.rowHeight = UITableViewAutomaticDimension;
         _tableView.estimatedRowHeight = 80;
         _tableView.estimatedSectionFooterHeight = 0;
@@ -262,11 +299,35 @@
         [_tableView registerClass:[BookDetailDescCell class] forCellReuseIdentifier:@"BookDetailDescCell"];
         [_tableView registerClass:[BookDetailRecCell class] forCellReuseIdentifier:@"BookDetailRecCell"];
         [_tableView registerClass:[BookDetailPreviewCell class] forCellReuseIdentifier:@"BookDetailPreviewCell"];
-        [_tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"UITableViewCell"];
+        [_tableView registerClass:[BookDetailCommentCell class] forCellReuseIdentifier:@"BookDetailCommentCell"];
         [self.view addSubview:_tableView];
         adjustsScrollViewInsets_NO(_tableView, self);
         [_tableView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.edges.equalTo(self.view);
+            make.left.right.top.equalTo(self.view);
+            make.bottom.equalTo(self.view.mas_bottom).offset(AdaptH(-50));
+        }];
+    }
+}
+
+- (void)addBottomView {
+    if (!_bottomView) {
+        _bottomView = [[UIView alloc] init];
+        _bottomView.backgroundColor = [UIColor whiteColor];
+        _bottomView.layer.borderWidth = 1;
+        _bottomView.layer.borderColor = [UIColor grayColor].CGColor;
+        [self.view addSubview:_bottomView];
+        [_bottomView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.right.bottom.equalTo(self.view);
+            make.height.mas_equalTo(AdaptH(50));
+        }];
+        
+        UILabel *label = [[UILabel alloc] init];
+        label.text = @"免费试读";
+        label.textColor = [UIColor blackColor];
+        label.font = [UIFont systemFontOfSize:16];
+        [self.bottomView addSubview:label];
+        [label mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.centerX.centerY.equalTo(self.bottomView);
         }];
     }
 }

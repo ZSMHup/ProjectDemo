@@ -163,5 +163,27 @@
     }];
 }
 
+// 图书详情 -- 获取评论总数
++ (void)requestBookDetailAllCommentCountWithBookCode:(NSString *)bookCode
+                                     success:(void (^)(BookDetailEvaluateModel *model))success
+                                     failure:(void (^)(NSError *error))failure {
+    NSMutableDictionary *param = [NSMutableDictionary dictionary];
+    [param setObject:bookCode forKey:@"bookCode"];
+    NSMutableDictionary *dic = [NSMutableDictionary dictionary];
+    [dic setObject:[NetworkRequestManager convertToJsonData:param] forKey:@"content"];
+    [dic setObject:@"ella.book.bookCommentCount" forKey:@"method"];
+    
+    [NetworkRequestManager postRequestWithParameters:dic modelClass:[BookDetailEvaluateModel class] responseCaches:nil success:^(id responseObject) {
+        BookDetailEvaluateModel *model = (BookDetailEvaluateModel *)responseObject;
+        if (success) {
+            success(model);
+        }
+    } failure:^(NSError *error) {
+        if (failure) {
+            failure(error);
+        }
+    }];
+}
+
 
 @end

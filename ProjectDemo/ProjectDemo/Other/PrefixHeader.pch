@@ -32,6 +32,7 @@
 #import <SDWebImage/UIButton+WebCache.h>
 #import <YYModel/YYModel.h>
 #import <YYCache/YYCache.h>
+#import "TQStarRatingView.h"
 
 
 #endif /* PrefixHeader_pch */

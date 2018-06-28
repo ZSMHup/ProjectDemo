@@ -8,8 +8,6 @@
 
 #import "BookDetailHeadView.h"
 
-#import "TQStarRatingView.h"
-
 #import "EbBookModel.h"
 #import "BookAuthorModel.h"
 #import "BookPriceModel.h"
