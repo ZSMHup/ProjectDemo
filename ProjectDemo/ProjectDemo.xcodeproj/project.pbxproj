@@ -15,6 +15,9 @@
 		E10924BA20E1FD6700C6BC30 /* HomeHorizontalCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E10924B920E1FD6700C6BC30 /* HomeHorizontalCell.m */; };
 		E10924BD20E1FD8600C6BC30 /* HomeHorizontalCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E10924BC20E1FD8600C6BC30 /* HomeHorizontalCollectionCell.m */; };
 		E10924C320E2163900C6BC30 /* CommenWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E10924C220E2163900C6BC30 /* CommenWebViewController.m */; };
+		E10CA52120E4A989006C5762 /* BookDetailEvaluateModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E10CA52020E4A989006C5762 /* BookDetailEvaluateModel.m */; };
+		E12608A120E46AF900394FE4 /* YYFPSLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = E126089E20E46AF800394FE4 /* YYFPSLabel.m */; };
+		E12608A220E46AF900394FE4 /* YYWeakProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = E12608A020E46AF800394FE4 /* YYWeakProxy.m */; };
 		E1263EF720E332E800D587FE /* BookDetailHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = E1263EF620E332E800D587FE /* BookDetailHeadView.m */; };
 		E15152ED20E3589500EB009B /* TQStarRatingView.m in Sources */ = {isa = PBXBuildFile; fileRef = E15152EC20E3589500EB009B /* TQStarRatingView.m */; };
 		E168775620E23B4B00E284DA /* BookDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E168775520E23B4B00E284DA /* BookDetailViewController.m */; };
@@ -106,6 +109,12 @@
 		E10924BC20E1FD8600C6BC30 /* HomeHorizontalCollectionCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeHorizontalCollectionCell.m; sourceTree = "<group>"; };
 		E10924C120E2163900C6BC30 /* CommenWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommenWebViewController.h; sourceTree = "<group>"; };
 		E10924C220E2163900C6BC30 /* CommenWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommenWebViewController.m; sourceTree = "<group>"; };
+		E10CA51F20E4A989006C5762 /* BookDetailEvaluateModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BookDetailEvaluateModel.h; sourceTree = "<group>"; };
+		E10CA52020E4A989006C5762 /* BookDetailEvaluateModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BookDetailEvaluateModel.m; sourceTree = "<group>"; };
+		E126089D20E46AF800394FE4 /* YYFPSLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYFPSLabel.h; sourceTree = "<group>"; };
+		E126089E20E46AF800394FE4 /* YYFPSLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYFPSLabel.m; sourceTree = "<group>"; };
+		E126089F20E46AF800394FE4 /* YYWeakProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYWeakProxy.h; sourceTree = "<group>"; };
+		E12608A020E46AF800394FE4 /* YYWeakProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYWeakProxy.m; sourceTree = "<group>"; };
 		E1263EF520E332E800D587FE /* BookDetailHeadView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BookDetailHeadView.h; sourceTree = "<group>"; };
 		E1263EF620E332E800D587FE /* BookDetailHeadView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BookDetailHeadView.m; sourceTree = "<group>"; };
 		E15152EB20E3589500EB009B /* TQStarRatingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQStarRatingView.h; sourceTree = "<group>"; };
@@ -312,9 +321,21 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		E126089C20E46AF800394FE4 /* YYFPSLabel */ = {
+			isa = PBXGroup;
+			children = (
+				E126089D20E46AF800394FE4 /* YYFPSLabel.h */,
+				E126089E20E46AF800394FE4 /* YYFPSLabel.m */,
+				E126089F20E46AF800394FE4 /* YYWeakProxy.h */,
+				E12608A020E46AF800394FE4 /* YYWeakProxy.m */,
+			);
+			path = YYFPSLabel;
+			sourceTree = "<group>";
+		};
 		E15152DB20E356B400EB009B /* ThirdSDK */ = {
 			isa = PBXGroup;
 			children = (
+				E126089C20E46AF800394FE4 /* YYFPSLabel */,
 				E15152EA20E3589500EB009B /* TQStarRating */,
 			);
 			path = ThirdSDK;
@@ -359,6 +380,8 @@
 				E16A063E20E367F5004314B9 /* BookPriceModel.m */,
 				E16A064A20E3841B004314B9 /* BookDetailPreviewModel.h */,
 				E16A064B20E3841B004314B9 /* BookDetailPreviewModel.m */,
+				E10CA51F20E4A989006C5762 /* BookDetailEvaluateModel.h */,
+				E10CA52020E4A989006C5762 /* BookDetailEvaluateModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -900,11 +923,13 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-ProjectDemo/Pods-ProjectDemo-resources.sh",
 				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
+				"${PODS_ROOT}/YBImageBrowser/YBImageBrowser/YBImageBrowser.bundle",
 				"${PODS_ROOT}/ZFPlayer/ZFPlayer/ZFPlayer.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/YBImageBrowser.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ZFPlayer.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -921,6 +946,7 @@
 			files = (
 				E1E67EA620E0905E00D537E5 /* AYProgressHUD.m in Sources */,
 				E16A063C20E367EB004314B9 /* BookAuthorModel.m in Sources */,
+				E10CA52120E4A989006C5762 /* BookDetailEvaluateModel.m in Sources */,
 				E1E67EA720E0905E00D537E5 /* MBProgressHUD+AYHUD.m in Sources */,
 				E1E67EB920E0905E00D537E5 /* AYWebView.m in Sources */,
 				E1E67E9820E0905E00D537E5 /* NSDate+AYDate.m in Sources */,
@@ -975,11 +1001,13 @@
 				E1E67EA320E0905E00D537E5 /* NSString+AYHash.m in Sources */,
 				E1E67ECF20E09A7800D537E5 /* HomeChoiceViewController.m in Sources */,
 				E10924B120E1D5C100C6BC30 /* HomeH5Cell.m in Sources */,
+				E12608A120E46AF900394FE4 /* YYFPSLabel.m in Sources */,
 				E1E67E9B20E0905E00D537E5 /* UINavigationController+Additions.m in Sources */,
 				E10924C320E2163900C6BC30 /* CommenWebViewController.m in Sources */,
 				E1E67EA020E0905E00D537E5 /* AYNotification.m in Sources */,
 				E1E67E9D20E0905E00D537E5 /* UITextView+Placeholder.m in Sources */,
 				E1E3AA7820E0ECAD009B6FAC /* EbBookModel.m in Sources */,
+				E12608A220E46AF900394FE4 /* YYWeakProxy.m in Sources */,
 				E1E67E1B20E08B9300D537E5 /* AppDelegate.m in Sources */,
 				E1E67E9E20E0905E00D537E5 /* UIView+AYView.m in Sources */,
 				E15152ED20E3589500EB009B /* TQStarRatingView.m in Sources */,

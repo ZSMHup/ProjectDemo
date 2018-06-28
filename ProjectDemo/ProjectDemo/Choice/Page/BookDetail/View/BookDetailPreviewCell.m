@@ -10,6 +10,7 @@
 
 #import "BookDetailPreviewCollectionCell.h"
 #import "VideoPlayer.h"
+#import <YBImageBrowser.h>
 
 #import "BookDetailPreviewModel.h"
 
@@ -39,6 +40,31 @@
     }];
 }
 
+- (NSArray *)photoBrowser {
+    NSMutableArray *imgArr = [NSMutableArray array];
+    for (NSInteger i = 0; i < self.dataSource.count; i++) {
+        if ([self.dataSource[i].resourceType isEqualToString:@"PREVIEW_VIDEO"]) {
+            continue;
+        }
+        [imgArr addObject:self.dataSource[i].ossUrl];
+    }
+    return imgArr;
+}
+
+- (void)showWithIndex:(NSUInteger)index {
+    NSMutableArray *browserArr = [NSMutableArray array];
+    for (NSInteger i = 0; i < [self photoBrowser].count; i++) {
+        YBImageBrowserModel *browserModel = [[YBImageBrowserModel alloc] init];
+        [browserModel setUrlWithDownloadInAdvance:[NSURL URLWithString:[self photoBrowser][i]]];
+        [browserArr addObject:browserModel];
+    }
+    YBImageBrowser *browser = [YBImageBrowser new];
+    [browser.toolBar setRightButtonHide:YES];
+    browser.dataArray = [browserArr copy];
+    browser.currentIndex = index;
+    [browser show];
+}
+
 - (void)setDataSource:(NSArray<BookDetailPreviewModel *> *)dataSource {
     _dataSource = dataSource;
     [self.collectionView reloadData];
@@ -57,9 +83,15 @@
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    if (self.delegate && [self.delegate respondsToSelector:@selector(view:didSelectItemAtIndexPath:model:)]) {
-        [self.delegate view:self didSelectItemAtIndexPath:indexPath model:self.dataSource[indexPath.item]];
+
+    BookDetailPreviewModel *previewModel = (BookDetailPreviewModel *)self.dataSource[indexPath.item];
+    
+    if ([previewModel.resourceType isEqualToString:@"PREVIEW_VIDEO"]) { // 视频播放
+        [VideoPlayer showPlayerWithURL:previewModel.ossUrl coveUrl:previewModel.coverUrl];
+    } else {
+        [self showWithIndex:indexPath.item - 1];
     }
+    
 }
 
 #pragma mark - UICollectionView flowlayout

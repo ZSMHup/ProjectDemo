@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "TabBarController.h"
+#import "YYFPSLabel.h"
 
 @interface AppDelegate ()
 
@@ -22,6 +23,10 @@
     TabBarController *vc = [[TabBarController alloc] init];
     self.window.rootViewController = vc;
     [self.window makeKeyAndVisible];
+    
+    YYFPSLabel *fps = [[YYFPSLabel alloc] initWithFrame:CGRectMake(0, 100, 55, 20)];
+    [vc.view addSubview:fps];
+    
     return YES;
 }
 

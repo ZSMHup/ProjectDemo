@@ -13,6 +13,7 @@
 @class BookDetailModel;
 @class BookListModel;
 @class BookDetailPreviewModel;
+@class BookDetailEvaluateModel;
 
 @interface HomeRequest : NSObject
 
@@ -37,5 +38,9 @@
 + (void)requestBookDetailPreviewWithBookCode:(NSString *)bookCode
                                     resource:(NSString *)resource
                                      success:(void (^)(BookDetailPreviewModel *model))success
+                                     failure:(void (^)(NSError *error))failure;
+// 图书详情 -- 获取书籍详情底部评论数据
++ (void)requestBookDetailCommentWithBookCode:(NSString *)bookCode
+                                     success:(void (^)(BookDetailEvaluateModel *model))success
                                      failure:(void (^)(NSError *error))failure;
 @end

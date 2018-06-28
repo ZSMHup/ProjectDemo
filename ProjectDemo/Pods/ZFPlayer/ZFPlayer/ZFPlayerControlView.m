@@ -152,6 +152,12 @@ static const CGFloat ZFPlayerControlBarAutoFadeOutTimeInterval = 0.35f;
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(appDidEnterPlayground) name:UIApplicationDidBecomeActiveNotification object:nil];
 
         [self listeningRotating];
+        
+        /// ========== 自己修改的
+        self.backBtn.hidden = YES;
+        self.lockBtn.hidden = YES;
+        self.fullScreenBtn.hidden = YES;
+        /// ==========
     }
     return self;
 }

@@ -11,5 +11,8 @@
 @interface VideoPlayer : UIView
 
 @property (nonatomic, copy) NSString *url;
+@property (nonatomic, copy) NSString *coveUrl;
+
++ (void)showPlayerWithURL:(NSString *)url coveUrl:(NSString *)coveUrl;
 
 @end

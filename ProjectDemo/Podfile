@@ -13,5 +13,6 @@ pod 'KMNavigationBarTransition'
 pod 'YYCache'
 pod 'YYModel'
 pod 'ZFPlayer'
+pod 'YBImageBrowser'
 
 end

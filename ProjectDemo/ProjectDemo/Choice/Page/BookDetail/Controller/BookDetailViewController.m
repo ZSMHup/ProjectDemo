@@ -19,6 +19,7 @@
 #import "BookListModel.h"
 #import "BookDetailPreviewModel.h"
 #import "EbBookModel.h"
+#import "BookDetailEvaluateModel.h"
 
 #import "HomeRequest.h"
 
@@ -31,6 +32,7 @@
 
 @property (nonatomic, strong) NSMutableArray <BookListModel *>*bookListArray;
 @property (nonatomic, strong) NSMutableArray <BookDetailPreviewModel *>*bookPreviewArray;
+@property (nonatomic, strong) NSMutableArray <BookDetailEvaluateModel *>*evaluateArray;
 
 @end
 
@@ -99,6 +101,17 @@
         dispatch_group_leave(group);
     }];
     
+    dispatch_group_enter(group);
+    [HomeRequest requestBookDetailCommentWithBookCode:self.bookListModel.bookCode success:^(BookDetailEvaluateModel *model) {
+        self.evaluateArray = [model.responseResultList mutableCopy];
+        
+        dispatch_group_leave(group);
+    } failure:^(NSError *error) {
+        [AYProgressHUD showNetworkError];
+        dispatch_group_leave(group);
+    }];
+    
+    
     kWeakSelf(self)
     dispatch_group_notify(group, dispatch_get_main_queue(), ^{
         [AYProgressHUD dismiss];
@@ -115,6 +128,11 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
+    if (section == 3) {
+        return self.evaluateArray.count;
+    }
+    
     return 1;
 }
 
@@ -209,19 +227,10 @@
 
 #pragma mark - DidSelectItemDelegate
 - (void)view:(UIView *)view didSelectItemAtIndexPath:(NSIndexPath *)indexPath model:(id)model {
-    if ([view isKindOfClass:[BookDetailPreviewCell class]]) {
-        
-        BookDetailPreviewModel *previewModel = (BookDetailPreviewModel *)model;
-        
-        VideoPlayer *videoPlayer = [[VideoPlayer alloc] initWithFrame:[UIScreen mainScreen].bounds];
-        videoPlayer.url = previewModel.ossUrl;
-        [self.view addSubview:videoPlayer];
-        
-    } else {
-        BookDetailViewController *bookDetailVC = [[BookDetailViewController alloc] init];
-        bookDetailVC.bookListModel = (BookListModel *)model;
-        [self.navigationController pushViewController:bookDetailVC animated:YES];
-    }
+
+    BookDetailViewController *bookDetailVC = [[BookDetailViewController alloc] init];
+    bookDetailVC.bookListModel = (BookListModel *)model;
+    [self.navigationController pushViewController:bookDetailVC animated:YES];
 }
 
 #pragma mark - getter
@@ -274,6 +283,13 @@
         _bookPreviewArray = [NSMutableArray array];
     }
     return _bookPreviewArray;
+}
+
+- (NSMutableArray<BookDetailEvaluateModel *> *)evaluateArray {
+    if (!_evaluateArray) {
+        _evaluateArray = [NSMutableArray array];
+    }
+    return _evaluateArray;
 }
 
 @end

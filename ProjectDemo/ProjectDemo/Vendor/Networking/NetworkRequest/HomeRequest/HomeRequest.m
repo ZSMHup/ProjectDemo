@@ -14,6 +14,7 @@
 #import "BookDetailModel.h"
 #import "BookListModel.h"
 #import "BookDetailPreviewModel.h"
+#import "BookDetailEvaluateModel.h"
 
 @implementation HomeRequest
 
@@ -128,6 +129,30 @@
     
     [NetworkRequestManager postRequestWithParameters:dic modelClass:[BookDetailPreviewModel class] responseCaches:nil success:^(id responseObject) {
         BookDetailPreviewModel *model = (BookDetailPreviewModel *)responseObject;
+        if (success) {
+            success(model);
+        }
+    } failure:^(NSError *error) {
+        if (failure) {
+            failure(error);
+        }
+    }];
+}
+
+// 图书详情 -- 获取书籍详情底部评论数据
++ (void)requestBookDetailCommentWithBookCode:(NSString *)bookCode
+                                     success:(void (^)(BookDetailEvaluateModel *model))success
+                                     failure:(void (^)(NSError *error))failure {
+    NSMutableDictionary *param = [NSMutableDictionary dictionary];
+    [param setObject:@(0) forKey:@"pageIndex"];
+    [param setObject:@(5) forKey:@"pageSize"];
+    [param setObject:bookCode forKey:@"bookCode"];
+    NSMutableDictionary *dic = [NSMutableDictionary dictionary];
+    [dic setObject:[NetworkRequestManager convertToJsonData:param] forKey:@"content"];
+    [dic setObject:@"ella.book.listBookComment" forKey:@"method"];
+    
+    [NetworkRequestManager postRequestWithParameters:dic modelClass:[BookDetailEvaluateModel class] responseCaches:nil success:^(id responseObject) {
+        BookDetailEvaluateModel *model = (BookDetailEvaluateModel *)responseObject;
         if (success) {
             success(model);
         }
