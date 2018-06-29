@@ -10,6 +10,8 @@
 
 #import "BookDetailEvaluateModel.h"
 
+#import "AudioPlayerManager.h"
+
 @interface BookDetailCommentCell ()
 
 @property (nonatomic, strong) UIImageView *imgView;
@@ -18,7 +20,6 @@
 @property (nonatomic, strong) UILabel *dateLabel;
 @property (nonatomic, strong) UILabel *detailLabel;
 @property (nonatomic, strong) UIButton *audioBtn;
-
 
 @end
 
@@ -40,7 +41,6 @@
     self.dateLabel.text = model.commentTimeFormatter;
     
     if ([model.commentType isEqualToString:@"COMMENT_VOICE"]) { // 语音
-        NSLog(@"%@ s", model.commentDuration);
         self.detailLabel.hidden = YES;
         self.audioBtn.hidden = NO;
         [self.audioBtn setTitle:NSStringFormat(@"%@s", model.commentDuration) forState:(UIControlStateNormal)];
@@ -52,6 +52,24 @@
         self.audioBtn.hidden = YES;
         self.detailLabel.text = model.commentContent;
     }
+}
+
+- (void)audioBtnClick:(UIButton *)sender {
+//    if ([self.model.commentType isEqualToString:@"COMMENT_VOICE"]) { // 语音
+//        [[AudioPlayerManager sharedInstance] playerWithURL:self.model.commentVoiceUrl];
+//    }
+    
+    if (self.playerCallBack) {
+        self.playerCallBack(sender);
+    }
+    
+    sender.selected = !sender.selected;
+    if (sender.selected) {
+        [sender.imageView startAnimating];
+    } else {
+        [sender.imageView stopAnimating];
+    }
+    
 }
 
 - (void)addSubViews {
@@ -124,6 +142,7 @@
         _detailLabel = [[UILabel alloc] init];
         _detailLabel.textColor = [UIColor blackColor];
         _detailLabel.font = [UIFont systemFontOfSize:14.0];
+        _detailLabel.numberOfLines = 0;
         [self.contentView addSubview:_detailLabel];
         [_detailLabel mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(self.dateLabel.mas_bottom).offset(AdaptH(6));
@@ -143,6 +162,12 @@
         _audioBtn.imageEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 70);
         _audioBtn.titleEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 10);
         _audioBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
+        [_audioBtn addTarget:self action:@selector(audioBtnClick:) forControlEvents:(UIControlEventTouchUpInside)];
+        _audioBtn.imageView.animationImages = @[[UIImage imageNamed:@"play_voice_icon_0"],
+                                                [UIImage imageNamed:@"play_voice_icon_1"],
+                                                [UIImage imageNamed:@"play_voice_icon_2"]];
+        _audioBtn.imageView.animationDuration = 1;
+        _audioBtn.imageView.animationRepeatCount = 0;
         [self.contentView addSubview:_audioBtn];
         [_audioBtn mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(self.nameLabel.mas_left);

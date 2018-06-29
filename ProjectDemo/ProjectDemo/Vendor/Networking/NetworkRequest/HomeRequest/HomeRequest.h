@@ -41,6 +41,7 @@
                                      failure:(void (^)(NSError *error))failure;
 // 图书详情 -- 获取书籍详情底部评论数据
 + (void)requestBookDetailCommentWithBookCode:(NSString *)bookCode
+                                   pageIndex:(NSInteger)pageIndex
                                      success:(void (^)(BookDetailEvaluateModel *model))success
                                      failure:(void (^)(NSError *error))failure;
 // 图书详情 -- 获取评论总数

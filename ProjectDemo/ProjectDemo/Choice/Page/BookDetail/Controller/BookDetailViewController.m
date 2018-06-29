@@ -7,6 +7,7 @@
 //
 
 #import "BookDetailViewController.h"
+#import "CommentListViewController.h"
 
 #import "BookDetailHeadView.h"
 #import "SectionView.h"
@@ -107,9 +108,14 @@
     }];
     
     dispatch_group_enter(group);
-    [HomeRequest requestBookDetailCommentWithBookCode:self.bookListModel.bookCode success:^(BookDetailEvaluateModel *model) {
-        self.evaluateArray = [model.responseResultList mutableCopy];
-        
+    [HomeRequest requestBookDetailCommentWithBookCode:self.bookListModel.bookCode pageIndex:0 success:^(BookDetailEvaluateModel *model) {
+        if (model.responseResultList.count > 0) {
+            if (model.responseResultList.count > 5) {
+                self.evaluateArray = [[model.responseResultList subarrayWithRange:NSMakeRange(0, 5)] mutableCopy];
+            } else {
+                self.evaluateArray = [model.responseResultList mutableCopy];
+            }
+        }
         dispatch_group_leave(group);
     } failure:^(NSError *error) {
         [AYProgressHUD showNetworkError];
@@ -131,6 +137,12 @@
         [weakself.tableView reloadData];
     });
     
+}
+
+- (void)allCommentClick {
+    CommentListViewController *commentListVC = [[CommentListViewController alloc] init];
+    commentListVC.bookListModel = self.bookListModel;
+    [self.navigationController pushViewController:commentListVC animated:YES];
 }
 
 #pragma mark - UITableViewDelegate, UITableViewDataSource
@@ -195,10 +207,11 @@
     if (section == 3) {
         UIView *footer = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, AdaptH(50))];
         footer.backgroundColor = [UIColor whiteColor];
-        UILabel *label = [[UILabel alloc] init];
-        label.text = NSStringFormat(@"查看全部%ld条评论", self.commentCount);
-        label.textColor = [UIColor blackColor];
-        label.font = [UIFont systemFontOfSize:16];
+        UIButton *label = [[UIButton alloc] init];
+        [label setTitle:NSStringFormat(@"查看全部%ld条评论", self.commentCount) forState:(UIControlStateNormal)];
+        [label setTitleColor:[UIColor blackColor] forState:(UIControlStateNormal)];
+        [label addTarget:self action:@selector(allCommentClick) forControlEvents:(UIControlEventTouchUpInside)];
+        label.titleLabel.font = [UIFont systemFontOfSize:16];
         [footer addSubview:label];
         [label mas_makeConstraints:^(MASConstraintMaker *make) {
             make.centerX.centerY.equalTo(footer);

@@ -141,11 +141,12 @@
 
 // 图书详情 -- 获取书籍详情底部评论数据
 + (void)requestBookDetailCommentWithBookCode:(NSString *)bookCode
+                                    pageIndex:(NSInteger)pageIndex
                                      success:(void (^)(BookDetailEvaluateModel *model))success
                                      failure:(void (^)(NSError *error))failure {
     NSMutableDictionary *param = [NSMutableDictionary dictionary];
-    [param setObject:@(0) forKey:@"pageIndex"];
-    [param setObject:@(5) forKey:@"pageSize"];
+    [param setObject:@(pageIndex) forKey:@"pageIndex"];
+    [param setObject:@(20) forKey:@"pageSize"];
     [param setObject:bookCode forKey:@"bookCode"];
     NSMutableDictionary *dic = [NSMutableDictionary dictionary];
     [dic setObject:[NetworkRequestManager convertToJsonData:param] forKey:@"content"];

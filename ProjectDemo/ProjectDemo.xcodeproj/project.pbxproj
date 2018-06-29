@@ -22,6 +22,8 @@
 		E1263EF720E332E800D587FE /* BookDetailHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = E1263EF620E332E800D587FE /* BookDetailHeadView.m */; };
 		E15152ED20E3589500EB009B /* TQStarRatingView.m in Sources */ = {isa = PBXBuildFile; fileRef = E15152EC20E3589500EB009B /* TQStarRatingView.m */; };
 		E168775620E23B4B00E284DA /* BookDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E168775520E23B4B00E284DA /* BookDetailViewController.m */; };
+		E169DF9320E6147B00C8E59E /* CommentListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E169DF9220E6147B00C8E59E /* CommentListViewController.m */; };
+		E169DF9620E622F000C8E59E /* AudioPlayerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E169DF9520E622F000C8E59E /* AudioPlayerManager.m */; };
 		E16A063920E36706004314B9 /* BookDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E16A063820E36706004314B9 /* BookDetailModel.m */; };
 		E16A063C20E367EB004314B9 /* BookAuthorModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E16A063B20E367EB004314B9 /* BookAuthorModel.m */; };
 		E16A063F20E367F5004314B9 /* BookPriceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E16A063E20E367F5004314B9 /* BookPriceModel.m */; };
@@ -125,6 +127,10 @@
 		E168775420E23B4B00E284DA /* BookDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BookDetailViewController.h; sourceTree = "<group>"; };
 		E168775520E23B4B00E284DA /* BookDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BookDetailViewController.m; sourceTree = "<group>"; };
 		E168775C20E23E5E00E284DA /* CommonProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonProtocol.h; sourceTree = "<group>"; };
+		E169DF9120E6147B00C8E59E /* CommentListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommentListViewController.h; sourceTree = "<group>"; };
+		E169DF9220E6147B00C8E59E /* CommentListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommentListViewController.m; sourceTree = "<group>"; };
+		E169DF9420E622F000C8E59E /* AudioPlayerManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AudioPlayerManager.h; sourceTree = "<group>"; };
+		E169DF9520E622F000C8E59E /* AudioPlayerManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AudioPlayerManager.m; sourceTree = "<group>"; };
 		E16A063720E36706004314B9 /* BookDetailModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BookDetailModel.h; sourceTree = "<group>"; };
 		E16A063820E36706004314B9 /* BookDetailModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BookDetailModel.m; sourceTree = "<group>"; };
 		E16A063A20E367EB004314B9 /* BookAuthorModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BookAuthorModel.h; sourceTree = "<group>"; };
@@ -368,6 +374,8 @@
 			children = (
 				E168775420E23B4B00E284DA /* BookDetailViewController.h */,
 				E168775520E23B4B00E284DA /* BookDetailViewController.m */,
+				E169DF9120E6147B00C8E59E /* CommentListViewController.h */,
+				E169DF9220E6147B00C8E59E /* CommentListViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -416,6 +424,15 @@
 				E168775C20E23E5E00E284DA /* CommonProtocol.h */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		E169DF8D20E613B600C8E59E /* AudioPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				E169DF9420E622F000C8E59E /* AudioPlayerManager.h */,
+				E169DF9520E622F000C8E59E /* AudioPlayerManager.m */,
+			);
+			path = AudioPlayer;
 			sourceTree = "<group>";
 		};
 		E1E67E0D20E08B9300D537E5 = {
@@ -609,6 +626,7 @@
 		E1E67E5920E0905E00D537E5 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
+				E169DF8D20E613B600C8E59E /* AudioPlayer */,
 				6B2D0A9D20E3CC070079BDBE /* VideoPlayer */,
 				E1E67E5A20E0905E00D537E5 /* AYFileDownloadManager */,
 				E1E67E6220E0905E00D537E5 /* AYMenuView */,
@@ -965,6 +983,7 @@
 				E1E67EA220E0905E00D537E5 /* AYFileSessionModel.m in Sources */,
 				E16A063F20E367F5004314B9 /* BookPriceModel.m in Sources */,
 				E10924BD20E1FD8600C6BC30 /* HomeHorizontalCollectionCell.m in Sources */,
+				E169DF9320E6147B00C8E59E /* CommentListViewController.m in Sources */,
 				E1E3AA7220E0EC4A009B6FAC /* DailyListModel.m in Sources */,
 				E1E67EB820E0905E00D537E5 /* UILabel+AYLabelTextHelper.m in Sources */,
 				E16A065220E389A6004314B9 /* BookDetailPreviewCollectionCell.m in Sources */,
@@ -1016,6 +1035,7 @@
 				E12608A220E46AF900394FE4 /* YYWeakProxy.m in Sources */,
 				E1E67E1B20E08B9300D537E5 /* AppDelegate.m in Sources */,
 				E1E67E9E20E0905E00D537E5 /* UIView+AYView.m in Sources */,
+				E169DF9620E622F000C8E59E /* AudioPlayerManager.m in Sources */,
 				E15152ED20E3589500EB009B /* TQStarRatingView.m in Sources */,
 				E16A064320E375DE004314B9 /* BookDetailDescCell.m in Sources */,
 				E16A064C20E3841B004314B9 /* BookDetailPreviewModel.m in Sources */,

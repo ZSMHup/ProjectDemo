@@ -13,5 +13,6 @@
 @interface BookDetailCommentCell : UITableViewCell
 
 @property (nonatomic, strong) BookDetailEvaluateModel *model;
+@property (nonatomic, copy) void(^playerCallBack)(UIButton *sender);
 
 @end
