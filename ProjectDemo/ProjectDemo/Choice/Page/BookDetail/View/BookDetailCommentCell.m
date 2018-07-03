@@ -27,6 +27,7 @@
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
+        self.selectionStyle = UITableViewCellSelectionStyleNone;
         [self addSubViews];
     }
     return self;
@@ -41,35 +42,35 @@
     self.dateLabel.text = model.commentTimeFormatter;
     
     if ([model.commentType isEqualToString:@"COMMENT_VOICE"]) { // 语音
+
         self.detailLabel.hidden = YES;
         self.audioBtn.hidden = NO;
         [self.audioBtn setTitle:NSStringFormat(@"%@s", model.commentDuration) forState:(UIControlStateNormal)];
         [self.dateLabel mas_updateConstraints:^(MASConstraintMaker *make) {
             make.bottom.equalTo(self.contentView.mas_bottom).offset(-50);
         }];
+        
     } else {
         self.detailLabel.hidden = NO;
         self.audioBtn.hidden = YES;
         self.detailLabel.text = model.commentContent;
     }
+    
 }
 
 - (void)audioBtnClick:(UIButton *)sender {
-//    if ([self.model.commentType isEqualToString:@"COMMENT_VOICE"]) { // 语音
-//        [[AudioPlayerManager sharedInstance] playerWithURL:self.model.commentVoiceUrl];
-//    }
+    
+    if (_model.isStopAudio) {
+        sender.selected = YES;
+        [sender.imageView startAnimating];
+    } else {
+        sender.selected = NO;
+        [sender.imageView stopAnimating];
+    }
     
     if (self.playerCallBack) {
         self.playerCallBack(sender);
     }
-    
-    sender.selected = !sender.selected;
-    if (sender.selected) {
-        [sender.imageView startAnimating];
-    } else {
-        [sender.imageView stopAnimating];
-    }
-    
 }
 
 - (void)addSubViews {
@@ -159,8 +160,8 @@
         [_audioBtn setTitleColor:[UIColor whiteColor] forState:(UIControlStateNormal)];
         [_audioBtn setBackgroundImage:[UIImage imageNamed:@"voice_bg_icon"] forState:(UIControlStateNormal)];
         [_audioBtn setImage:[UIImage imageNamed:@"play_voice_icon_2"] forState:(UIControlStateNormal)];
-        _audioBtn.imageEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 70);
-        _audioBtn.titleEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 10);
+        _audioBtn.imageEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 60);
+        _audioBtn.titleEdgeInsets = UIEdgeInsetsMake(0, -30, 0, 10);
         _audioBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
         [_audioBtn addTarget:self action:@selector(audioBtnClick:) forControlEvents:(UIControlEventTouchUpInside)];
         _audioBtn.imageView.animationImages = @[[UIImage imageNamed:@"play_voice_icon_0"],

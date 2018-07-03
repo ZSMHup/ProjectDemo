@@ -16,7 +16,8 @@
 #define CachesFileName(fileName) [CachesDirectory stringByAppendingPathComponent:fileName]
 
 // 保存文件名
-#define FileName(url) url.pathExtension.length ? [NSString stringWithFormat:@"%@.%@", url.md5String, url.pathExtension] : url.md5String
+//#define FileName(url) url.pathExtension.length ? [NSString stringWithFormat:@"%@.%@", url.md5String, url.pathExtension] : url.md5String
+#define FileName(url) [NSString stringWithFormat:@"%@.mp3", url.md5String] 
 
 // 文件的存放路径（caches）
 #define FileFullpath(url,fileName) [CachesFileName(fileName) stringByAppendingPathComponent:FileName(url)]

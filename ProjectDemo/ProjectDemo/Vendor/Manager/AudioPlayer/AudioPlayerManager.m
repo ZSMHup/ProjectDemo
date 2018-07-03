@@ -7,6 +7,9 @@
 //
 
 #import "AudioPlayerManager.h"
+#import "AYFileDownloadManager.h"
+
+#define AudioPlayerFileName @"AudioPlayerFileName"
 
 @interface AudioPlayerManager ()
 
@@ -41,23 +44,59 @@ static AudioPlayerManager *_audioPlayer;
     return _audioPlayer;
 }
 
-- (void)playerWithURL:(NSString *)url {
-    NSLog(@"url: %@", url);
-    NSURL *playerUrl = [NSURL URLWithString:url];
-    _currentPlayerItem = [AVPlayerItem playerItemWithURL:playerUrl];
-    self.audioPlayer = [[AVPlayer alloc] initWithPlayerItem:_currentPlayerItem];
-//    [self addMusicTimeMake]; //监听时间变化
-//    _isPlay = YES;
-//    [_player play];  //需要注意的是初始化完player之后不一定会马上开始播放，需要等待player的状态变为ReadyToPlay才会进行播放。
-//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(playbackFinished:) name:AVPlayerItemDidPlayToEndTimeNotification object:_currentPlayerItem];  //播放完后进行回调。播放完后一般都会进行播放下一首的操作。
-    [self.audioPlayer play];
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
-//- (AVPlayer *)audioPlayer {
-//    if (!_audioPlayer) {
-//        _audioPlayer = [[AVPlayer alloc] init];
-//    }
-//    return _audioPlayer;
-//}
+- (void)playerWithURL:(NSString *)url {
+//    AudioPlayerManager *manager = [[AudioPlayerManager alloc] init];
+    
+    if ([[AYFileDownloadManager sharedInstance] isExistence:url fileName:AudioPlayerFileName] && [[AYFileDownloadManager sharedInstance] isCompletion:url fileName:AudioPlayerFileName]) {
+        
+        NSURL *playerUrl = [NSURL fileURLWithPath:[[AYFileDownloadManager sharedInstance] getFileWithURL:url fileName:AudioPlayerFileName]];
+        self.currentPlayerItem = [AVPlayerItem playerItemWithURL:playerUrl];
+        self.audioPlayer = [[AVPlayer alloc] initWithPlayerItem:self.currentPlayerItem];
+        [self.audioPlayer play];
+    } else {
+        __weak typeof(self) weakManager = self;
+        [[AYFileDownloadManager sharedInstance] downloadWithURL:url attribute:nil fileName:AudioPlayerFileName progress:^(NSInteger receivedSize, NSInteger expectedSize, CGFloat progress) {
+            NSLog(@"progress: %f", progress);
+        } state:^(DownloadState state) {
+            NSLog(@"state: %u", state);
+            if (state == DownloadStateCompleted) {
+                NSURL *playerUrl = [NSURL fileURLWithPath:[[AYFileDownloadManager sharedInstance] getFileWithURL:url fileName:AudioPlayerFileName]];
+                weakManager.currentPlayerItem = [AVPlayerItem playerItemWithURL:playerUrl];
+                weakManager.audioPlayer = [[AVPlayer alloc] initWithPlayerItem:weakManager.currentPlayerItem];
+                [weakManager.audioPlayer play];
+            }
+        }];
+    }
+    
+    [self addObserver];
+}
+
+- (void)addObserver {
+    AVPlayerItem * songItem = self.currentPlayerItem;
+    //播放完成
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(playbackFinished) name:AVPlayerItemDidPlayToEndTimeNotification object:songItem];
+}
+
+- (void)playbackFinished {
+    NSLog(@"播放完成");
+    
+}
+
+- (void)player {
+    if (self.audioPlayer.status == AVPlayerStatusReadyToPlay) {
+        [self.audioPlayer pause];
+    }
+}
+
+- (void)pause {
+    if (self.audioPlayer.status == AVPlayerStatusReadyToPlay) {
+        [self.audioPlayer pause];
+    }
+}
+
 
 @end

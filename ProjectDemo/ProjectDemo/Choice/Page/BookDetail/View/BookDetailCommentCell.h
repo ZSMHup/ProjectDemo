@@ -13,6 +13,7 @@
 @interface BookDetailCommentCell : UITableViewCell
 
 @property (nonatomic, strong) BookDetailEvaluateModel *model;
+@property (nonatomic, assign) BOOL isStartAnimating;
 @property (nonatomic, copy) void(^playerCallBack)(UIButton *sender);
 
 @end

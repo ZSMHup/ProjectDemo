@@ -10,6 +10,7 @@
 
 @interface AudioPlayerManager : NSObject
 
+@property (nonatomic, copy) void(^playToEnd)(void);
 + (instancetype)sharedInstance;
 - (void)playerWithURL:(NSString *)url;
 

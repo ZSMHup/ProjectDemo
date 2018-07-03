@@ -13,6 +13,7 @@
 #import "BookDetailEvaluateModel.h"
 
 #import "HomeRequest.h"
+#import "AudioPlayerManager.h"
 
 
 @interface CommentListViewController () <UITableViewDelegate, UITableViewDataSource>
@@ -83,10 +84,27 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    BookDetailCommentCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BookDetailCommentCell"];
-    [cell setModel:self.evaluateArray[indexPath.item]];
     
+    BookDetailCommentCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BookDetailCommentCell"];
+    [cell setModel:self.evaluateArray[indexPath.row]];
+    
+    kWeakSelf(self);
     cell.playerCallBack = ^(UIButton *sender) {
+        sender.selected = !sender.selected;
+        
+        if (sender.selected) {
+            for (NSInteger i = 0; i < weakself.evaluateArray.count; i++) {
+                weakself.evaluateArray[i].isStopAudio = NO;
+            }
+            weakself.evaluateArray[indexPath.row].isStopAudio = YES;
+            
+            [[AudioPlayerManager sharedInstance] playerWithURL:weakself.evaluateArray[indexPath.row].commentVoiceUrl];
+        } else {
+            for (NSInteger i = 0; i < weakself.evaluateArray.count; i++) {
+                weakself.evaluateArray[i].isStopAudio = NO;
+            }
+        }
+        [weakself.tableView reloadData];
         
     };
     
