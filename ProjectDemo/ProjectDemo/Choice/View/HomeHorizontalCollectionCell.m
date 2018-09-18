@@ -36,7 +36,7 @@
 }
 
 - (void)setBookModel:(BookListModel *)bookModel {
-    _bookListModel = bookModel;
+    _bookModel = bookModel;
     
     [self.imgView mas_updateConstraints:^(MASConstraintMaker *make) {
         make.height.mas_equalTo(AdaptH(126));

@@ -11,7 +11,7 @@
 @implementation NetworkRequestModel
 - (BOOL)success {
     NSString *code = [NSString stringWithFormat:@"%@", self.code];
-    NSString *staus = [NSString stringWithFormat:@"%@", self.code];
+    NSString *staus = [NSString stringWithFormat:@"%@", self.status];
     return [code isEqualToString:@"200"] || [staus isEqualToString:@"1"];
 }
 

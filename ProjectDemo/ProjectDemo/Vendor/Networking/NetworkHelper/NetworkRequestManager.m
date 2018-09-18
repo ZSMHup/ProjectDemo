@@ -10,7 +10,7 @@
 
 #define kWindow [UIApplication sharedApplication].delegate.window
 
-//#define kApiPrefix@"http://dev.ellabook.cn/rest/api/service"
+//#define kApiPrefix @"http://dev.ellabook.cn/rest/api/service"
 #define kApiPrefix @"http://api.ellabook.cn/rest/api/service"
 
 @implementation NetworkRequestManager
